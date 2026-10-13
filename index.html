@@ -11,7 +11,7 @@
   <meta name="description" content="Join CCL - Code Champion League — the ultimate online student knockout hackathon. 32 teams of 5, 4 intense cricket-style rounds, and ₹16,000 in cash prizes. Entry ₹750/team. Register now!" />
   <meta name="keywords" content="CCL, Code Champion League, hackathon, student hackathon, coding competition, online hackathon, engineering competition, tech event, cash prize" />
   <meta name="author" content="CCL Organizing Team" />
-  <meta name="theme-color" content="#070B14" />
+  <meta name="theme-color" content="#FFFFFF" />
 
   <!-- Open Graph / WhatsApp Preview -->
   <meta property="og:type" content="website" />
@@ -39,22 +39,15 @@
       theme: {
         extend: {
           colors: {
-            navy: {
-              950: '#04070F',
-              900: '#070B14',
-              850: '#0C1222',
-              800: '#111A30',
-              700: '#1A2744',
-            },
             electric: {
               400: '#38BDF8',
-              500: '#00F0FF',
-              600: '#0284C7',
+              500: '#0284C7',
+              600: '#0369A1',
             },
             neon: {
-              orange: '#FF5E00',
-              amber: '#FFB800',
-              yellow: '#FACC15',
+              orange: '#EA580C',
+              amber: '#D97706',
+              yellow: '#CA8A04',
             }
           },
           fontFamily: {
@@ -62,10 +55,10 @@
             body: ['"Inter"', 'sans-serif'],
           },
           boxShadow: {
-            'neon-blue': '0 0 25px -3px rgba(0, 240, 255, 0.45)',
-            'neon-orange': '0 0 25px -3px rgba(255, 94, 0, 0.45)',
-            'neon-gold': '0 0 30px -2px rgba(255, 184, 0, 0.5)',
-            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+            'neon-blue': '0 10px 25px -3px rgba(2, 132, 199, 0.25)',
+            'neon-orange': '0 10px 25px -3px rgba(234, 88, 12, 0.25)',
+            'neon-gold': '0 12px 30px -2px rgba(217, 119, 6, 0.28)',
+            'glass': '0 8px 30px 0 rgba(15, 23, 42, 0.06)',
           },
           keyframes: {
             float: {
@@ -74,7 +67,7 @@
             },
             pulseGlow: {
               '0%, 100%': { opacity: '0.4' },
-              '50%': { opacity: '0.9' },
+              '50%': { opacity: '0.8' },
             }
           },
           animation: {
@@ -89,58 +82,61 @@
   <!-- Three.js CDN for Interactive 3D WebGL Interface -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-  <!-- Custom Styles for Glassmorphism & High-Tech 3D Accents -->
+  <!-- Custom Styles for Clean White Glassmorphism & High-Tech 3D Accents -->
   <style>
     /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
     }
     ::-webkit-scrollbar-track {
-      background: #070B14;
+      background: #F8FAFC;
     }
     ::-webkit-scrollbar-thumb {
-      background: #1A2744;
+      background: #CBD5E1;
       border-radius: 4px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #00F0FF;
+      background: #0284C7;
     }
 
-    /* Glassmorphism Classes */
+    /* Clean Light Glassmorphism Classes */
     .glass-card {
-      background: rgba(12, 18, 34, 0.72);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(56, 189, 248, 0.12);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
     }
     .glass-card:hover {
-      border-color: rgba(0, 240, 255, 0.35);
+      border-color: rgba(2, 132, 199, 0.35);
+      box-shadow: 0 12px 28px -4px rgba(2, 132, 199, 0.12);
     }
 
     .glass-nav {
-      background: rgba(7, 11, 20, 0.88);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(56, 189, 248, 0.12);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+      box-shadow: 0 1px 4px 0 rgba(15, 23, 42, 0.04);
     }
 
-    /* Tech Grid Background Pattern */
+    /* Subtle Light Tech Grid Background */
     .tech-grid {
       background-size: 40px 40px;
       background-image: 
-        linear-gradient(to right, rgba(56, 189, 248, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+        linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
     }
 
     /* Glow Gradients */
     .gradient-radial-blue {
-      background: radial-gradient(circle at 50% 30%, rgba(0, 240, 255, 0.15) 0%, rgba(7, 11, 20, 0) 70%);
+      background: radial-gradient(circle at 50% 30%, rgba(2, 132, 199, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
     }
 
     /* Scroll Reveal Animation Classes */
     .reveal {
       opacity: 0;
-      transform: translateY(28px);
+      transform: translateY(24px);
       transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: opacity, transform;
     }
@@ -168,7 +164,7 @@
       transition: background 0.15s ease;
     }
 
-    /* Animated 3D Holographic Border Beam */
+    /* Animated 3D Holographic Border Beam (Light Mode) */
     @keyframes rotateBeam {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
@@ -178,6 +174,7 @@
       overflow: hidden;
       border-radius: 1.25rem;
       padding: 2px;
+      box-shadow: 0 10px 30px -5px rgba(2, 132, 199, 0.15);
     }
     .border-beam-container::before {
       content: '';
@@ -186,39 +183,39 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: conic-gradient(transparent, #00f0ff, transparent 35%, #ffb800 50%, transparent 80%);
+      background: conic-gradient(transparent, #0284c7, transparent 35%, #f59e0b 50%, transparent 80%);
       animation: rotateBeam 5s linear infinite;
       z-index: 0;
     }
     .border-beam-content {
       position: relative;
       z-index: 1;
-      background: #090e1c;
+      background: #FFFFFF;
       border-radius: inherit;
       height: 100%;
     }
 
-    /* 3D Floating Pedestals for Podium */
+    /* 3D Floating Pedestals for Podium (Light Mode) */
     .podium-base {
       position: relative;
     }
     .podium-base::after {
       content: '';
       position: absolute;
-      bottom: -16px;
+      bottom: -14px;
       left: 8%;
       right: 8%;
-      height: 22px;
-      background: radial-gradient(ellipse at center, rgba(0, 240, 255, 0.35) 0%, transparent 75%);
+      height: 20px;
+      background: radial-gradient(ellipse at center, rgba(2, 132, 199, 0.2) 0%, transparent 75%);
       filter: blur(8px);
       z-index: -1;
     }
     .podium-base-gold::after {
-      background: radial-gradient(ellipse at center, rgba(255, 184, 0, 0.6) 0%, transparent 75%);
+      background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.3) 0%, transparent 75%);
       filter: blur(10px);
     }
 
-    /* Podium Responsive Heights - Only applies to desktop/tablet (768px+) */
+    /* Podium Responsive Heights */
     @media (min-width: 768px) {
       .podium-1 { min-height: 410px; }
       .podium-2 { min-height: 350px; }
@@ -226,15 +223,15 @@
     }
   </style>
 </head>
-<body class="bg-navy-950 text-slate-100 font-body antialiased selection:bg-electric-500 selection:text-navy-950 overflow-x-hidden relative">
+<body class="bg-[#FAFCFF] text-slate-800 font-body antialiased selection:bg-blue-600 selection:text-white overflow-x-hidden relative">
 
   <!-- Background decorative canvas for interactive particles -->
-  <canvas id="particleCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+  <canvas id="particleCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-60"></canvas>
 
-  <!-- Ambient Light Blobs -->
-  <div class="fixed top-[-10vw] left-1/2 -translate-x-1/2 w-[70vw] h-[35vw] bg-electric-500/10 rounded-full blur-[140px] pointer-events-none z-0 animate-pulse-glow"></div>
-  <div class="fixed top-[40vh] right-[-10vw] w-[45vw] h-[45vw] bg-neon-orange/8 rounded-full blur-[150px] pointer-events-none z-0"></div>
-  <div class="fixed bottom-[-10vw] left-[-10vw] w-[50vw] h-[50vw] bg-electric-600/10 rounded-full blur-[160px] pointer-events-none z-0"></div>
+  <!-- Ambient Light Pastel Blobs -->
+  <div class="fixed top-[-10vw] left-1/2 -translate-x-1/2 w-[70vw] h-[35vw] bg-blue-400/8 rounded-full blur-[140px] pointer-events-none z-0 animate-pulse-glow"></div>
+  <div class="fixed top-[40vh] right-[-10vw] w-[45vw] h-[45vw] bg-amber-400/7 rounded-full blur-[150px] pointer-events-none z-0"></div>
+  <div class="fixed bottom-[-10vw] left-[-10vw] w-[50vw] h-[50vw] bg-cyan-400/8 rounded-full blur-[160px] pointer-events-none z-0"></div>
 
   <!-- ===================================================================
        1. STICKY NAVBAR
@@ -243,35 +240,35 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <!-- Brand Logo / Name -->
-      <a href="#" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-electric-500 rounded-lg p-1">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-electric-500 to-neon-orange p-[1.5px] shadow-neon-blue group-hover:scale-105 transition-transform duration-300">
-          <div class="w-full h-full bg-navy-900 rounded-[10px] flex items-center justify-center">
-            <svg class="w-5 h-5 text-electric-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <a href="#" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg p-1">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 via-cyan-500 to-amber-500 p-[1.5px] shadow-sm group-hover:scale-105 transition-transform duration-300">
+          <div class="w-full h-full bg-white rounded-[10px] flex items-center justify-center">
+            <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
         </div>
         <div class="flex flex-col">
-          <span class="font-display font-bold text-lg tracking-wider text-white group-hover:text-electric-400 transition-colors">
+          <span class="font-display font-bold text-lg tracking-wider text-slate-900 group-hover:text-blue-600 transition-colors">
             CCL
           </span>
-          <span class="text-[10px] uppercase font-mono tracking-widest text-slate-400 -mt-0.5">Code Champion League</span>
+          <span class="text-[10px] uppercase font-mono tracking-widest text-slate-500 -mt-0.5">Code Champion League</span>
         </div>
       </a>
 
       <!-- Desktop Navigation Links -->
       <nav class="hidden md:flex items-center gap-8" aria-label="Desktop Navigation">
-        <a href="#about" class="text-sm font-medium text-slate-300 hover:text-electric-400 transition-colors py-1">About</a>
-        <a href="#rounds" class="text-sm font-medium text-slate-300 hover:text-electric-400 transition-colors py-1">Rounds</a>
-        <a href="#prizes" class="text-sm font-medium text-slate-300 hover:text-electric-400 transition-colors py-1">Prizes</a>
-        <a href="#rules" class="text-sm font-medium text-slate-300 hover:text-electric-400 transition-colors py-1">Rules</a>
-        <a href="#faq" class="text-sm font-medium text-slate-300 hover:text-electric-400 transition-colors py-1">FAQ</a>
-        <a href="#contact" class="text-sm font-medium text-slate-300 hover:text-electric-400 transition-colors py-1">Contact</a>
+        <a href="#about" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors py-1">About</a>
+        <a href="#rounds" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors py-1">Rounds</a>
+        <a href="#prizes" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors py-1">Prizes</a>
+        <a href="#rules" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors py-1">Rules</a>
+        <a href="#faq" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors py-1">FAQ</a>
+        <a href="#contact" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors py-1">Contact</a>
       </nav>
 
       <!-- Desktop CTA Button -->
       <div class="hidden md:flex items-center gap-4">
-        <a href="#register" class="relative group inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-display font-semibold text-sm text-navy-950 bg-gradient-to-r from-electric-500 via-cyan-300 to-neon-amber hover:shadow-neon-blue transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0">
+        <a href="#register" class="relative group inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-display font-semibold text-sm text-white bg-gradient-to-r from-blue-600 via-cyan-600 to-amber-500 hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0">
           <span>Register Now</span>
           <svg class="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -280,7 +277,7 @@
       </div>
 
       <!-- Mobile Hamburger Button -->
-      <button id="mobileMenuBtn" type="button" aria-label="Toggle mobile menu" aria-expanded="false" class="md:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-navy-800 focus:outline-none focus:ring-2 focus:ring-electric-500 transition-colors">
+      <button id="mobileMenuBtn" type="button" aria-label="Toggle mobile menu" aria-expanded="false" class="md:hidden p-2 rounded-xl text-slate-700 hover:text-blue-600 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
         <svg id="hamburgerIcon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
@@ -292,20 +289,20 @@
     </div>
 
     <!-- Mobile Dropdown Menu -->
-    <div id="mobileMenu" class="md:hidden hidden px-4 pt-2 pb-6 border-t border-slate-800/80 bg-navy-900/98 backdrop-blur-2xl transition-all duration-300">
-      <div class="flex flex-col space-y-3 pt-2">
-        <a href="#about" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-electric-400">About</a>
-        <a href="#rounds" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-electric-400">Tournament Format</a>
-        <a href="#prizes" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-electric-400">Prize Pool</a>
-        <a href="#rules" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-electric-400">Rules & Eligibility</a>
-        <a href="#register" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-electric-400">How to Register</a>
-        <a href="#faq" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-electric-400">FAQ</a>
-        <a href="#contact" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-electric-400">Contact</a>
+    <div id="mobileMenu" class="md:hidden hidden px-4 pt-2 pb-6 border-t border-slate-200 bg-white/98 backdrop-blur-2xl transition-all duration-300 shadow-xl">
+      <div class="flex flex-col space-y-2 pt-2">
+        <a href="#about" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600">About</a>
+        <a href="#rounds" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600">Tournament Format</a>
+        <a href="#prizes" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600">Prize Pool</a>
+        <a href="#rules" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600">Rules & Eligibility</a>
+        <a href="#register" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600">How to Register</a>
+        <a href="#faq" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600">FAQ</a>
+        <a href="#contact" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600">Contact</a>
         <div class="pt-4 flex flex-col gap-3">
-          <a href="#register" class="mobile-nav-link w-full py-3 rounded-xl text-center font-display font-semibold text-navy-950 bg-gradient-to-r from-electric-500 to-neon-amber shadow-neon-blue">
+          <a href="#register" class="mobile-nav-link w-full py-3 rounded-xl text-center font-display font-semibold text-white bg-gradient-to-r from-blue-600 via-cyan-600 to-amber-500 shadow-md">
             Register Team (₹750)
           </a>
-          <a href="https://chat.whatsapp.com/CDPD39LfROz4AY9HV4Zv4G?s=cl&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" class="whatsapp-group-link w-full py-3 rounded-xl text-center font-medium text-emerald-400 border border-emerald-500/30 bg-emerald-950/20 flex items-center justify-center gap-2">
+          <a href="https://chat.whatsapp.com/CDPD39LfROz4AY9HV4Zv4G?s=cl&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" class="whatsapp-group-link w-full py-3 rounded-xl text-center font-medium text-emerald-700 border border-emerald-300 bg-emerald-50 flex items-center justify-center gap-2">
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
               <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.101-.476-.15-.677.15-.201.3-.778.979-.954 1.18-.176.2-.352.226-.653.076-.3-.151-1.267-.467-2.414-1.489-.893-.796-1.496-1.78-1.672-2.08-.176-.3-.019-.462.132-.612.136-.135.301-.351.452-.527.15-.175.201-.3.301-.5.101-.2.051-.376-.025-.526-.076-.151-.678-1.633-.929-2.235-.245-.588-.493-.509-.678-.518-.176-.01-.377-.01-.578-.01s-.527.075-.803.376c-.276.3-1.054 1.03-1.054 2.511 0 1.482 1.079 2.913 1.23 3.114.15.2 2.122 3.24 5.141 4.544.718.31 1.278.496 1.716.634.721.229 1.378.197 1.897.12.578-.087 1.78-.727 2.03-1.43.25-.704.25-1.306.176-1.43-.075-.125-.276-.201-.577-.351z"/>
               <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.05 21.95l4.912-1.288A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.05a8.03 8.03 0 01-4.103-1.125l-.294-.175-3.051.8 0.814-2.973-.191-.305A8.04 8.04 0 1112 20.05z"/>
@@ -325,14 +322,14 @@
       
       <!-- Top Announcement Pill -->
       <div class="reveal flex justify-center mb-8">
-        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-navy-850/90 border border-electric-500/30 text-xs sm:text-sm font-mono text-electric-400 shadow-glass">
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/95 border border-blue-200/90 text-xs sm:text-sm font-mono text-blue-700 shadow-sm">
           <span class="relative flex h-2.5 w-2.5">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-amber opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-neon-amber"></span>
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-500"></span>
           </span>
-          <span class="font-semibold tracking-wide text-slate-200">DATES COMING SOON</span>
-          <span class="text-slate-500">•</span>
-          <span class="text-neon-amber font-medium">ONLY 32 SLOTS AVAILABLE</span>
+          <span class="font-semibold tracking-wide text-slate-800">DATES COMING SOON</span>
+          <span class="text-slate-400">•</span>
+          <span class="text-amber-600 font-semibold">ONLY 32 SLOTS AVAILABLE</span>
         </div>
       </div>
 
@@ -341,48 +338,48 @@
         <!-- Left Content Column -->
         <div class="lg:col-span-7 text-center lg:text-left">
           <h1 class="reveal text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-extrabold tracking-tight leading-[1.1] mb-5">
-            <span class="block text-white">CCL</span>
-            <span class="block text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-300 mt-1 mb-2 font-mono tracking-wide">Code Champion League</span>
-            <span class="block bg-gradient-to-r from-electric-500 via-cyan-200 to-neon-orange bg-clip-text text-transparent">
+            <span class="block text-slate-950">CCL</span>
+            <span class="block text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-600 mt-1 mb-2 font-mono tracking-wide">Code Champion League</span>
+            <span class="block bg-gradient-to-r from-blue-600 via-cyan-600 to-amber-600 bg-clip-text text-transparent">
               32 Teams. 4 Rounds. One Champion.
             </span>
           </h1>
 
-          <p class="reveal text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 mb-6 font-light leading-relaxed">
+          <p class="reveal text-base sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 mb-6 font-normal leading-relaxed">
             The ultimate cricket-style online knockout hackathon for college tech creators. 
-            Battle through fast-paced rounds, out-code rival teams, and claim your share of the <span class="text-neon-amber font-semibold">₹16,000 cash prize pool</span>.
+            Battle through fast-paced rounds, out-code rival teams, and claim your share of the <span class="text-amber-600 font-semibold">₹16,000 cash prize pool</span>.
           </p>
 
           <!-- Key Stats Chips Bar -->
           <div class="reveal flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 mb-8">
-            <span class="px-3 py-1.5 rounded-xl bg-navy-850/80 border border-amber-500/30 text-xs sm:text-sm font-medium text-amber-300 flex items-center gap-1.5">
+            <span class="px-3 py-1.5 rounded-xl bg-white border border-amber-300 text-xs sm:text-sm font-medium text-amber-800 shadow-sm flex items-center gap-1.5">
               <span class="text-base">🏆</span> ₹16,000 Prize Pool
             </span>
-            <span class="px-3 py-1.5 rounded-xl bg-navy-850/80 border border-electric-500/30 text-xs sm:text-sm font-medium text-electric-400 flex items-center gap-1.5">
+            <span class="px-3 py-1.5 rounded-xl bg-white border border-blue-300 text-xs sm:text-sm font-medium text-blue-700 shadow-sm flex items-center gap-1.5">
               <span class="text-base">⚡</span> 32 Teams Only
             </span>
-            <span class="px-3 py-1.5 rounded-xl bg-navy-850/80 border border-purple-500/30 text-xs sm:text-sm font-medium text-purple-300 flex items-center gap-1.5">
+            <span class="px-3 py-1.5 rounded-xl bg-white border border-purple-300 text-xs sm:text-sm font-medium text-purple-700 shadow-sm flex items-center gap-1.5">
               <span class="text-base">🏏</span> 4 Knockout Rounds
             </span>
-            <span class="px-3 py-1.5 rounded-xl bg-navy-850/80 border border-cyan-400/30 text-xs sm:text-sm font-medium text-cyan-300 flex items-center gap-1.5">
+            <span class="px-3 py-1.5 rounded-xl bg-white border border-cyan-300 text-xs sm:text-sm font-medium text-cyan-800 shadow-sm flex items-center gap-1.5">
               <span class="text-base">💻</span> All Stacks Welcome
             </span>
-            <span class="px-3 py-1.5 rounded-xl bg-navy-850/80 border border-emerald-500/30 text-xs sm:text-sm font-medium text-emerald-400 flex items-center gap-1.5">
+            <span class="px-3 py-1.5 rounded-xl bg-white border border-emerald-300 text-xs sm:text-sm font-medium text-emerald-800 shadow-sm flex items-center gap-1.5">
               <span class="text-base">🌐</span> 100% Online
             </span>
           </div>
 
           <!-- Primary & Secondary CTA Buttons -->
           <div class="reveal flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 w-full">
-            <a href="#register" class="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-display font-bold text-sm sm:text-base text-navy-950 bg-gradient-to-r from-electric-500 via-cyan-300 to-neon-amber hover:shadow-neon-blue transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-center flex items-center justify-center gap-2">
+            <a href="#register" class="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-display font-bold text-sm sm:text-base text-white bg-gradient-to-r from-blue-600 via-cyan-600 to-amber-500 hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-center flex items-center justify-center gap-2">
               <span>Register Now — ₹750 / Team</span>
               <svg class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </a>
 
-            <a href="https://chat.whatsapp.com/CDPD39LfROz4AY9HV4Zv4G?s=cl&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" class="whatsapp-group-link w-full sm:w-auto px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl font-display font-semibold text-sm sm:text-base text-white bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/50 hover:border-emerald-400 transition-all duration-300 flex items-center justify-center gap-2">
-              <svg class="w-5 h-5 text-emerald-400 fill-current flex-shrink-0" viewBox="0 0 24 24">
+            <a href="https://chat.whatsapp.com/CDPD39LfROz4AY9HV4Zv4G?s=cl&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" class="whatsapp-group-link w-full sm:w-auto px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl font-display font-semibold text-sm sm:text-base text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 shadow-sm transition-all duration-300 flex items-center justify-center gap-2">
+              <svg class="w-5 h-5 text-emerald-600 fill-current flex-shrink-0" viewBox="0 0 24 24">
                 <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.101-.476-.15-.677.15-.201.3-.778.979-.954 1.18-.176.2-.352.226-.653.076-.3-.151-1.267-.467-2.414-1.489-.893-.796-1.496-1.78-1.672-2.08-.176-.3-.019-.462.132-.612.136-.135.301-.351.452-.527.15-.175.201-.3.301-.5.101-.2.051-.376-.025-.526-.076-.151-.678-1.633-.929-2.235-.245-.588-.493-.509-.678-.518-.176-.01-.377-.01-.578-.01s-.527.075-.803.376c-.276.3-1.054 1.03-1.054 2.511 0 1.482 1.079 2.913 1.23 3.114.15.2 2.122 3.24 5.141 4.544.718.31 1.278.496 1.716.634.721.229 1.378.197 1.897.12.578-.087 1.78-.727 2.03-1.43.25-.704.25-1.306.176-1.43-.075-.125-.276-.201-.577-.351z"/>
                 <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.05 21.95l4.912-1.288A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.05a8.03 8.03 0 01-4.103-1.125l-.294-.175-3.051.8 0.814-2.973-.191-.305A8.04 8.04 0 1112 20.05z"/>
               </svg>
@@ -394,60 +391,67 @@
         <!-- Right 3D Championship Arena & Schedule Column -->
         <div class="lg:col-span-5 mt-6 lg:mt-0">
           <div class="reveal perspective-1000 max-w-lg mx-auto">
-            <div class="card-3d border-beam-container shadow-neon-blue">
-              <div class="border-beam-content p-4 sm:p-5 flex flex-col">
+            <div class="card-3d border-beam-container shadow-xl">
+              <div class="border-beam-content p-4 sm:p-5 flex flex-col bg-white">
                 
-                <!-- 3D Arena Header Bar -->
-                <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800">
+                <!-- 3D Arena Header Bar with Stage Trigger Button -->
+                <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-200">
                   <div class="flex items-center gap-2">
-                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
-                    <span class="text-xs uppercase font-mono tracking-wider text-slate-200 font-bold">3D Championship Arena</span>
+                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+                    <span class="text-xs uppercase font-mono tracking-wider text-slate-800 font-bold">3D Trophy Arena</span>
                   </div>
-                  <span class="text-[11px] font-mono text-cyan-300 flex items-center gap-1 select-none">
-                    <span>↻</span> Drag to Rotate
-                  </span>
+                  <button id="stageTriggerBtn" type="button" class="text-xs font-mono font-bold px-3 py-1 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100 hover:border-blue-300 transition-all flex items-center gap-1.5 shadow-sm cursor-pointer">
+                    <span>⚡ View Stage & Roster</span>
+                  </button>
                 </div>
 
-                <!-- Three.js 3D Interactive Canvas -->
-                <div class="relative w-full h-[260px] sm:h-[300px] rounded-xl overflow-hidden bg-navy-950/70 border border-slate-800 flex items-center justify-center cursor-grab active:cursor-grabbing group">
+                <!-- Three.js 3D Interactive Canvas Container (Tap to open stage!) -->
+                <div id="arenaCanvasWrapper" class="relative w-full h-[260px] sm:h-[300px] rounded-xl overflow-hidden bg-gradient-to-b from-slate-50 via-white to-blue-50/30 border border-slate-200 flex items-center justify-center cursor-pointer group shadow-inner">
                   <canvas id="hero3dCanvas" class="w-full h-full block" style="touch-action: none;"></canvas>
+                  
                   <!-- Subtle Floating HUD Overlays -->
-                  <div class="absolute top-2.5 left-2.5 pointer-events-none px-2 py-0.5 rounded bg-navy-900/80 border border-cyan-500/30 text-[10px] font-mono text-cyan-300">
-                    TROPHY ORB // 60 FPS
+                  <div class="absolute top-2.5 left-2.5 pointer-events-none px-2.5 py-0.5 rounded-md bg-white/95 border border-blue-200 text-[10px] font-mono font-semibold text-blue-700 shadow-sm">
+                    TROPHY ORB // 3D
                   </div>
-                  <div class="absolute bottom-2.5 right-2.5 pointer-events-none px-2 py-0.5 rounded bg-navy-900/80 border border-amber-500/30 text-[10px] font-mono text-amber-300">
-                    STAGE: FINALS
+                  <div class="absolute bottom-2.5 right-2.5 pointer-events-none px-2.5 py-0.5 rounded-md bg-white/95 border border-amber-300 text-[10px] font-mono font-semibold text-amber-700 shadow-sm">
+                    STAGE: LEAGUE
+                  </div>
+                  
+                  <!-- Interactive Tap / Touch Callout Prompt -->
+                  <div class="absolute bottom-2.5 left-1/2 -translate-x-1/2 pointer-events-none px-3 py-1 rounded-full bg-white/95 border border-blue-300 text-[11px] font-mono font-semibold text-blue-700 shadow-md flex items-center gap-1.5 whitespace-nowrap">
+                    <span class="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span>
+                    <span>Tap 3D for Stage & Roster</span>
                   </div>
                 </div>
 
                 <!-- Integrated Schedule Countdown Ticker -->
-                <div class="mt-4 pt-3 border-t border-slate-800/80">
+                <div class="mt-4 pt-3 border-t border-slate-200">
                   <div class="flex items-center justify-between mb-2.5">
-                    <span class="text-xs font-mono uppercase tracking-wider text-slate-300 font-semibold">Official Schedule</span>
-                    <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-amber-400/20 text-neon-amber border border-amber-500/30 font-mono">
+                    <span class="text-xs font-mono uppercase tracking-wider text-slate-700 font-semibold">Official Schedule</span>
+                    <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-300 font-mono">
                       Dates: TBA
                     </span>
                   </div>
 
                   <div id="countdownContainer" class="grid grid-cols-4 gap-1.5 sm:gap-2 text-center">
-                    <div class="bg-navy-900/90 rounded-lg p-1.5 sm:p-2 border border-slate-800">
-                      <span id="countdownDays" class="block font-display font-bold text-base sm:text-xl text-electric-400">--</span>
-                      <span class="text-[9px] uppercase text-slate-400 font-mono">Days</span>
+                    <div class="bg-slate-50 rounded-lg p-1.5 sm:p-2 border border-slate-200">
+                      <span id="countdownDays" class="block font-display font-bold text-base sm:text-xl text-blue-600">--</span>
+                      <span class="text-[9px] uppercase text-slate-500 font-mono">Days</span>
                     </div>
-                    <div class="bg-navy-900/90 rounded-lg p-1.5 sm:p-2 border border-slate-800">
-                      <span id="countdownHours" class="block font-display font-bold text-base sm:text-xl text-white">--</span>
-                      <span class="text-[9px] uppercase text-slate-400 font-mono">Hours</span>
+                    <div class="bg-slate-50 rounded-lg p-1.5 sm:p-2 border border-slate-200">
+                      <span id="countdownHours" class="block font-display font-bold text-base sm:text-xl text-slate-900">--</span>
+                      <span class="text-[9px] uppercase text-slate-500 font-mono">Hours</span>
                     </div>
-                    <div class="bg-navy-900/90 rounded-lg p-1.5 sm:p-2 border border-slate-800">
-                      <span id="countdownMinutes" class="block font-display font-bold text-base sm:text-xl text-white">--</span>
-                      <span class="text-[9px] uppercase text-slate-400 font-mono">Mins</span>
+                    <div class="bg-slate-50 rounded-lg p-1.5 sm:p-2 border border-slate-200">
+                      <span id="countdownMinutes" class="block font-display font-bold text-base sm:text-xl text-slate-900">--</span>
+                      <span class="text-[9px] uppercase text-slate-500 font-mono">Mins</span>
                     </div>
-                    <div class="bg-navy-900/90 rounded-lg p-1.5 sm:p-2 border border-slate-800">
-                      <span id="countdownSeconds" class="block font-display font-bold text-base sm:text-xl text-neon-orange">--</span>
-                      <span class="text-[9px] uppercase text-slate-400 font-mono">Secs</span>
+                    <div class="bg-slate-50 rounded-lg p-1.5 sm:p-2 border border-slate-200">
+                      <span id="countdownSeconds" class="block font-display font-bold text-base sm:text-xl text-amber-600">--</span>
+                      <span class="text-[9px] uppercase text-slate-500 font-mono">Secs</span>
                     </div>
                   </div>
-                  <p class="text-[10px] sm:text-[11px] text-slate-400 mt-2 text-center">
+                  <p class="text-[10px] sm:text-[11px] text-slate-500 mt-2 text-center">
                     🔔 Final dates will be dropped directly in WhatsApp first!
                   </p>
                 </div>
@@ -463,46 +467,141 @@
   </section>
 
   <!-- ===================================================================
+       INTERACTIVE TOURNAMENT STAGE & PARTICIPANTS MODAL
+       (Triggered when touching the 3D trophy or clicking the Stage button)
+       =================================================================== -->
+  <div id="stageModal" class="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-4 transition-all duration-300 hidden opacity-0" aria-modal="true" role="dialog">
+    <div class="bg-white rounded-3xl border border-slate-200 max-w-xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto transform transition-transform scale-95 duration-300" id="stageModalCard">
+      
+      <!-- Close Button -->
+      <button id="closeStageModalBtn" type="button" aria-label="Close modal" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors text-xl font-bold cursor-pointer">
+        &times;
+      </button>
+
+      <!-- Modal Header -->
+      <div class="mb-6">
+        <span class="inline-block px-3 py-1 rounded-full text-xs font-mono font-bold bg-blue-50 text-blue-700 border border-blue-200 mb-2">
+          🏆 TOURNAMENT STAGE & BRACKET
+        </span>
+        <h3 class="text-2xl font-display font-extrabold text-slate-900">
+          Current Stage & Squad Lineup
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">
+          Track the live tournament bracket progression and verified squads.
+        </p>
+      </div>
+
+      <!-- Current Stage Info Box -->
+      <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 mb-6">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-mono uppercase tracking-wider text-slate-500 font-semibold">Active Progression</span>
+          <span id="stageStatusBadge" class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300">
+            Registration Active
+          </span>
+        </div>
+        
+        <!-- 4 Round Progress Tracker Pills -->
+        <div class="grid grid-cols-4 gap-1.5 sm:gap-2 mb-4 text-center">
+          <div class="p-2 rounded-xl bg-blue-600 text-white font-mono text-[11px] font-bold shadow-sm">
+            <span>R1: League</span>
+            <span class="block text-[9px] opacity-90 mt-0.5">32 Teams</span>
+          </div>
+          <div class="p-2 rounded-xl bg-slate-200 text-slate-600 font-mono text-[11px] font-medium">
+            <span>R2: Quarters</span>
+            <span class="block text-[9px] text-slate-500 mt-0.5">16 Teams</span>
+          </div>
+          <div class="p-2 rounded-xl bg-slate-200 text-slate-600 font-mono text-[11px] font-medium">
+            <span>R3: Semis</span>
+            <span class="block text-[9px] text-slate-500 mt-0.5">8 Teams</span>
+          </div>
+          <div class="p-2 rounded-xl bg-slate-200 text-slate-600 font-mono text-[11px] font-medium">
+            <span>Final</span>
+            <span class="block text-[9px] text-slate-500 mt-0.5">Top 4</span>
+          </div>
+        </div>
+
+        <div class="space-y-1 text-xs text-slate-600 leading-relaxed border-t border-slate-200 pt-3">
+          <div class="flex items-center gap-2 font-semibold text-slate-800">
+            <span>🏏 Current: Round 01 — League Stage</span>
+          </div>
+          <p>
+            All 32 confirmed teams build their prototype. The top 16 teams qualify for the Quarter-Finals.
+          </p>
+        </div>
+      </div>
+
+      <!-- Participants Roster Container -->
+      <div class="mb-6">
+        <div class="flex items-center justify-between mb-3">
+          <h4 class="font-display font-bold text-base sm:text-lg text-slate-900 flex items-center gap-2">
+            <span>👥 Confirmed Squads</span>
+            <span class="text-xs font-mono font-normal text-slate-500">(32 Slots Max)</span>
+          </h4>
+          <span class="text-xs font-mono text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200 font-medium">
+            Slots Filling
+          </span>
+        </div>
+
+        <!-- Dynamic Participants Area (Coming Soon placeholder or active team list) -->
+        <div id="participantsRosterContainer">
+          <!-- Populated dynamically via JavaScript based on CONFIG.PARTICIPANTS -->
+        </div>
+      </div>
+
+      <!-- Modal Footer Action -->
+      <div class="flex flex-col sm:flex-row gap-3 pt-3 border-t border-slate-200">
+        <a href="#register" class="modal-register-btn flex-1 py-3 rounded-xl font-display font-bold text-center text-sm text-white bg-gradient-to-r from-blue-600 to-amber-500 shadow-md hover:shadow-blue-500/25 transition-all">
+          Register Your Team (₹750)
+        </a>
+        <button type="button" id="dismissStageModalBtn" class="py-3 px-5 rounded-xl text-center text-sm font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 transition-colors">
+          Back to 3D Arena
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===================================================================
        3. QUICK STATS BAR (Animated Counters)
        =================================================================== -->
   <section class="relative z-10 -mt-6 sm:-mt-8 max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="glass-card rounded-2xl p-4 sm:p-6 md:p-8 border border-electric-500/20 shadow-2xl bg-gradient-to-r from-navy-900 via-navy-850 to-navy-900">
+    <div class="glass-card rounded-2xl p-4 sm:p-6 md:p-8 border border-slate-200 shadow-xl bg-white">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
         
         <!-- Stat 1 -->
-        <div class="flex flex-col items-center text-center p-3 sm:p-4 rounded-xl bg-navy-950/40 border border-slate-800/60">
-          <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-white flex items-center">
+        <div class="flex flex-col items-center text-center p-3 sm:p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-slate-900 flex items-center">
             <span class="counter" data-target="32">0</span>
           </div>
-          <span class="text-[10px] sm:text-xs md:text-sm font-medium text-slate-400 mt-1 uppercase tracking-wider font-mono">Total Teams</span>
-          <span class="text-[9px] sm:text-[11px] text-electric-400 mt-0.5">Strict Cap</span>
+          <span class="text-[10px] sm:text-xs md:text-sm font-semibold text-slate-600 mt-1 uppercase tracking-wider font-mono">Total Teams</span>
+          <span class="text-[9px] sm:text-[11px] text-blue-600 mt-0.5 font-medium">Strict Cap</span>
         </div>
 
         <!-- Stat 2 -->
-        <div class="flex flex-col items-center text-center p-3 sm:p-4 rounded-xl bg-navy-950/40 border border-slate-800/60">
-          <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-white flex items-center">
+        <div class="flex flex-col items-center text-center p-3 sm:p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-slate-900 flex items-center">
             <span class="counter" data-target="5">0</span>
           </div>
-          <span class="text-[10px] sm:text-xs md:text-sm font-medium text-slate-400 mt-1 uppercase tracking-wider font-mono">Members / Team</span>
-          <span class="text-[9px] sm:text-[11px] text-electric-400 mt-0.5">Fixed Squad</span>
+          <span class="text-[10px] sm:text-xs md:text-sm font-semibold text-slate-600 mt-1 uppercase tracking-wider font-mono">Members / Team</span>
+          <span class="text-[9px] sm:text-[11px] text-blue-600 mt-0.5 font-medium">Fixed Squad</span>
         </div>
 
         <!-- Stat 3 -->
-        <div class="flex flex-col items-center text-center p-3 sm:p-4 rounded-xl bg-navy-950/40 border border-slate-800/60">
-          <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-neon-orange flex items-center">
+        <div class="flex flex-col items-center text-center p-3 sm:p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-amber-600 flex items-center">
             <span>₹</span><span class="counter" data-target="750">0</span>
           </div>
-          <span class="text-[10px] sm:text-xs md:text-sm font-medium text-slate-400 mt-1 uppercase tracking-wider font-mono">Entry / Team</span>
-          <span class="text-[9px] sm:text-[11px] text-slate-400 mt-0.5">₹150 / person</span>
+          <span class="text-[10px] sm:text-xs md:text-sm font-semibold text-slate-600 mt-1 uppercase tracking-wider font-mono">Entry / Team</span>
+          <span class="text-[9px] sm:text-[11px] text-slate-500 mt-0.5">₹150 / person</span>
         </div>
 
         <!-- Stat 4 -->
-        <div class="flex flex-col items-center text-center p-3 sm:p-4 rounded-xl bg-navy-950/40 border border-slate-800/60">
-          <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-neon-amber flex items-center">
+        <div class="flex flex-col items-center text-center p-3 sm:p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-amber-500 flex items-center">
             <span>₹</span><span class="counter" data-target="16000">0</span>
           </div>
-          <span class="text-[10px] sm:text-xs md:text-sm font-medium text-slate-400 mt-1 uppercase tracking-wider font-mono">Prize Pool</span>
-          <span class="text-[9px] sm:text-[11px] text-neon-amber mt-0.5">Cash Prizes</span>
+          <span class="text-[10px] sm:text-xs md:text-sm font-semibold text-slate-600 mt-1 uppercase tracking-wider font-mono">Prize Pool</span>
+          <span class="text-[9px] sm:text-[11px] text-amber-700 mt-0.5 font-medium">Cash Prizes</span>
         </div>
 
       </div>
@@ -514,18 +613,18 @@
        =================================================================== -->
   <section id="about" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="max-w-3xl mx-auto text-center mb-16">
-      <span class="text-xs uppercase font-mono tracking-widest text-electric-400 font-semibold mb-2 block">
+      <span class="text-xs uppercase font-mono tracking-widest text-blue-600 font-semibold mb-2 block">
         // WHY JOIN THIS HACKATHON
       </span>
-      <h2 class="text-3xl sm:text-5xl font-display font-bold text-white mb-6">
+      <h2 class="text-3xl sm:text-5xl font-display font-bold text-slate-900 mb-6">
         Not Just Another Hackathon.<br />
-        <span class="bg-gradient-to-r from-electric-400 to-cyan-200 bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
           It’s A High-Octane Cricket-Style League.
         </span>
       </h2>
-      <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+      <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
         Most hackathons drag on for 48 hours without clear feedback until the end. We reimagined competitive student programming: 
-        <strong>32 teams enter a high-energy progression tournament</strong>. Advance through knockout checkpoints, pitch at each milestone, 
+        <strong class="text-slate-900">32 teams enter a high-energy progression tournament</strong>. Advance through knockout checkpoints, pitch at each milestone, 
         and battle your way to the top podium!
       </p>
     </div>
@@ -534,40 +633,40 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       
       <!-- Card 1 -->
-      <div class="reveal glass-card rounded-2xl p-8 border border-slate-800 hover:border-electric-500/40 transition-all duration-300 group">
-        <div class="w-14 h-14 rounded-xl bg-electric-500/10 border border-electric-500/30 flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">
+      <div class="reveal glass-card rounded-2xl p-8 border border-slate-200 hover:border-blue-300 shadow-sm hover:shadow-md transition-all duration-300 group bg-white">
+        <div class="w-14 h-14 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">
           ⚡
         </div>
-        <h3 class="text-xl font-display font-bold text-white mb-3 group-hover:text-electric-400 transition-colors">
+        <h3 class="text-xl font-display font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
           Cricket Knockout Adrenaline
         </h3>
-        <p class="text-slate-400 text-sm leading-relaxed">
+        <p class="text-slate-600 text-sm leading-relaxed">
           Every round matters. League stage filtering, sudden-death quarters, intense semi-finals, and a Grand Final showdown. Feel the stadium rush right from your desk.
         </p>
       </div>
 
       <!-- Card 2 -->
-      <div class="reveal glass-card rounded-2xl p-8 border border-slate-800 hover:border-neon-orange/40 transition-all duration-300 group">
-        <div class="w-14 h-14 rounded-xl bg-neon-orange/10 border border-neon-orange/30 flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">
+      <div class="reveal glass-card rounded-2xl p-8 border border-slate-200 hover:border-amber-300 shadow-sm hover:shadow-md transition-all duration-300 group bg-white">
+        <div class="w-14 h-14 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">
           🎯
         </div>
-        <h3 class="text-xl font-display font-bold text-white mb-3 group-hover:text-neon-orange transition-colors">
+        <h3 class="text-xl font-display font-bold text-slate-900 mb-3 group-hover:text-amber-600 transition-colors">
           100% Online & Flexible
         </h3>
-        <p class="text-slate-400 text-sm leading-relaxed">
+        <p class="text-slate-600 text-sm leading-relaxed">
           Compete from your college hostel, lab, or home bedroom. Live stream announcements, online submissions, and smooth Discord/WhatsApp coordination.
         </p>
       </div>
 
       <!-- Card 3 -->
-      <div class="reveal glass-card rounded-2xl p-8 border border-slate-800 hover:border-neon-amber/40 transition-all duration-300 group">
-        <div class="w-14 h-14 rounded-xl bg-neon-amber/10 border border-neon-amber/30 flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">
+      <div class="reveal glass-card rounded-2xl p-8 border border-slate-200 hover:border-amber-300 shadow-sm hover:shadow-md transition-all duration-300 group bg-white">
+        <div class="w-14 h-14 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">
           💰
         </div>
-        <h3 class="text-xl font-display font-bold text-white mb-3 group-hover:text-neon-amber transition-colors">
+        <h3 class="text-xl font-display font-bold text-slate-900 mb-3 group-hover:text-amber-600 transition-colors">
           High ROI & Direct UPI Payouts
         </h3>
-        <p class="text-slate-400 text-sm leading-relaxed">
+        <p class="text-slate-600 text-sm leading-relaxed">
           With only ₹150 per person (₹750/team) and a capped pool of 32 teams, your odds of winning the ₹16,000 prize pool are drastically higher than mega 500-team events.
         </p>
       </div>
@@ -578,17 +677,17 @@
   <!-- ===================================================================
        5. TOURNAMENT FORMAT (Cricket-Style 4 Rounds Progression)
        =================================================================== -->
-  <section id="rounds" class="py-24 bg-navy-900/60 border-y border-slate-800/80 relative z-10">
+  <section id="rounds" class="py-24 bg-slate-50/70 border-y border-slate-200 relative z-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs uppercase font-mono tracking-widest text-electric-400 font-semibold mb-2 block">
+        <span class="text-xs uppercase font-mono tracking-widest text-blue-600 font-semibold mb-2 block">
           // CRICKET-STYLE BRACKET
         </span>
-        <h2 class="text-3xl sm:text-5xl font-display font-bold text-white mb-4">
+        <h2 class="text-3xl sm:text-5xl font-display font-bold text-slate-900 mb-4">
           How The Tournament Works
         </h2>
-        <p class="text-slate-400 text-base sm:text-lg">
+        <p class="text-slate-600 text-base sm:text-lg">
           4 progressive rounds designed like an IPL championship. Survive each round cut-off to claim the crown.
         </p>
       </div>
@@ -597,138 +696,138 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 perspective-1000">
         
         <!-- Round 1: League Stage -->
-        <div class="reveal glass-card card-3d rounded-2xl p-6 border-l-4 border-l-electric-500 flex flex-col justify-between group transition-all" data-tilt>
+        <div class="reveal glass-card card-3d rounded-2xl p-6 border-l-4 border-l-blue-600 flex flex-col justify-between group transition-all bg-white" data-tilt>
           <div class="glare-effect"></div>
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-electric-500/20 text-electric-400 border border-electric-500/40">
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-blue-50 text-blue-700 border border-blue-200">
                 ROUND 01
               </span>
-              <span class="text-xs font-mono text-slate-400 bg-navy-900 px-2 py-0.5 rounded border border-slate-800">
+              <span class="text-xs font-mono text-slate-600 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
                 Date: TBA
               </span>
             </div>
             
-            <div class="w-12 h-12 rounded-xl bg-electric-500/10 flex items-center justify-center text-2xl mb-4">
+            <div class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-2xl mb-4">
               🏏
             </div>
 
-            <h3 class="text-xl font-display font-bold text-white mb-2">
+            <h3 class="text-xl font-display font-bold text-slate-900 mb-2">
               The League Stage
             </h3>
-            <p class="text-xs font-mono text-electric-400 font-semibold mb-3">
+            <p class="text-xs font-mono text-blue-700 font-semibold mb-3">
               32 Teams → Top 16 Advance
             </p>
-            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
               All 32 registered teams build and submit their core idea prototype against the kickoff problem statements.
             </p>
           </div>
 
-          <div class="pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+          <div class="pt-4 border-t border-slate-100 text-xs text-slate-500 flex items-center justify-between">
             <span>Cut-off: 50%</span>
-            <span class="text-slate-300 font-medium">16 Teams Eliminated</span>
+            <span class="text-slate-700 font-medium">16 Teams Eliminated</span>
           </div>
         </div>
 
         <!-- Round 2: Quarter-Finals -->
-        <div class="reveal glass-card card-3d rounded-2xl p-6 border-l-4 border-l-cyan-400 flex flex-col justify-between group transition-all" data-tilt>
+        <div class="reveal glass-card card-3d rounded-2xl p-6 border-l-4 border-l-cyan-600 flex flex-col justify-between group transition-all bg-white" data-tilt>
           <div class="glare-effect"></div>
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-cyan-50 text-cyan-800 border border-cyan-200">
                 ROUND 02
               </span>
-              <span class="text-xs font-mono text-slate-400 bg-navy-900 px-2 py-0.5 rounded border border-slate-800">
+              <span class="text-xs font-mono text-slate-600 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
                 Date: TBA
               </span>
             </div>
             
-            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-2xl mb-4">
+            <div class="w-12 h-12 rounded-xl bg-cyan-50 border border-cyan-200 flex items-center justify-center text-2xl mb-4">
               ⚡
             </div>
 
-            <h3 class="text-xl font-display font-bold text-white mb-2">
+            <h3 class="text-xl font-display font-bold text-slate-900 mb-2">
               Quarter-Finals
             </h3>
-            <p class="text-xs font-mono text-cyan-300 font-semibold mb-3">
+            <p class="text-xs font-mono text-cyan-700 font-semibold mb-3">
               16 Teams → Top 8 Advance
             </p>
-            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
               Feature sprint round! Teams receive a sudden surprise twist / requirement to integrate into their existing build.
             </p>
           </div>
 
-          <div class="pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+          <div class="pt-4 border-t border-slate-100 text-xs text-slate-500 flex items-center justify-between">
             <span>Cut-off: Top 8</span>
-            <span class="text-slate-300 font-medium">High Pace Review</span>
+            <span class="text-slate-700 font-medium">High Pace Review</span>
           </div>
         </div>
 
         <!-- Round 3: Semi-Finals -->
-        <div class="reveal glass-card card-3d rounded-2xl p-6 border-l-4 border-l-neon-orange flex flex-col justify-between group transition-all" data-tilt>
+        <div class="reveal glass-card card-3d rounded-2xl p-6 border-l-4 border-l-orange-500 flex flex-col justify-between group transition-all bg-white" data-tilt>
           <div class="glare-effect"></div>
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-neon-orange/20 text-neon-orange border border-neon-orange/40">
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-orange-50 text-orange-700 border border-orange-200">
                 ROUND 03
               </span>
-              <span class="text-xs font-mono text-slate-400 bg-navy-900 px-2 py-0.5 rounded border border-slate-800">
+              <span class="text-xs font-mono text-slate-600 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
                 Date: TBA
               </span>
             </div>
             
-            <div class="w-12 h-12 rounded-xl bg-neon-orange/10 flex items-center justify-center text-2xl mb-4">
+            <div class="w-12 h-12 rounded-xl bg-orange-50 border border-orange-200 flex items-center justify-center text-2xl mb-4">
               🔥
             </div>
 
-            <h3 class="text-xl font-display font-bold text-white mb-2">
+            <h3 class="text-xl font-display font-bold text-slate-900 mb-2">
               Semi-Finals
             </h3>
-            <p class="text-xs font-mono text-neon-orange font-semibold mb-3">
+            <p class="text-xs font-mono text-orange-600 font-semibold mb-3">
               8 Teams → Top 4 Finalists
             </p>
-            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
               Live code checkpoint & architecture defense before technical evaluators. Only 4 teams book their ticket to the finale.
             </p>
           </div>
 
-          <div class="pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+          <div class="pt-4 border-t border-slate-100 text-xs text-slate-500 flex items-center justify-between">
             <span>Cut-off: Final 4</span>
-            <span class="text-slate-300 font-medium">Podium Contenders</span>
+            <span class="text-slate-700 font-medium">Podium Contenders</span>
           </div>
         </div>
 
         <!-- Round 4: The Grand Final -->
-        <div class="reveal glass-card card-3d rounded-2xl p-6 border-l-4 border-l-neon-amber flex flex-col justify-between group transition-all" data-tilt>
+        <div class="reveal glass-card card-3d rounded-2xl p-6 border-l-4 border-l-amber-500 flex flex-col justify-between group transition-all bg-white" data-tilt>
           <div class="glare-effect"></div>
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-500/20 text-neon-amber border border-amber-500/40">
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-50 text-amber-800 border border-amber-200">
                 GRAND FINAL
               </span>
-              <span class="text-xs font-mono text-slate-400 bg-navy-900 px-2 py-0.5 rounded border border-slate-800">
+              <span class="text-xs font-mono text-slate-600 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
                 Date: TBA
               </span>
             </div>
             
-            <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-2xl mb-4">
+            <div class="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-2xl mb-4">
               👑
             </div>
 
-            <h3 class="text-xl font-display font-bold text-white mb-2">
+            <h3 class="text-xl font-display font-bold text-slate-900 mb-2">
               The Grand Final
             </h3>
-            <p class="text-xs font-mono text-neon-amber font-semibold mb-3">
+            <p class="text-xs font-mono text-amber-700 font-semibold mb-3">
               Top 4 Battle For Top 3
             </p>
-            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
               Live presentation & project showcase. The 4 finalist squads present their working builds to crown the 1st, 2nd, and 3rd champions.
             </p>
           </div>
 
-          <div class="pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+          <div class="pt-4 border-t border-slate-100 text-xs text-slate-500 flex items-center justify-between">
             <span>Prize Split</span>
-            <span class="text-neon-amber font-semibold">₹16,000 Cash</span>
+            <span class="text-amber-600 font-bold">₹16,000 Cash</span>
           </div>
         </div>
 
@@ -736,8 +835,8 @@
 
       <!-- Format Note Disclaimer -->
       <div class="mt-8 text-center">
-        <p class="text-xs sm:text-sm text-slate-400 bg-navy-850/80 inline-block px-5 py-2.5 rounded-full border border-slate-800">
-          <span class="text-amber-400 font-semibold">ℹ️ Organizer's Note:</span> The exact stage timings, review rubrics, and round progression structure may be fine-tuned by the organizing committee to ensure optimal fair play.
+        <p class="text-xs sm:text-sm text-slate-600 bg-white inline-block px-5 py-2.5 rounded-full border border-slate-200 shadow-sm">
+          <span class="text-amber-600 font-semibold">ℹ️ Organizer's Note:</span> The exact stage timings, review rubrics, and round progression structure may be fine-tuned by the organizing committee to ensure optimal fair play.
         </p>
       </div>
 
@@ -750,13 +849,13 @@
   <section id="prizes" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="text-xs uppercase font-mono tracking-widest text-neon-amber font-semibold mb-2 block">
+      <span class="text-xs uppercase font-mono tracking-widest text-amber-600 font-semibold mb-2 block">
         // CASH REWARDS & GLORY
       </span>
-      <h2 class="text-3xl sm:text-5xl font-display font-bold text-white mb-4">
+      <h2 class="text-3xl sm:text-5xl font-display font-bold text-slate-900 mb-4">
         ₹16,000 Total Prize Pool
       </h2>
-      <p class="text-slate-300 text-base sm:text-lg">
+      <p class="text-slate-600 text-base sm:text-lg">
         Compete for cash prizes transferred directly to winning team leads within 48 hours.
       </p>
     </div>
@@ -766,69 +865,69 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-5 md:items-end perspective-1000">
         
         <!-- 2nd Place (Silver) -->
-        <div class="reveal order-2 md:order-1 glass-card card-3d podium-base rounded-2xl p-5 sm:p-6 md:p-5 lg:p-7 border-2 border-slate-400/40 text-center flex flex-col justify-between podium-2 relative group hover:border-slate-300 transition-all shadow-glass" data-tilt>
+        <div class="reveal order-2 md:order-1 glass-card card-3d podium-base rounded-2xl p-5 sm:p-6 md:p-5 lg:p-7 border-2 border-slate-300 text-center flex flex-col justify-between podium-2 relative group hover:border-slate-400 transition-all shadow-md bg-white" data-tilt>
           <div class="glare-effect"></div>
-          <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-slate-300 text-navy-950 font-display font-black flex items-center justify-center shadow-lg text-lg">
+          <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-slate-200 text-slate-800 font-display font-black flex items-center justify-center shadow-md text-lg border border-slate-300">
             2
           </div>
           <div class="pt-3">
             <span class="text-3xl sm:text-4xl block mb-2">🥈</span>
-            <span class="text-xs uppercase font-mono tracking-wider text-slate-300 font-bold block mb-1">RUNNER UP</span>
-            <h3 class="text-lg sm:text-xl font-display font-bold text-white">2nd Place</h3>
+            <span class="text-xs uppercase font-mono tracking-wider text-slate-500 font-bold block mb-1">RUNNER UP</span>
+            <h3 class="text-lg sm:text-xl font-display font-bold text-slate-900">2nd Place</h3>
           </div>
           <div class="my-4">
-            <div class="text-3xl sm:text-4xl font-display font-extrabold text-slate-200">
+            <div class="text-3xl sm:text-4xl font-display font-extrabold text-slate-800">
               ₹<span class="counter" data-target="5000">0</span>
             </div>
-            <span class="text-xs text-slate-400 mt-1 block">Cash Prize</span>
+            <span class="text-xs text-slate-500 mt-1 block">Cash Prize</span>
           </div>
-          <div class="pt-4 border-t border-slate-800/80 text-xs text-slate-300 leading-normal">
+          <div class="pt-4 border-t border-slate-100 text-xs text-slate-600 leading-normal">
             Certificate of Excellence + Bragging Rights
           </div>
         </div>
 
         <!-- 1st Place (Gold / Champion - Elevated with 3D Border Beam) -->
-        <div class="reveal order-1 md:order-2 border-beam-container podium-base podium-base-gold shadow-neon-gold group hover:scale-[1.02] transition-all">
-          <div class="border-beam-content card-3d rounded-2xl p-6 sm:p-7 md:p-6 lg:p-8 border-2 border-amber-400 text-center flex flex-col justify-between podium-1 relative bg-gradient-to-b from-navy-850 via-navy-900 to-navy-900" data-tilt>
+        <div class="reveal order-1 md:order-2 border-beam-container podium-base podium-base-gold shadow-xl group hover:scale-[1.02] transition-all">
+          <div class="border-beam-content card-3d rounded-2xl p-6 sm:p-7 md:p-6 lg:p-8 border-2 border-amber-400 text-center flex flex-col justify-between podium-1 relative bg-gradient-to-b from-amber-50/40 via-white to-white" data-tilt>
             <div class="glare-effect"></div>
-            <div class="absolute -top-6 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-400 to-neon-orange text-navy-950 font-display font-black text-xs uppercase tracking-wider shadow-lg flex items-center gap-1.5 whitespace-nowrap z-20">
+            <div class="absolute -top-6 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-display font-black text-xs uppercase tracking-wider shadow-md flex items-center gap-1.5 whitespace-nowrap z-20">
               <span>👑</span> GRAND CHAMPION
             </div>
             <div class="pt-4">
               <span class="text-4xl sm:text-5xl block mb-2 animate-bounce">🏆</span>
-              <span class="text-xs uppercase font-mono tracking-widest text-amber-300 font-bold block mb-1">1ST PLACE</span>
-              <h3 class="text-xl sm:text-2xl font-display font-black text-white">The Champion</h3>
+              <span class="text-xs uppercase font-mono tracking-widest text-amber-700 font-bold block mb-1">1ST PLACE</span>
+              <h3 class="text-xl sm:text-2xl font-display font-black text-slate-950">The Champion</h3>
             </div>
             <div class="my-4">
-              <div class="text-4xl sm:text-5xl font-display font-black text-amber-300">
+              <div class="text-4xl sm:text-5xl font-display font-black text-amber-600">
                 ₹<span class="counter" data-target="7500">0</span>
               </div>
-              <span class="text-xs text-amber-200/90 mt-1 block font-medium">Grand Cash Prize</span>
+              <span class="text-xs text-amber-800 mt-1 block font-semibold">Grand Cash Prize</span>
             </div>
-            <div class="pt-4 border-t border-amber-400/30 text-xs text-slate-200 leading-normal">
+            <div class="pt-4 border-t border-amber-200 text-xs text-slate-700 leading-normal font-medium">
               Winner Trophy + Winner Certificates + Social Showcase
             </div>
           </div>
         </div>
 
         <!-- 3rd Place (Bronze) -->
-        <div class="reveal order-3 md:order-3 glass-card card-3d podium-base rounded-2xl p-5 sm:p-6 md:p-5 lg:p-7 border-2 border-amber-700/50 text-center flex flex-col justify-between podium-3 relative group hover:border-amber-600 transition-all shadow-glass" data-tilt>
+        <div class="reveal order-3 md:order-3 glass-card card-3d podium-base rounded-2xl p-5 sm:p-6 md:p-5 lg:p-7 border-2 border-amber-600/30 text-center flex flex-col justify-between podium-3 relative group hover:border-amber-600/60 transition-all shadow-md bg-white" data-tilt>
           <div class="glare-effect"></div>
-          <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-amber-700 text-white font-display font-black flex items-center justify-center shadow-lg text-lg">
+          <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-amber-100 text-amber-900 font-display font-black flex items-center justify-center shadow-md text-lg border border-amber-300">
             3
           </div>
           <div class="pt-3">
             <span class="text-3xl sm:text-4xl block mb-2">🥉</span>
-            <span class="text-xs uppercase font-mono tracking-wider text-amber-500 font-bold block mb-1">2ND RUNNER UP</span>
-            <h3 class="text-lg sm:text-xl font-display font-bold text-white">3rd Place</h3>
+            <span class="text-xs uppercase font-mono tracking-wider text-amber-700 font-bold block mb-1">2ND RUNNER UP</span>
+            <h3 class="text-lg sm:text-xl font-display font-bold text-slate-900">3rd Place</h3>
           </div>
           <div class="my-4">
-            <div class="text-3xl sm:text-4xl font-display font-extrabold text-amber-500">
+            <div class="text-3xl sm:text-4xl font-display font-extrabold text-amber-700">
               ₹<span class="counter" data-target="3500">0</span>
             </div>
-            <span class="text-xs text-slate-400 mt-1 block">Cash Prize</span>
+            <span class="text-xs text-slate-500 mt-1 block">Cash Prize</span>
           </div>
-          <div class="pt-4 border-t border-slate-800/80 text-xs text-slate-300 leading-normal">
+          <div class="pt-4 border-t border-slate-100 text-xs text-slate-600 leading-normal">
             Certificate of Excellence + Bragging Rights
           </div>
         </div>
@@ -836,7 +935,7 @@
       </div>
 
       <!-- Additional perks note with generous spacing -->
-      <div class="mt-14 sm:mt-16 text-center text-xs text-slate-400">
+      <div class="mt-14 sm:mt-16 text-center text-xs text-slate-500">
         ✨ Digital Certificates of Participation will be provided to all active team participants.
       </div>
     </div>
@@ -846,17 +945,17 @@
   <!-- ===================================================================
        7. RULES & ELIGIBILITY SECTION
        =================================================================== -->
-  <section id="rules" class="py-24 bg-navy-900/50 border-t border-slate-800/80 relative z-10">
+  <section id="rules" class="py-24 bg-slate-50/70 border-t border-slate-200 relative z-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs uppercase font-mono tracking-widest text-electric-400 font-semibold mb-2 block">
+        <span class="text-xs uppercase font-mono tracking-widest text-blue-600 font-semibold mb-2 block">
           // FAIR PLAY & ELIGIBILITY
         </span>
-        <h2 class="text-3xl sm:text-5xl font-display font-bold text-white mb-4">
+        <h2 class="text-3xl sm:text-5xl font-display font-bold text-slate-900 mb-4">
           Who Can Participate & Rules
         </h2>
-        <p class="text-slate-400 text-base sm:text-lg">
+        <p class="text-slate-600 text-base sm:text-lg">
           Clear, simple guidelines so every team competes on an equal playing field.
         </p>
       </div>
@@ -865,67 +964,67 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         
         <!-- Rule 1 -->
-        <div class="reveal glass-card rounded-2xl p-6 border border-slate-800">
+        <div class="reveal glass-card rounded-2xl p-6 border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all">
           <div class="flex items-center gap-3 mb-3">
-            <span class="w-8 h-8 rounded-lg bg-electric-500/10 text-electric-400 flex items-center justify-center font-bold text-sm">01</span>
-            <h3 class="font-display font-bold text-lg text-white">Students Only</h3>
+            <span class="w-8 h-8 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center font-bold text-sm border border-blue-200">01</span>
+            <h3 class="font-display font-bold text-lg text-slate-900">Students Only</h3>
           </div>
-          <p class="text-slate-300 text-sm leading-relaxed">
+          <p class="text-slate-600 text-sm leading-relaxed">
             Open to all undergraduate, postgraduate, and diploma students from any recognized college or university. Valid student IDs will be verified.
           </p>
         </div>
 
         <!-- Rule 2 -->
-        <div class="reveal glass-card rounded-2xl p-6 border border-slate-800">
+        <div class="reveal glass-card rounded-2xl p-6 border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all">
           <div class="flex items-center gap-3 mb-3">
-            <span class="w-8 h-8 rounded-lg bg-electric-500/10 text-electric-400 flex items-center justify-center font-bold text-sm">02</span>
-            <h3 class="font-display font-bold text-lg text-white">Exactly 5 Members</h3>
+            <span class="w-8 h-8 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center font-bold text-sm border border-blue-200">02</span>
+            <h3 class="font-display font-bold text-lg text-slate-900">Exactly 5 Members</h3>
           </div>
-          <p class="text-slate-300 text-sm leading-relaxed">
+          <p class="text-slate-600 text-sm leading-relaxed">
             Every team must consist of exactly 5 students. Cross-college and inter-departmental teams are 100% allowed and encouraged.
           </p>
         </div>
 
         <!-- Rule 3 -->
-        <div class="reveal glass-card rounded-2xl p-6 border border-slate-800">
+        <div class="reveal glass-card rounded-2xl p-6 border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all">
           <div class="flex items-center gap-3 mb-3">
-            <span class="w-8 h-8 rounded-lg bg-electric-500/10 text-electric-400 flex items-center justify-center font-bold text-sm">03</span>
-            <h3 class="font-display font-bold text-lg text-white">One Registration</h3>
+            <span class="w-8 h-8 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center font-bold text-sm border border-blue-200">03</span>
+            <h3 class="font-display font-bold text-lg text-slate-900">One Registration</h3>
           </div>
-          <p class="text-slate-300 text-sm leading-relaxed">
+          <p class="text-slate-600 text-sm leading-relaxed">
             A participant can only be registered under one squad. Multi-team entries by the same individual will lead to team disqualification.
           </p>
         </div>
 
         <!-- Rule 4 -->
-        <div class="reveal glass-card rounded-2xl p-6 border border-slate-800">
+        <div class="reveal glass-card rounded-2xl p-6 border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all">
           <div class="flex items-center gap-3 mb-3">
-            <span class="w-8 h-8 rounded-lg bg-neon-orange/10 text-neon-orange flex items-center justify-center font-bold text-sm">04</span>
-            <h3 class="font-display font-bold text-lg text-white">₹750 Entry Fee</h3>
+            <span class="w-8 h-8 rounded-lg bg-orange-50 text-orange-700 flex items-center justify-center font-bold text-sm border border-orange-200">04</span>
+            <h3 class="font-display font-bold text-lg text-slate-900">₹750 Entry Fee</h3>
           </div>
-          <p class="text-slate-300 text-sm leading-relaxed">
+          <p class="text-slate-600 text-sm leading-relaxed">
             A flat non-refundable fee of ₹750 covers the entire squad of 5 (only ₹150 per person). Entry is confirmed once payment screenshot is validated.
           </p>
         </div>
 
         <!-- Rule 5 -->
-        <div class="reveal glass-card rounded-2xl p-6 border border-slate-800">
+        <div class="reveal glass-card rounded-2xl p-6 border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all">
           <div class="flex items-center gap-3 mb-3">
-            <span class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-sm">05</span>
-            <h3 class="font-display font-bold text-lg text-white">Open Tech & Tool Freedom</h3>
+            <span class="w-8 h-8 rounded-lg bg-cyan-50 text-cyan-800 flex items-center justify-center font-bold text-sm border border-cyan-200">05</span>
+            <h3 class="font-display font-bold text-lg text-slate-900">Open Tech & Tool Freedom</h3>
           </div>
-          <p class="text-slate-300 text-sm leading-relaxed">
+          <p class="text-slate-600 text-sm leading-relaxed">
             Participants are free to use any web frameworks, libraries, and developer tools to build and ship their websites. Focus on clean architecture, responsive design, and real working functionality.
           </p>
         </div>
 
         <!-- Rule 6 -->
-        <div class="reveal glass-card rounded-2xl p-6 border border-slate-800">
+        <div class="reveal glass-card rounded-2xl p-6 border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all">
           <div class="flex items-center gap-3 mb-3">
-            <span class="w-8 h-8 rounded-lg bg-neon-amber/10 text-neon-amber flex items-center justify-center font-bold text-sm">06</span>
-            <h3 class="font-display font-bold text-lg text-white">Organizer Decision Final</h3>
+            <span class="w-8 h-8 rounded-lg bg-amber-50 text-amber-800 flex items-center justify-center font-bold text-sm border border-amber-200">06</span>
+            <h3 class="font-display font-bold text-lg text-slate-900">Organizer Decision Final</h3>
           </div>
-          <p class="text-slate-300 text-sm leading-relaxed">
+          <p class="text-slate-600 text-sm leading-relaxed">
             Evaluation rubrics, bracket matchups, and referee verdicts are conclusive. Respectful communication in official groups is mandatory.
           </p>
         </div>
@@ -942,36 +1041,36 @@
     <div class="max-w-4xl mx-auto">
       
       <div class="text-center mb-12">
-        <span class="text-xs uppercase font-mono tracking-widest text-electric-400 font-semibold mb-2 block">
+        <span class="text-xs uppercase font-mono tracking-widest text-blue-600 font-semibold mb-2 block">
           // SECURE YOUR SQUAD SPOT
         </span>
-        <h2 class="text-3xl sm:text-5xl font-display font-bold text-white mb-4">
+        <h2 class="text-3xl sm:text-5xl font-display font-bold text-slate-900 mb-4">
           4 Simple Steps To Register
         </h2>
-        <p class="text-slate-300 text-base sm:text-lg">
+        <p class="text-slate-600 text-base sm:text-lg">
           Spots are locked on a strict first-come, first-served basis. Only 32 team slots.
         </p>
       </div>
 
       <!-- Urgency Banner -->
-      <div class="reveal glass-card rounded-2xl p-6 border border-amber-500/30 mb-12 shadow-glass bg-gradient-to-r from-navy-900 via-navy-850 to-navy-900">
+      <div class="reveal glass-card rounded-2xl p-6 border border-amber-300 mb-12 shadow-sm bg-gradient-to-r from-amber-50 via-white to-amber-50">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div class="flex items-center gap-3">
             <span class="relative flex h-3 w-3 flex-shrink-0">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-orange opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-3 w-3 bg-neon-orange"></span>
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
             </span>
             <div>
-              <h3 class="font-display font-bold text-base sm:text-lg text-white">
+              <h3 class="font-display font-bold text-base sm:text-lg text-slate-900">
                 Slots Filling Fast: Only 32 Teams
               </h3>
-              <p class="text-xs sm:text-sm text-slate-300 mt-0.5">
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Strict limit of 32 squads total. First-come, first-served — registration closes immediately once 32 teams are registered.
               </p>
             </div>
           </div>
           <div class="flex-shrink-0">
-            <span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-amber-500/10 border border-amber-500/30 text-xs sm:text-sm font-mono font-semibold text-neon-amber">
+            <span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-amber-100 border border-amber-300 text-xs sm:text-sm font-mono font-bold text-amber-800">
               ⚡ 32 Squads Only
             </span>
           </div>
@@ -982,65 +1081,65 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
         
         <!-- Step 1 -->
-        <div class="reveal glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+        <div class="reveal glass-card rounded-2xl p-6 border border-slate-200 bg-white shadow-sm flex flex-col justify-between">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-electric-500/10 text-electric-400 font-display font-bold flex items-center justify-center mb-4">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 font-display font-bold flex items-center justify-center mb-4 border border-blue-200">
               1
             </div>
-            <h4 class="font-display font-bold text-base text-white mb-2">Form Your Team</h4>
-            <p class="text-xs text-slate-300 leading-relaxed">
+            <h4 class="font-display font-bold text-base text-slate-900 mb-2">Form Your Team</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
               Assemble exactly 5 members. Pick your team name and appoint a primary Team Leader.
             </p>
           </div>
-          <div class="text-[11px] text-slate-400 font-mono mt-4 pt-3 border-t border-slate-800">
+          <div class="text-[11px] text-slate-500 font-mono mt-4 pt-3 border-t border-slate-100">
             Squad size: 5
           </div>
         </div>
 
         <!-- Step 2 -->
-        <div class="reveal glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+        <div class="reveal glass-card rounded-2xl p-6 border border-slate-200 bg-white shadow-sm flex flex-col justify-between">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-neon-orange/10 text-neon-orange font-display font-bold flex items-center justify-center mb-4">
+            <div class="w-10 h-10 rounded-xl bg-orange-50 text-orange-700 font-display font-bold flex items-center justify-center mb-4 border border-orange-200">
               2
             </div>
-            <h4 class="font-display font-bold text-base text-white mb-2">Pay ₹750 Fee</h4>
-            <p class="text-xs text-slate-300 leading-relaxed">
+            <h4 class="font-display font-bold text-base text-slate-900 mb-2">Pay ₹750 Fee</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
               Complete the one-time ₹750 team entry payment via UPI. Save your transaction reference ID & screenshot.
             </p>
           </div>
-          <div class="text-[11px] text-slate-400 font-mono mt-4 pt-3 border-t border-slate-800">
+          <div class="text-[11px] text-slate-500 font-mono mt-4 pt-3 border-t border-slate-100">
             ₹150 / member
           </div>
         </div>
 
         <!-- Step 3 -->
-        <div class="reveal glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+        <div class="reveal glass-card rounded-2xl p-6 border border-slate-200 bg-white shadow-sm flex flex-col justify-between">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 font-display font-bold flex items-center justify-center mb-4">
+            <div class="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-800 font-display font-bold flex items-center justify-center mb-4 border border-cyan-200">
               3
             </div>
-            <h4 class="font-display font-bold text-base text-white mb-2">Submit Details</h4>
-            <p class="text-xs text-slate-300 leading-relaxed">
+            <h4 class="font-display font-bold text-base text-slate-900 mb-2">Submit Details</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
               Fill out the Google Form / registration portal with your 5 teammates' names, colleges, and payment proof.
             </p>
           </div>
-          <div class="text-[11px] text-slate-400 font-mono mt-4 pt-3 border-t border-slate-800">
+          <div class="text-[11px] text-slate-500 font-mono mt-4 pt-3 border-t border-slate-100">
             Quick 2 min form
           </div>
         </div>
 
         <!-- Step 4 -->
-        <div class="reveal glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+        <div class="reveal glass-card rounded-2xl p-6 border border-slate-200 bg-white shadow-sm flex flex-col justify-between">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 font-display font-bold flex items-center justify-center mb-4">
+            <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 font-display font-bold flex items-center justify-center mb-4 border border-emerald-200">
               4
             </div>
-            <h4 class="font-display font-bold text-base text-white mb-2">Join WhatsApp</h4>
-            <p class="text-xs text-slate-300 leading-relaxed">
+            <h4 class="font-display font-bold text-base text-slate-900 mb-2">Join WhatsApp</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
               All 5 members join the official WhatsApp group for bracket seedings, topic drops, and live alerts.
             </p>
           </div>
-          <div class="text-[11px] text-slate-400 font-mono mt-4 pt-3 border-t border-slate-800">
+          <div class="text-[11px] text-slate-500 font-mono mt-4 pt-3 border-t border-slate-100">
             Live updates hub
           </div>
         </div>
@@ -1048,11 +1147,11 @@
       </div>
 
       <!-- Registration Action Box -->
-      <div class="reveal glass-card rounded-3xl p-8 sm:p-10 border-2 border-electric-500/40 text-center bg-gradient-to-b from-navy-900 to-navy-850 shadow-neon-blue">
-        <h3 class="text-2xl sm:text-3xl font-display font-extrabold text-white mb-3">
+      <div class="reveal glass-card rounded-3xl p-8 sm:p-10 border-2 border-blue-400/60 text-center bg-gradient-to-b from-blue-50/50 via-white to-white shadow-xl">
+        <h3 class="text-2xl sm:text-3xl font-display font-extrabold text-slate-950 mb-3">
           Ready to Claim Your Team Slot?
         </h3>
-        <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-8">
+        <p class="text-slate-600 text-sm sm:text-base max-w-xl mx-auto mb-8">
           Click below to open the official registration form. Have your UPI transaction screenshot ready to complete submission.
         </p>
 
@@ -1063,19 +1162,19 @@
             Point this href to your Google Form or Razorpay payment gateway
             ==================================================================
           -->
-          <a id="registrationFormBtn" href="#" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-10 py-4 rounded-xl font-display font-bold text-base text-navy-950 bg-gradient-to-r from-electric-500 via-cyan-300 to-neon-amber hover:shadow-neon-blue transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 text-center flex items-center justify-center gap-2">
+          <a id="registrationFormBtn" href="#" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-10 py-4 rounded-xl font-display font-bold text-base text-white bg-gradient-to-r from-blue-600 via-cyan-600 to-amber-500 hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 text-center flex items-center justify-center gap-2">
             <span>Open Registration Form (₹750)</span>
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
           </a>
 
-          <a href="https://chat.whatsapp.com/CDPD39LfROz4AY9HV4Zv4G?s=cl&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" class="whatsapp-group-link w-full sm:w-auto px-7 py-4 rounded-xl font-display font-semibold text-sm sm:text-base text-white border border-emerald-500/40 hover:bg-emerald-600/20 transition-all text-center flex items-center justify-center gap-2">
+          <a href="https://chat.whatsapp.com/CDPD39LfROz4AY9HV4Zv4G?s=cl&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" class="whatsapp-group-link w-full sm:w-auto px-7 py-4 rounded-xl font-display font-semibold text-sm sm:text-base text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 shadow-sm transition-all text-center flex items-center justify-center gap-2">
             <span>Need Help? Ask on WhatsApp</span>
           </a>
         </div>
 
-        <p class="text-xs text-slate-400 mt-6">
+        <p class="text-xs text-slate-500 mt-6">
           🔒 Payments are securely verified. Confirmation email and team roster code will be assigned to your team lead.
         </p>
       </div>
@@ -1086,17 +1185,17 @@
   <!-- ===================================================================
        9. FAQ ACCORDION SECTION (Keyboard Accessible)
        =================================================================== -->
-  <section id="faq" class="py-24 bg-navy-900/60 border-t border-slate-800/80 relative z-10">
+  <section id="faq" class="py-24 bg-slate-50/70 border-t border-slate-200 relative z-10">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center mb-16">
-        <span class="text-xs uppercase font-mono tracking-widest text-electric-400 font-semibold mb-2 block">
+        <span class="text-xs uppercase font-mono tracking-widest text-blue-600 font-semibold mb-2 block">
           // QUESTIONS ANSWERED
         </span>
-        <h2 class="text-3xl sm:text-5xl font-display font-bold text-white mb-4">
+        <h2 class="text-3xl sm:text-5xl font-display font-bold text-slate-900 mb-4">
           Frequently Asked Questions
         </h2>
-        <p class="text-slate-400 text-base sm:text-lg">
+        <p class="text-slate-600 text-base sm:text-lg">
           Everything you need to know about CCL (Code Champion League) before signing up.
         </p>
       </div>
@@ -1105,89 +1204,89 @@
       <div class="space-y-4" id="faqAccordion">
         
         <!-- FAQ 1 -->
-        <div class="faq-item glass-card rounded-2xl border border-slate-800 overflow-hidden transition-colors">
-          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-electric-500" aria-expanded="false">
-            <span class="font-display font-bold text-base sm:text-lg text-white">Who is eligible to participate?</span>
-            <span class="faq-icon text-electric-400 text-2xl font-light transform transition-transform duration-300">+</span>
+        <div class="faq-item glass-card rounded-2xl border border-slate-200 bg-white overflow-hidden transition-colors shadow-sm">
+          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-expanded="false">
+            <span class="font-display font-bold text-base sm:text-lg text-slate-900">Who is eligible to participate?</span>
+            <span class="faq-icon text-blue-600 text-2xl font-light transform transition-transform duration-300">+</span>
           </button>
-          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
             Any college student currently enrolled in an undergraduate (B.E, B.Tech, B.Sc, BCA, etc.), postgraduate, or polytechnic diploma program is eligible. Cross-college teams and multidisciplinary branches are completely welcome. You must hold a valid college ID card.
           </div>
         </div>
 
         <!-- FAQ 2 -->
-        <div class="faq-item glass-card rounded-2xl border border-slate-800 overflow-hidden transition-colors">
-          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-electric-500" aria-expanded="false">
-            <span class="font-display font-bold text-base sm:text-lg text-white">Can we participate with fewer or more than 5 members?</span>
-            <span class="faq-icon text-electric-400 text-2xl font-light transform transition-transform duration-300">+</span>
+        <div class="faq-item glass-card rounded-2xl border border-slate-200 bg-white overflow-hidden transition-colors shadow-sm">
+          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-expanded="false">
+            <span class="font-display font-bold text-base sm:text-lg text-slate-900">Can we participate with fewer or more than 5 members?</span>
+            <span class="faq-icon text-blue-600 text-2xl font-light transform transition-transform duration-300">+</span>
           </button>
-          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
             To preserve the fairness of the cricket knockout format and team workload distribution, every team must register with exactly 5 members. If you need teammates, join our WhatsApp group to find fellow students looking to form a squad!
           </div>
         </div>
 
         <!-- FAQ 3 -->
-        <div class="faq-item glass-card rounded-2xl border border-slate-800 overflow-hidden transition-colors">
-          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-electric-500" aria-expanded="false">
-            <span class="font-display font-bold text-base sm:text-lg text-white">Is the ₹750 entry fee refundable?</span>
-            <span class="faq-icon text-electric-400 text-2xl font-light transform transition-transform duration-300">+</span>
+        <div class="faq-item glass-card rounded-2xl border border-slate-200 bg-white overflow-hidden transition-colors shadow-sm">
+          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-expanded="false">
+            <span class="font-display font-bold text-base sm:text-lg text-slate-900">Is the ₹750 entry fee refundable?</span>
+            <span class="faq-icon text-blue-600 text-2xl font-light transform transition-transform duration-300">+</span>
           </button>
-          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
             No, the ₹750 team entry fee is strictly non-refundable once your team slot is reserved. This ensures that only committed teams claim the limited 32 spots and prevents no-shows from ruining tournament fixtures.
           </div>
         </div>
 
         <!-- FAQ 4 -->
-        <div class="faq-item glass-card rounded-2xl border border-slate-800 overflow-hidden transition-colors">
-          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-electric-500" aria-expanded="false">
-            <span class="font-display font-bold text-base sm:text-lg text-white">What platform will the hackathon take place on?</span>
-            <span class="faq-icon text-electric-400 text-2xl font-light transform transition-transform duration-300">+</span>
+        <div class="faq-item glass-card rounded-2xl border border-slate-200 bg-white overflow-hidden transition-colors shadow-sm">
+          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-expanded="false">
+            <span class="font-display font-bold text-base sm:text-lg text-slate-900">What platform will the hackathon take place on?</span>
+            <span class="faq-icon text-blue-600 text-2xl font-light transform transition-transform duration-300">+</span>
           </button>
-          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
             The entire event is 100% online! Announcements and fast coordination happen on WhatsApp and Discord. Project submissions will be collected via GitHub links and recorded loom/walkthrough video links. Final presentations will be conducted over Google Meet / Zoom.
           </div>
         </div>
 
         <!-- FAQ 5 -->
-        <div class="faq-item glass-card rounded-2xl border border-slate-800 overflow-hidden transition-colors">
-          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-electric-500" aria-expanded="false">
-            <span class="font-display font-bold text-base sm:text-lg text-white">When will the exact dates be announced?</span>
-            <span class="faq-icon text-electric-400 text-2xl font-light transform transition-transform duration-300">+</span>
+        <div class="faq-item glass-card rounded-2xl border border-slate-200 bg-white overflow-hidden transition-colors shadow-sm">
+          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-expanded="false">
+            <span class="font-display font-bold text-base sm:text-lg text-slate-900">When will the exact dates be announced?</span>
+            <span class="faq-icon text-blue-600 text-2xl font-light transform transition-transform duration-300">+</span>
           </button>
-          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
             Dates are currently "To Be Announced" to allow teams enough time to form rosters. As soon as slot pre-registrations reach threshold, the complete schedule with precise round timings will be announced first inside the official WhatsApp group.
           </div>
         </div>
 
         <!-- FAQ 6 -->
-        <div class="faq-item glass-card rounded-2xl border border-slate-800 overflow-hidden transition-colors">
-          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-electric-500" aria-expanded="false">
-            <span class="font-display font-bold text-base sm:text-lg text-white">What tech stacks, frameworks, and tools are allowed?</span>
-            <span class="faq-icon text-electric-400 text-2xl font-light transform transition-transform duration-300">+</span>
+        <div class="faq-item glass-card rounded-2xl border border-slate-200 bg-white overflow-hidden transition-colors shadow-sm">
+          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-expanded="false">
+            <span class="font-display font-bold text-base sm:text-lg text-slate-900">What tech stacks, frameworks, and tools are allowed?</span>
+            <span class="faq-icon text-blue-600 text-2xl font-light transform transition-transform duration-300">+</span>
           </button>
-          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
             There are zero restrictions on tech stacks or developer tools! You are free to build using HTML/Tailwind, React, Next.js, Vue, or any modern libraries and tools that help your team prototype and ship fast. All entries are evaluated based on user experience, responsiveness across devices, design polish, and working features.
           </div>
         </div>
 
         <!-- FAQ 7 -->
-        <div class="faq-item glass-card rounded-2xl border border-slate-800 overflow-hidden transition-colors">
-          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-electric-500" aria-expanded="false">
-            <span class="font-display font-bold text-base sm:text-lg text-white">How and when are the cash prizes distributed?</span>
-            <span class="faq-icon text-electric-400 text-2xl font-light transform transition-transform duration-300">+</span>
+        <div class="faq-item glass-card rounded-2xl border border-slate-200 bg-white overflow-hidden transition-colors shadow-sm">
+          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-expanded="false">
+            <span class="font-display font-bold text-base sm:text-lg text-slate-900">How and when are the cash prizes distributed?</span>
+            <span class="faq-icon text-blue-600 text-2xl font-light transform transition-transform duration-300">+</span>
           </button>
-          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
             Cash prizes (₹7,500 for 1st, ₹5,000 for 2nd, and ₹3,500 for 3rd) are transferred directly via UPI or IMPS bank transfer to the winning team leader within 48 hours of the grand finale conclusion after standard identity verification.
           </div>
         </div>
 
         <!-- FAQ 8 -->
-        <div class="faq-item glass-card rounded-2xl border border-slate-800 overflow-hidden transition-colors">
-          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-electric-500" aria-expanded="false">
-            <span class="font-display font-bold text-base sm:text-lg text-white">Who can I contact for queries or immediate support?</span>
-            <span class="faq-icon text-electric-400 text-2xl font-light transform transition-transform duration-300">+</span>
+        <div class="faq-item glass-card rounded-2xl border border-slate-200 bg-white overflow-hidden transition-colors shadow-sm">
+          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-expanded="false">
+            <span class="font-display font-bold text-base sm:text-lg text-slate-900">Who can I contact for queries or immediate support?</span>
+            <span class="faq-icon text-blue-600 text-2xl font-light transform transition-transform duration-300">+</span>
           </button>
-          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
             You can call our student coordinator helpline at <strong>+91 8072657948</strong> or <strong>+91 98944 57189</strong> anytime between 9 AM to 9 PM, or simply join our official WhatsApp group and ping an admin directly.
           </div>
         </div>
@@ -1201,19 +1300,19 @@
        10. CONTACT SECTION
        =================================================================== -->
   <section id="contact" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="max-w-4xl mx-auto glass-card rounded-3xl p-8 sm:p-12 border border-slate-700/80 shadow-2xl relative overflow-hidden">
+    <div class="max-w-4xl mx-auto glass-card rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-xl bg-white relative overflow-hidden">
       
       <!-- Accent Top Banner Glow -->
-      <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-electric-500 via-neon-amber to-neon-orange"></div>
+      <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-600 via-cyan-500 to-amber-500"></div>
 
       <div class="text-center mb-10">
-        <span class="text-xs uppercase font-mono tracking-widest text-electric-400 font-semibold mb-2 block">
+        <span class="text-xs uppercase font-mono tracking-widest text-blue-600 font-semibold mb-2 block">
           // REACH OUT TO ORGANIZERS
         </span>
-        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mb-3">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-slate-900 mb-3">
           Have Questions? Let's Talk!
         </h2>
-        <p class="text-slate-300 text-sm sm:text-base">
+        <p class="text-slate-600 text-sm sm:text-base">
           Our organizing committee is just a tap away for team matching, registration help, or sponsorship queries.
         </p>
       </div>
@@ -1222,51 +1321,51 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
         
         <!-- Phone Contact Card 1 -->
-        <a href="tel:+918072657948" class="flex items-center gap-4 p-5 rounded-2xl bg-navy-900/90 border border-slate-800 hover:border-electric-500/50 hover:bg-navy-850 transition-all group">
-          <div class="w-12 h-12 rounded-xl bg-electric-500/10 text-electric-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+        <a href="tel:+918072657948" class="flex items-center gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 hover:bg-blue-50/40 transition-all group shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
             📞
           </div>
           <div>
-            <span class="text-xs text-slate-400 font-mono block">Student Coordinator 1</span>
-            <span class="text-lg font-display font-bold text-white group-hover:text-electric-400 transition-colors">
+            <span class="text-xs text-slate-500 font-mono block">Student Coordinator 1</span>
+            <span class="text-lg font-display font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
               +91 80726 57948
             </span>
-            <span class="text-[11px] text-electric-400 block mt-0.5">Tap to Call Directly</span>
+            <span class="text-[11px] text-blue-600 block mt-0.5 font-medium">Tap to Call Directly</span>
           </div>
         </a>
 
         <!-- Phone Contact Card 2 -->
-        <a href="tel:+919894457189" class="flex items-center gap-4 p-5 rounded-2xl bg-navy-900/90 border border-slate-800 hover:border-electric-500/50 hover:bg-navy-850 transition-all group">
-          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+        <a href="tel:+919894457189" class="flex items-center gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-cyan-300 hover:bg-cyan-50/40 transition-all group shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
             📞
           </div>
           <div>
-            <span class="text-xs text-slate-400 font-mono block">Student Coordinator 2</span>
-            <span class="text-lg font-display font-bold text-white group-hover:text-cyan-400 transition-colors">
+            <span class="text-xs text-slate-500 font-mono block">Student Coordinator 2</span>
+            <span class="text-lg font-display font-bold text-slate-900 group-hover:text-cyan-700 transition-colors">
               +91 98944 57189
             </span>
-            <span class="text-[11px] text-cyan-400 block mt-0.5">Tap to Call Directly</span>
+            <span class="text-[11px] text-cyan-600 block mt-0.5 font-medium">Tap to Call Directly</span>
           </div>
         </a>
 
       </div>
 
       <!-- Prominent WhatsApp Community Banner -->
-      <div class="p-6 rounded-2xl bg-gradient-to-r from-emerald-950/40 via-emerald-900/20 to-navy-900 border border-emerald-500/40 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="p-6 rounded-2xl bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-50 border border-emerald-300 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
         <div class="flex items-center gap-4 text-center sm:text-left">
-          <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 flex-shrink-0">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-100 border border-emerald-300 flex items-center justify-center text-emerald-700 flex-shrink-0">
             <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
               <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.101-.476-.15-.677.15-.201.3-.778.979-.954 1.18-.176.2-.352.226-.653.076-.3-.151-1.267-.467-2.414-1.489-.893-.796-1.496-1.78-1.672-2.08-.176-.3-.019-.462.132-.612.136-.135.301-.351.452-.527.15-.175.201-.3.301-.5.101-.2.051-.376-.025-.526-.076-.151-.678-1.633-.929-2.235-.245-.588-.493-.509-.678-.518-.176-.01-.377-.01-.578-.01s-.527.075-.803.376c-.276.3-1.054 1.03-1.054 2.511 0 1.482 1.079 2.913 1.23 3.114.15.2 2.122 3.24 5.141 4.544.718.31 1.278.496 1.716.634.721.229 1.378.197 1.897.12.578-.087 1.78-.727 2.03-1.43.25-.704.25-1.306.176-1.43-.075-.125-.276-.201-.577-.351z"/>
               <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.05 21.95l4.912-1.288A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.05a8.03 8.03 0 01-4.103-1.125l-.294-.175-3.051.8 0.814-2.973-.191-.305A8.04 8.04 0 1112 20.05z"/>
             </svg>
           </div>
           <div>
-            <h4 class="font-display font-bold text-lg text-white">Join The Official WhatsApp Group</h4>
-            <p class="text-xs text-slate-300">Fast announcements, date reveal, teammate finding & instant query resolution.</p>
+            <h4 class="font-display font-bold text-lg text-slate-900">Join The Official WhatsApp Group</h4>
+            <p class="text-xs text-slate-600">Fast announcements, date reveal, teammate finding & instant query resolution.</p>
           </div>
         </div>
 
-        <a href="https://chat.whatsapp.com/CDPD39LfROz4AY9HV4Zv4G?s=cl&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" class="whatsapp-group-link w-full sm:w-auto px-6 py-3.5 rounded-xl font-display font-bold text-sm text-navy-950 bg-emerald-400 hover:bg-emerald-300 shadow-lg hover:shadow-emerald-500/30 transition-all flex items-center justify-center gap-2 text-center">
+        <a href="https://chat.whatsapp.com/CDPD39LfROz4AY9HV4Zv4G?s=cl&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" class="whatsapp-group-link w-full sm:w-auto px-6 py-3.5 rounded-xl font-display font-bold text-sm text-white bg-emerald-600 hover:bg-emerald-500 shadow-md hover:shadow-emerald-500/30 transition-all flex items-center justify-center gap-2 text-center">
           <span>For more details, join our WhatsApp group</span>
           <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -1280,50 +1379,50 @@
   <!-- ===================================================================
        11. FOOTER
        =================================================================== -->
-  <footer class="bg-navy-950 border-t border-slate-800/80 py-12 relative z-10 text-slate-400 text-sm">
+  <footer class="bg-slate-50 border-t border-slate-200 py-12 relative z-10 text-slate-600 text-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-slate-800">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-slate-200">
         
         <!-- Brand / Info -->
         <div class="flex flex-col items-center md:items-start text-center md:text-left">
           <div class="flex items-center gap-3 mb-2">
-            <div class="w-8 h-8 rounded-lg bg-electric-500/20 text-electric-400 flex items-center justify-center font-bold">
+            <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
               ⚡
             </div>
-            <span class="font-display font-bold text-lg text-white">CCL — Code Champion League</span>
+            <span class="font-display font-bold text-lg text-slate-900">CCL — Code Champion League</span>
           </div>
-          <p class="text-xs text-slate-400 max-w-sm">
+          <p class="text-xs text-slate-500 max-w-sm">
             Online Knockout Student Tournament. 32 Teams. 4 Rounds. One Champion.
           </p>
         </div>
 
         <!-- Quick Links -->
-        <div class="flex flex-wrap justify-center gap-6 text-xs font-medium">
-          <a href="#about" class="hover:text-electric-400 transition-colors">About</a>
-          <a href="#rounds" class="hover:text-electric-400 transition-colors">Tournament Format</a>
-          <a href="#prizes" class="hover:text-electric-400 transition-colors">Prizes</a>
-          <a href="#rules" class="hover:text-electric-400 transition-colors">Rules</a>
-          <a href="#register" class="hover:text-electric-400 transition-colors">Register</a>
-          <a href="#faq" class="hover:text-electric-400 transition-colors">FAQ</a>
-          <a href="#contact" class="hover:text-electric-400 transition-colors">Contact</a>
+        <div class="flex flex-wrap justify-center gap-6 text-xs font-medium text-slate-600">
+          <a href="#about" class="hover:text-blue-600 transition-colors">About</a>
+          <a href="#rounds" class="hover:text-blue-600 transition-colors">Tournament Format</a>
+          <a href="#prizes" class="hover:text-blue-600 transition-colors">Prizes</a>
+          <a href="#rules" class="hover:text-blue-600 transition-colors">Rules</a>
+          <a href="#register" class="hover:text-blue-600 transition-colors">Register</a>
+          <a href="#faq" class="hover:text-blue-600 transition-colors">FAQ</a>
+          <a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a>
         </div>
 
         <!-- Phone links -->
-        <div class="flex items-center gap-4 text-xs font-mono">
-          <a href="tel:+918072657948" class="hover:text-white transition-colors">📞 8072657948</a>
-          <span class="text-slate-700">|</span>
-          <a href="tel:+919894457189" class="hover:text-white transition-colors">📞 98944 57189</a>
+        <div class="flex items-center gap-4 text-xs font-mono text-slate-700">
+          <a href="tel:+918072657948" class="hover:text-blue-600 transition-colors">📞 8072657948</a>
+          <span class="text-slate-300">|</span>
+          <a href="tel:+919894457189" class="hover:text-blue-600 transition-colors">📞 98944 57189</a>
         </div>
 
       </div>
 
       <!-- Copyright Notice -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 text-center sm:text-left">
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center sm:text-left">
         <div>
           © 2026 CCL - Code Champion League. All rights reserved.
         </div>
-        <div class="text-slate-400">
+        <div>
           Crafted for high-velocity student innovators.
         </div>
       </div>
@@ -1336,7 +1435,7 @@
        =================================================================== -->
   <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center gap-3">
     <!-- Helpful Tooltip on Hover for Desktop -->
-    <span class="hidden sm:inline-block px-3 py-1.5 rounded-xl bg-navy-900/90 text-white text-xs font-medium border border-slate-700 shadow-glass">
+    <span class="hidden sm:inline-block px-3 py-1.5 rounded-xl bg-white text-slate-800 text-xs font-medium border border-slate-200 shadow-md">
       Join WhatsApp Group 👋
     </span>
 
@@ -1379,7 +1478,138 @@
 
       // 6. Max tournament team slots
       TOTAL_SLOTS: 32,
+
+      // 7. Current Tournament Stage & Status
+      CURRENT_STAGE: "Round 01: League Stage (Group Qualifiers)",
+      STAGE_STATUS: "Registrations Active (32 Slots Open)",
+      STAGE_SUBTEXT: "Knockout brackets & fixtures will be locked once registration closes.",
+
+      /**
+       * 8. PARTICIPANTS LIST
+       * -------------------------------------------------------------
+       * Leave as empty array [] to automatically display "COMING SOON".
+       * Once you have your registered teams, add them in this format:
+       *
+       * PARTICIPANTS: [
+       *   { id: 1, name: "Binary Bosses", leader: "Arun K.", members: 5, status: "Verified" },
+       *   { id: 2, name: "Cyber Knights", leader: "Priya S.", members: 5, status: "Verified" },
+       * ],
+       */
+      PARTICIPANTS: [],
     };
+
+    // Global Modal Handlers
+    function openStageModal() {
+      const modal = document.getElementById("stageModal");
+      if (!modal) return;
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      document.body.style.overflow = "hidden";
+      renderParticipantsRoster();
+    }
+
+    function closeStageModal() {
+      const modal = document.getElementById("stageModal");
+      if (!modal) return;
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      document.body.style.overflow = "";
+    }
+
+    // Render Participants Roster (Shows Coming Soon when empty)
+    function renderParticipantsRoster() {
+      const container = document.getElementById("participantsRosterContainer");
+      if (!container) return;
+
+      if (!CONFIG.PARTICIPANTS || CONFIG.PARTICIPANTS.length === 0) {
+        // High-Converting Coming Soon State
+        container.innerHTML = `
+          <div class="p-6 sm:p-8 rounded-2xl bg-gradient-to-b from-slate-50 to-white border-2 border-dashed border-electric-300/60 text-center relative overflow-hidden">
+            <div class="absolute -top-12 -right-12 w-36 h-36 bg-electric-100/60 rounded-full blur-2xl pointer-events-none"></div>
+            <div class="absolute -bottom-12 -left-12 w-36 h-36 bg-amber-100/60 rounded-full blur-2xl pointer-events-none"></div>
+            
+            <div class="relative z-10 flex flex-col items-center">
+              <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-tr from-electric-500 to-cyan-400 text-white flex items-center justify-center shadow-lg shadow-electric-500/20 mb-4 animate-bounce">
+                <svg class="w-8 h-8 sm:w-10 sm:h-10 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-electric-100 text-electric-700 mb-2 border border-electric-200">
+                <span class="w-2 h-2 rounded-full bg-electric-500 animate-ping"></span>
+                Official Team Draw
+              </span>
+
+              <h4 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight mb-2">
+                Participants Roster Coming Soon!
+              </h4>
+
+              <p class="text-slate-600 text-xs sm:text-sm max-w-md mx-auto mb-6 leading-relaxed">
+                Registration is actively underway for all <span class="font-bold text-slate-900">32 squad slots</span>. Once registrations close and verification is complete, the verified teams, match brackets, and live standings will be unlocked right here.
+              </p>
+
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 w-full max-w-md mb-6">
+                <div class="p-3 rounded-xl bg-white border border-slate-200 shadow-sm text-center">
+                  <span class="block text-lg font-black text-electric-600">32</span>
+                  <span class="text-[11px] font-medium text-slate-500">Total Slots</span>
+                </div>
+                <div class="p-3 rounded-xl bg-white border border-slate-200 shadow-sm text-center">
+                  <span class="block text-lg font-black text-amber-600">5</span>
+                  <span class="text-[11px] font-medium text-slate-500">Players/Team</span>
+                </div>
+                <div class="p-3 rounded-xl bg-white border border-slate-200 shadow-sm text-center col-span-2 sm:col-span-1">
+                  <span class="block text-lg font-black text-emerald-600">Active</span>
+                  <span class="text-[11px] font-medium text-slate-500">Portal Open</span>
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+                <a href="#registration" onclick="closeStageModal()" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-gradient-to-r from-electric-600 to-cyan-500 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-electric-500/30 transition text-center">
+                  Claim Your Team Slot
+                </a>
+                <a href="${CONFIG.WHATSAPP_GROUP_URL}" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold text-xs sm:text-sm hover:bg-emerald-100 transition text-center flex items-center justify-center gap-1.5">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.05 21.95l4.912-1.288A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.05a8.03 8.03 0 01-4.103-1.125l-.294-.175-3.051.8 0.814-2.973-.191-.305A8.04 8.04 0 1112 20.05z"/></svg>
+                  Get Roster Alert on WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+      } else {
+        // Render Active Participants Table/Grid
+        let listHtml = `
+          <div class="rounded-2xl border border-slate-200 overflow-hidden bg-white shadow-sm">
+            <div class="px-4 py-3 bg-slate-50 border-b border-slate-200 flex justify-between items-center text-xs font-bold text-slate-600 uppercase tracking-wider">
+              <span>Confirmed Teams (${CONFIG.PARTICIPANTS.length} / ${CONFIG.TOTAL_SLOTS})</span>
+              <span class="text-emerald-600 font-semibold">Verified</span>
+            </div>
+            <div class="divide-y divide-slate-100 max-h-72 overflow-y-auto">
+        `;
+        CONFIG.PARTICIPANTS.forEach((team, idx) => {
+          listHtml += `
+            <div class="px-4 py-3 flex items-center justify-between hover:bg-slate-50 transition">
+              <div class="flex items-center gap-3">
+                <span class="w-7 h-7 rounded-lg bg-electric-100 text-electric-700 font-bold text-xs flex items-center justify-center">
+                  #${idx + 1}
+                </span>
+                <div>
+                  <h5 class="text-sm font-bold text-slate-900">${team.name || 'Team ' + (idx + 1)}</h5>
+                  <p class="text-xs text-slate-500">Lead: ${team.leader || 'Registered'} • 5 Members</p>
+                </div>
+              </div>
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                ${team.status || 'Confirmed'}
+              </span>
+            </div>
+          `;
+        });
+        listHtml += `
+            </div>
+          </div>
+        `;
+        container.innerHTML = listHtml;
+      }
+    }
 
     // Update dynamic text and links across the document from CONFIG
     document.addEventListener("DOMContentLoaded", () => {
@@ -1404,6 +1634,29 @@
           });
         }
       }
+
+      // Wire up Stage Modal Buttons
+      const stageTriggerBtn = document.getElementById("stageTriggerBtn");
+      if (stageTriggerBtn) {
+        stageTriggerBtn.addEventListener("click", openStageModal);
+      }
+      const closeStageBtn = document.getElementById("closeStageModalBtn");
+      if (closeStageBtn) {
+        closeStageBtn.addEventListener("click", closeStageModal);
+      }
+      const dismissStageBtn = document.getElementById("dismissStageModalBtn");
+      if (dismissStageBtn) {
+        dismissStageBtn.addEventListener("click", closeStageModal);
+      }
+      const stageModal = document.getElementById("stageModal");
+      if (stageModal) {
+        stageModal.addEventListener("click", (e) => {
+          if (e.target === stageModal) closeStageModal();
+        });
+      }
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeStageModal();
+      });
 
       // Initialize all modules
       initMobileMenu();
@@ -1585,7 +1838,7 @@
     }
 
     /**
-     * 6. Lightweight Ambient Background Particle Canvas
+     * 6. Lightweight Ambient Background Particle Canvas (Light Theme Friendly)
      */
     function initParticleCanvas() {
       const canvas = document.getElementById("particleCanvas");
@@ -1594,7 +1847,7 @@
 
       let width, height;
       let particles = [];
-      const particleCount = window.innerWidth < 768 ? 25 : 55;
+      const particleCount = window.innerWidth < 768 ? 24 : 50;
 
       function resize() {
         width = canvas.width = window.innerWidth;
@@ -1610,11 +1863,11 @@
         reset() {
           this.x = Math.random() * width;
           this.y = Math.random() * height;
-          this.size = Math.random() * 2 + 0.6;
-          this.speedX = (Math.random() - 0.5) * 0.4;
-          this.speedY = (Math.random() - 0.5) * 0.4;
-          this.color = Math.random() > 0.4 ? 'rgba(0, 240, 255,' : 'rgba(255, 94, 0,';
-          this.alpha = Math.random() * 0.5 + 0.1;
+          this.size = Math.random() * 2.2 + 0.8;
+          this.speedX = (Math.random() - 0.5) * 0.35;
+          this.speedY = (Math.random() - 0.5) * 0.35;
+          this.color = Math.random() > 0.4 ? 'rgba(2, 132, 199,' : 'rgba(217, 119, 6,';
+          this.alpha = Math.random() * 0.35 + 0.12;
         }
         update() {
           this.x += this.speedX;
@@ -1647,7 +1900,7 @@
     }
 
     /**
-     * 7. Interactive 3D WebGL Championship Trophy Arena (Three.js)
+     * 7. Interactive 3D WebGL Championship Trophy Arena (Three.js with Tap/Touch Stage Trigger)
      */
     function initThreeJsHero() {
       const canvas = document.getElementById("hero3dCanvas");
@@ -1671,72 +1924,76 @@
       renderer.setSize(width, height);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
 
-      // Atmospheric Lighting
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
+      // Atmospheric Studio Lighting tuned for Light Background
+      const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
       scene.add(ambientLight);
 
-      const pointLight1 = new THREE.PointLight(0x00f0ff, 2.8, 50);
+      const pointLight1 = new THREE.PointLight(0x0284c7, 3.2, 50); // Electric Blue
       pointLight1.position.set(5, 5, 5);
       scene.add(pointLight1);
 
-      const pointLight2 = new THREE.PointLight(0xffb800, 2.2, 50);
+      const pointLight2 = new THREE.PointLight(0xd97706, 2.8, 50); // Amber Gold
       pointLight2.position.set(-5, -4, -2);
       scene.add(pointLight2);
 
-      // Root Group for interactive rotation
+      const pointLight3 = new THREE.PointLight(0x38bdf8, 2.0, 50); // Cyan Highlight
+      pointLight3.position.set(0, 6, 2);
+      scene.add(pointLight3);
+
+      // Root Group for interactive rotation & tap feedback
       const rootGroup = new THREE.Group();
       scene.add(rootGroup);
 
-      // Central Trophy Crystal (Faceted Icosahedron)
+      // Central Trophy Crystal (Brilliant Sapphire Gemstone)
       const geomCore = new THREE.IcosahedronGeometry(1.0, 0);
       const matCore = new THREE.MeshPhongMaterial({
-        color: 0x07152e,
-        emissive: 0x003b5c,
-        specular: 0x00f0ff,
-        shininess: 90,
+        color: 0x0284c7,
+        emissive: 0x075985,
+        specular: 0x38bdf8,
+        shininess: 95,
         flatShading: true,
         transparent: true,
-        opacity: 0.88
+        opacity: 0.92
       });
       const coreMesh = new THREE.Mesh(geomCore, matCore);
       rootGroup.add(coreMesh);
 
       // Wireframe Holographic Lattice
-      const geomWire = new THREE.IcosahedronGeometry(1.03, 0);
+      const geomWire = new THREE.IcosahedronGeometry(1.035, 0);
       const matWire = new THREE.MeshBasicMaterial({
-        color: 0x00f0ff,
+        color: 0x0284c7,
         wireframe: true,
         transparent: true,
-        opacity: 0.65
+        opacity: 0.75
       });
       const wireMesh = new THREE.Mesh(geomWire, matWire);
       rootGroup.add(wireMesh);
 
       // Glowing Inner Core Gem (Golden Octahedron)
-      const geomInner = new THREE.OctahedronGeometry(0.45, 0);
+      const geomInner = new THREE.OctahedronGeometry(0.48, 0);
       const matInner = new THREE.MeshBasicMaterial({
-        color: 0xffb800,
+        color: 0xf59e0b,
         wireframe: false
       });
       const innerMesh = new THREE.Mesh(geomInner, matInner);
       rootGroup.add(innerMesh);
 
       // Dual Gyroscope Orbit Rings (Torus)
-      const ringGeom1 = new THREE.TorusGeometry(1.48, 0.022, 16, 64);
+      const ringGeom1 = new THREE.TorusGeometry(1.48, 0.024, 16, 64);
       const ringMat1 = new THREE.MeshBasicMaterial({
-        color: 0x00f0ff,
+        color: 0x0284c7,
         transparent: true,
-        opacity: 0.8
+        opacity: 0.85
       });
       const ring1 = new THREE.Mesh(ringGeom1, ringMat1);
       ring1.rotation.x = Math.PI / 3;
       rootGroup.add(ring1);
 
-      const ringGeom2 = new THREE.TorusGeometry(1.72, 0.02, 16, 64);
+      const ringGeom2 = new THREE.TorusGeometry(1.72, 0.022, 16, 64);
       const ringMat2 = new THREE.MeshBasicMaterial({
-        color: 0xffb800,
+        color: 0xf59e0b,
         transparent: true,
-        opacity: 0.75
+        opacity: 0.85
       });
       const ring2 = new THREE.Mesh(ringGeom2, ringMat2);
       ring2.rotation.y = Math.PI / 4;
@@ -1744,7 +2001,7 @@
       rootGroup.add(ring2);
 
       // Floating 3D Micro-Dust Particles
-      const particleCount = 100;
+      const particleCount = 110;
       const pGeom = new THREE.BufferGeometry();
       const pCoords = new Float32Array(particleCount * 3);
       for (let i = 0; i < particleCount * 3; i += 3) {
@@ -1754,16 +2011,18 @@
       }
       pGeom.setAttribute('position', new THREE.BufferAttribute(pCoords, 3));
       const pMat = new THREE.PointsMaterial({
-        color: 0x38bdf8,
-        size: 0.045,
+        color: 0x0284c7,
+        size: 0.048,
         transparent: true,
-        opacity: 0.85
+        opacity: 0.7
       });
       const particleField = new THREE.Points(pGeom, pMat);
       scene.add(particleField);
 
-      // Mouse & Touch Drag Rotation with Momentum / Damping
+      // Mouse & Touch Drag Rotation + Touch/Tap Detection
       let isDragging = false;
+      let startX = 0;
+      let startY = 0;
       let prevX = 0;
       let prevY = 0;
       let velocityX = 0;
@@ -1772,6 +2031,8 @@
       function onPointerStart(e) {
         isDragging = true;
         const pt = e.touches ? e.touches[0] : e;
+        startX = pt.clientX;
+        startY = pt.clientY;
         prevX = pt.clientX;
         prevY = pt.clientY;
         velocityX = 0;
@@ -1793,8 +2054,22 @@
         rootGroup.rotation.x += velocityY;
       }
 
-      function onPointerEnd() {
+      function onPointerEnd(e) {
+        if (!isDragging) return;
         isDragging = false;
+
+        const pt = (e.changedTouches && e.changedTouches.length) ? e.changedTouches[0] : (e.touches ? e.touches[0] : e);
+        const endX = pt ? pt.clientX : prevX;
+        const endY = pt ? pt.clientY : prevY;
+        const dist = Math.hypot(endX - startX, endY - startY);
+
+        // If user tapped/clicked without substantial dragging (<12px), trigger the Stage & Participants view!
+        if (dist < 12) {
+          // Celebratory spin pulse
+          velocityX = 0.09;
+          velocityY = 0.04;
+          openStageModal();
+        }
       }
 
       canvas.addEventListener("mousedown", onPointerStart);
@@ -1855,10 +2130,9 @@
     }
 
     /**
-     * 8. 3D Card Perspective Tilt with Holographic Glare Tracking
+     * 8. 3D Card Perspective Tilt with Holographic Glare Tracking (Light Mode)
      */
     function initCard3DTilt() {
-      // Only enable tilt on non-touch devices or when mouse moves
       const cards = document.querySelectorAll("[data-tilt]");
       if (!cards.length) return;
 
@@ -1872,7 +2146,7 @@
           const centerX = rect.width / 2;
           const centerY = rect.height / 2;
 
-          const rotateX = ((y - centerY) / centerY) * -8; // Max 8 degrees
+          const rotateX = ((y - centerY) / centerY) * -8;
           const rotateY = ((x - centerX) / centerX) * 8;
 
           card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
@@ -1880,7 +2154,7 @@
           if (glare) {
             const percentX = (x / rect.width) * 100;
             const percentY = (y / rect.height) * 100;
-            glare.style.background = `radial-gradient(circle at ${percentX}% ${percentY}%, rgba(0, 240, 255, 0.15) 0%, transparent 65%)`;
+            glare.style.background = `radial-gradient(circle at ${percentX}% ${percentY}%, rgba(2, 132, 199, 0.09) 0%, transparent 65%)`;
           }
         });
 
