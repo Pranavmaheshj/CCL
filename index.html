@@ -254,7 +254,10 @@
       </nav>
 
       <!-- Desktop CTA Button -->
-      <div class="hidden md:flex items-center gap-4">
+      <div class="hidden md:flex items-center gap-3">
+        <button id="startTourBtn" type="button" aria-label="Start interactive guide tour" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl font-mono font-semibold text-xs text-slate-800 bg-slate-100 hover:bg-slate-200 border border-slate-300 shadow-sm transition-all duration-200 cursor-pointer">
+          <span>🧭 Quick Tour</span>
+        </button>
         <a href="#register" class="relative group inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-display font-semibold text-sm text-white bg-slate-950 hover:bg-slate-800 border border-slate-900 shadow-sm hover:shadow-md hover:shadow-black/10 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0">
           <span>Register Now</span>
           <svg class="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -285,7 +288,10 @@
         <a href="#register" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-950">How to Register</a>
         <a href="#faq" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-950">FAQ</a>
         <a href="#contact" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-950">Contact</a>
-        <div class="pt-4 flex flex-col gap-3">
+        <div class="pt-4 flex flex-col gap-2.5">
+          <button id="mobileStartTourBtn" type="button" class="w-full py-2.5 rounded-xl text-center font-mono text-xs font-semibold text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-300 flex items-center justify-center gap-2 transition-colors">
+            <span>🧭 Take a Quick Tour</span>
+          </button>
           <a href="#register" class="mobile-nav-link w-full py-3 rounded-xl text-center font-display font-semibold text-white bg-slate-950 hover:bg-slate-800 border border-slate-900 shadow-sm transition-colors">
             Register Team (₹750)
           </a>
@@ -1301,32 +1307,48 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
         
         <!-- Phone Contact Card 1 -->
-        <a href="tel:+918072657948" class="flex items-center gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-slate-400 hover:bg-slate-100/60 transition-all group shadow-sm">
-          <div class="w-12 h-12 rounded-xl bg-slate-100 text-slate-900 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
-            📞
-          </div>
-          <div>
-            <span class="text-xs text-slate-500 font-mono block">Student Coordinator 1</span>
-            <span class="text-lg font-display font-bold text-slate-900 group-hover:text-slate-950 transition-colors">
-              +91 80726 57948
-            </span>
-            <span class="text-[11px] text-slate-600 block mt-0.5 font-medium">Tap to Call Directly</span>
-          </div>
-        </a>
+        <div class="flex items-center justify-between p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-slate-400 hover:bg-slate-100/60 transition-all group shadow-sm">
+          <a href="tel:+918072657948" class="flex items-center gap-4 flex-1">
+            <div class="w-12 h-12 rounded-xl bg-slate-100 text-slate-900 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+              📞
+            </div>
+            <div>
+              <span class="text-xs text-slate-500 font-mono block">Student Coordinator 1</span>
+              <span class="text-lg font-display font-bold text-slate-900 group-hover:text-slate-950 transition-colors">
+                +91 80726 57948
+              </span>
+              <span class="text-[11px] text-slate-600 block mt-0.5 font-medium">Tap to Call Directly</span>
+            </div>
+          </a>
+          <button type="button" data-copy-phone="8072657948" aria-label="Copy phone number 8072657948" title="Copy to clipboard" class="copy-phone-btn px-3 py-2 rounded-xl bg-white hover:bg-slate-200 border border-slate-300 text-xs font-mono font-semibold text-slate-800 transition flex items-center gap-1.5 cursor-pointer shadow-sm">
+            <span>Copy</span>
+            <svg class="w-3.5 h-3.5 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+            </svg>
+          </button>
+        </div>
 
         <!-- Phone Contact Card 2 -->
-        <a href="tel:+919894457189" class="flex items-center gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-slate-400 hover:bg-slate-50 transition-all group shadow-sm">
-          <div class="w-12 h-12 rounded-xl bg-slate-100 text-slate-900 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
-            📞
-          </div>
-          <div>
-            <span class="text-xs text-slate-500 font-mono block">Student Coordinator 2</span>
-            <span class="text-lg font-display font-bold text-slate-900 group-hover:text-slate-950 transition-colors">
-              +91 98944 57189
-            </span>
-            <span class="text-[11px] text-slate-600 block mt-0.5 font-medium">Tap to Call Directly</span>
-          </div>
-        </a>
+        <div class="flex items-center justify-between p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-slate-400 hover:bg-slate-100/60 transition-all group shadow-sm">
+          <a href="tel:+919894457189" class="flex items-center gap-4 flex-1">
+            <div class="w-12 h-12 rounded-xl bg-slate-100 text-slate-900 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+              📞
+            </div>
+            <div>
+              <span class="text-xs text-slate-500 font-mono block">Student Coordinator 2</span>
+              <span class="text-lg font-display font-bold text-slate-900 group-hover:text-slate-950 transition-colors">
+                +91 98944 57189
+              </span>
+              <span class="text-[11px] text-slate-600 block mt-0.5 font-medium">Tap to Call Directly</span>
+            </div>
+          </a>
+          <button type="button" data-copy-phone="9894457189" aria-label="Copy phone number 9894457189" title="Copy to clipboard" class="copy-phone-btn px-3 py-2 rounded-xl bg-white hover:bg-slate-200 border border-slate-300 text-xs font-mono font-semibold text-slate-800 transition flex items-center gap-1.5 cursor-pointer shadow-sm">
+            <span>Copy</span>
+            <svg class="w-3.5 h-3.5 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+            </svg>
+          </button>
+        </div>
 
       </div>
 
@@ -1429,6 +1451,89 @@
   </div>
 
   <!-- ===================================================================
+       12. INTERACTIVE GUIDED ONBOARDING TOUR OVERLAY
+       =================================================================== -->
+  <div id="tourContainer" class="fixed inset-0 z-[100] transition-opacity duration-300 opacity-0 pointer-events-none hidden" aria-live="polite">
+    <!-- Click backdrop to skip -->
+    <div id="tourBackdrop" class="absolute inset-0 bg-transparent cursor-pointer" title="Click anywhere to skip tour"></div>
+
+    <!-- Spotlight cutout highlight frame with glowing ring and cut-through shadow -->
+    <div id="tourSpotlight" class="fixed pointer-events-none transition-all duration-300 ease-out rounded-2xl border-2 border-slate-900/80 ring-4 ring-slate-400/30 shadow-[0_0_0_9999px_rgba(15,23,42,0.68),0_0_35px_rgba(255,255,255,0.4)]"></div>
+
+    <!-- Floating Tour Tooltip Card -->
+    <div id="tourCard" class="fixed z-10 w-[calc(100vw-32px)] max-w-sm sm:max-w-md bg-white border border-slate-300 shadow-2xl rounded-2xl p-5 sm:p-6 transition-all duration-300 ease-out" role="dialog" aria-labelledby="tourTitle" aria-describedby="tourDesc">
+      
+      <!-- Card Header -->
+      <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
+        <div class="flex items-center gap-2">
+          <span id="tourStepBadge" class="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-slate-100 text-slate-900 border border-slate-300">
+            Step 1 of 5
+          </span>
+          <div id="tourStepDots" class="flex items-center gap-1.5 ml-1">
+            <!-- Dynamic Dots -->
+          </div>
+        </div>
+        <button id="tourCloseBtn" type="button" aria-label="Skip tour" class="text-slate-400 hover:text-slate-900 text-lg leading-none p-1.5 rounded-lg hover:bg-slate-100 transition cursor-pointer">
+          ✕
+        </button>
+      </div>
+
+      <!-- Card Body -->
+      <div class="mb-5">
+        <div class="flex items-center gap-2.5 mb-1.5">
+          <span id="tourIcon" class="text-2xl">🏆</span>
+          <h4 id="tourTitle" class="text-base sm:text-lg font-display font-bold text-slate-950">
+            Interactive 3D Championship Arena
+          </h4>
+        </div>
+        <p id="tourDesc" class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-3">
+          Explore the interactive 3D crystal trophy. Tap or drag to view live stages and verified roster brackets.
+        </p>
+        <div id="tourTip" class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-[11px] sm:text-xs text-slate-700 flex items-start gap-2">
+          <span class="font-bold text-slate-900 flex-shrink-0">💡 Pro Tip:</span>
+          <span id="tourTipText">Tap the 3D Trophy anytime to open the stage & roster viewer.</span>
+        </div>
+      </div>
+
+      <!-- Card Footer Navigation -->
+      <div class="flex items-center justify-between gap-3 pt-2">
+        <button id="tourSkipBtn" type="button" class="text-xs font-semibold text-slate-500 hover:text-slate-950 transition-colors py-2 px-1 cursor-pointer">
+          Skip Tour
+        </button>
+        <div class="flex items-center gap-2">
+          <button id="tourPrevBtn" type="button" class="px-3.5 py-2 rounded-xl text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-300 transition-colors cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed">
+            Back
+          </button>
+          <button id="tourNextBtn" type="button" class="px-4 py-2 rounded-xl text-xs font-bold text-white bg-slate-950 hover:bg-slate-800 border border-slate-900 transition-all shadow-sm hover:shadow-md cursor-pointer flex items-center gap-1.5">
+            <span id="tourNextBtnText">Next</span>
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       13. FLOATING BACK TO TOP BUTTON (Bottom Left - Smooth Scroll)
+       =================================================================== -->
+  <button id="backToTopBtn" type="button" aria-label="Back to top" class="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white text-slate-900 border border-slate-300 shadow-lg hover:shadow-xl hover:bg-slate-100 flex items-center justify-center transition-all duration-300 transform opacity-0 translate-y-4 pointer-events-none cursor-pointer group" title="Back to top">
+    <svg class="w-5 h-5 text-slate-900 group-hover:-translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+    </svg>
+  </button>
+
+  <!-- ===================================================================
+       14. TOAST NOTIFICATION (Copy feedback & alerts)
+       =================================================================== -->
+  <div id="cclToast" class="fixed top-5 left-1/2 -translate-x-1/2 z-[110] px-4 py-2.5 rounded-xl bg-slate-950 text-white text-xs sm:text-sm font-medium shadow-2xl border border-slate-800 flex items-center gap-2 transition-all duration-300 opacity-0 -translate-y-4 pointer-events-none">
+    <span id="cclToastIcon">📋</span>
+    <span id="cclToastMsg">Copied to clipboard!</span>
+  </div>
+
+  <!-- ===================================================================
        JAVASCRIPT LOGIC (Single Source of Truth Configuration)
        =================================================================== -->
   <script>
@@ -1481,19 +1586,37 @@
     // Global Modal Handlers
     function openStageModal() {
       const modal = document.getElementById("stageModal");
+      const card = document.getElementById("stageModalCard");
       if (!modal) return;
       modal.classList.remove("hidden");
       modal.classList.add("flex");
       document.body.style.overflow = "hidden";
       renderParticipantsRoster();
+      requestAnimationFrame(() => {
+        modal.classList.remove("opacity-0");
+        modal.classList.add("opacity-100");
+        if (card) {
+          card.classList.remove("scale-95");
+          card.classList.add("scale-100");
+        }
+      });
     }
 
     function closeStageModal() {
       const modal = document.getElementById("stageModal");
+      const card = document.getElementById("stageModalCard");
       if (!modal) return;
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
-      document.body.style.overflow = "";
+      modal.classList.remove("opacity-100");
+      modal.classList.add("opacity-0");
+      if (card) {
+        card.classList.remove("scale-100");
+        card.classList.add("scale-95");
+      }
+      setTimeout(() => {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+        document.body.style.overflow = "";
+      }, 250);
     }
 
     // Render Participants Roster (Shows Coming Soon when empty)
@@ -1646,6 +1769,9 @@
       initFaqAccordion();
       initParticleCanvas();
       initThreeJsHero();
+      initBackToTop();
+      initPhoneCopy();
+      initTour();
     });
 
     /**
@@ -2106,6 +2232,354 @@
         renderer.render(scene, camera);
       }
       renderLoop();
+    }
+
+    /**
+     * 8. Interactive Guided Onboarding Tour & UX Walkthrough
+     */
+    const TOUR_STEPS = [
+      {
+        targetId: "arenaCanvasWrapper",
+        icon: "🏆",
+        title: "Interactive 3D Arena & Stages",
+        desc: "Touch, spin, or drag our real-time 3D crystal trophy! Tapping it opens the tournament stage, team draw brackets, and participant roster.",
+        tip: "You can tap the 3D trophy anytime to open the stage & squad lineup modal."
+      },
+      {
+        targetId: "rounds",
+        icon: "🏏",
+        title: "Cricket Knockout 4-Round Format",
+        desc: "Experience the intensity of cricket knockout progression: 32 teams battle across 4 elimination rounds down to the championship final.",
+        tip: "Real-time bracket tracking, fast evaluation rounds, and live scoreboards."
+      },
+      {
+        targetId: "prizes",
+        icon: "💰",
+        title: "₹16,000 Guaranteed Cash Prize Pool",
+        desc: "Top 3 teams secure guaranteed cash prizes (₹8,000 Winner, ₹5,000 Runner-up, ₹3,000 3rd Place) + prestigious trophies, medals, and certificates.",
+        tip: "All 32 teams receive official verified participation credentials."
+      },
+      {
+        targetId: "register",
+        icon: "📝",
+        title: "Simple 4-Step Registration",
+        desc: "Gather your 5-person squad, review event criteria, fill the registration form, and pay ₹750/team (only ₹150 per participant).",
+        tip: "Strictly limited to 32 verified teams on a first-confirmed basis."
+      },
+      {
+        targetId: "contact",
+        icon: "💬",
+        title: "WhatsApp Hub & Helplines",
+        desc: "Need assistance or seeking teammates? Join the official WhatsApp group or tap any coordinator to call or copy their number.",
+        tip: "Tap 'Copy' on coordinator cards to instantly copy phone numbers to clipboard."
+      }
+    ];
+
+    let currentTourStep = 0;
+    let isTourActive = false;
+
+    function initTour() {
+      const container = document.getElementById("tourContainer");
+      if (!container) return;
+
+      const skipBtn = document.getElementById("tourSkipBtn");
+      const closeBtn = document.getElementById("tourCloseBtn");
+      const nextBtn = document.getElementById("tourNextBtn");
+      const prevBtn = document.getElementById("tourPrevBtn");
+      const backdrop = document.getElementById("tourBackdrop");
+
+      if (skipBtn) skipBtn.addEventListener("click", closeTour);
+      if (closeBtn) closeBtn.addEventListener("click", closeTour);
+      if (backdrop) backdrop.addEventListener("click", closeTour);
+      if (nextBtn) nextBtn.addEventListener("click", nextTourStep);
+      if (prevBtn) prevBtn.addEventListener("click", prevTourStep);
+
+      // Keyboard navigation for power users
+      document.addEventListener("keydown", (e) => {
+        if (!isTourActive) return;
+        if (e.key === "Escape") closeTour();
+        else if (e.key === "ArrowRight") nextTourStep();
+        else if (e.key === "ArrowLeft") prevTourStep();
+      });
+
+      // Responsive re-anchoring on window resize and scroll
+      window.addEventListener("resize", () => {
+        if (isTourActive) positionTourStep(currentTourStep);
+      }, { passive: true });
+
+      window.addEventListener("scroll", () => {
+        if (isTourActive) updateSpotlightBounds();
+      }, { passive: true });
+
+      // Wire Quick Tour trigger buttons
+      const startTourBtn = document.getElementById("startTourBtn");
+      if (startTourBtn) {
+        startTourBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          startTour(0);
+        });
+      }
+
+      const mobileStartTourBtn = document.getElementById("mobileStartTourBtn");
+      if (mobileStartTourBtn) {
+        mobileStartTourBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const menu = document.getElementById("mobileMenu");
+          if (menu) menu.classList.add("hidden");
+          startTour(0);
+        });
+      }
+
+      // Check first-time visit: auto-start tour after page settles
+      try {
+        const hasSeenTour = localStorage.getItem("ccl_tour_completed");
+        if (!hasSeenTour) {
+          setTimeout(() => {
+            startTour(0);
+          }, 700);
+        }
+      } catch (e) {
+        // Fallback for private browsing
+      }
+    }
+
+    function startTour(stepIdx = 0) {
+      const container = document.getElementById("tourContainer");
+      if (!container) return;
+
+      // Close any active modal or menu
+      closeStageModal();
+
+      isTourActive = true;
+      currentTourStep = stepIdx;
+
+      container.classList.remove("hidden");
+      container.classList.remove("pointer-events-none");
+      requestAnimationFrame(() => {
+        container.classList.remove("opacity-0");
+        container.classList.add("opacity-100");
+      });
+
+      goToTourStep(currentTourStep);
+    }
+
+    function closeTour() {
+      const container = document.getElementById("tourContainer");
+      if (!container) return;
+
+      isTourActive = false;
+      try {
+        localStorage.setItem("ccl_tour_completed", "true");
+      } catch (e) {}
+
+      container.classList.remove("opacity-100");
+      container.classList.add("opacity-0");
+      container.classList.add("pointer-events-none");
+
+      setTimeout(() => {
+        container.classList.add("hidden");
+      }, 300);
+    }
+
+    function nextTourStep() {
+      if (currentTourStep < TOUR_STEPS.length - 1) {
+        goToTourStep(currentTourStep + 1);
+      } else {
+        closeTour();
+        showToast("Tour completed! Welcome to CCL 2026 🎉", "🏆");
+      }
+    }
+
+    function prevTourStep() {
+      if (currentTourStep > 0) {
+        goToTourStep(currentTourStep - 1);
+      }
+    }
+
+    function goToTourStep(stepIndex) {
+      currentTourStep = stepIndex;
+      const step = TOUR_STEPS[stepIndex];
+      if (!step) return;
+
+      const targetEl = document.getElementById(step.targetId);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      // Update Card Header & Texts
+      const badge = document.getElementById("tourStepBadge");
+      const icon = document.getElementById("tourIcon");
+      const title = document.getElementById("tourTitle");
+      const desc = document.getElementById("tourDesc");
+      const tipText = document.getElementById("tourTipText");
+      const nextBtnText = document.getElementById("tourNextBtnText");
+      const prevBtn = document.getElementById("tourPrevBtn");
+
+      if (badge) badge.textContent = `Step ${stepIndex + 1} of ${TOUR_STEPS.length}`;
+      if (icon) icon.textContent = step.icon;
+      if (title) title.textContent = step.title;
+      if (desc) desc.textContent = step.desc;
+      if (tipText) tipText.textContent = step.tip;
+
+      if (prevBtn) prevBtn.disabled = stepIndex === 0;
+      if (nextBtnText) {
+        nextBtnText.textContent = stepIndex === TOUR_STEPS.length - 1 ? "Finish Tour ✓" : "Next";
+      }
+
+      // Render Dots
+      const dotsContainer = document.getElementById("tourStepDots");
+      if (dotsContainer) {
+        dotsContainer.innerHTML = "";
+        TOUR_STEPS.forEach((_, idx) => {
+          const dot = document.createElement("span");
+          dot.className = idx === stepIndex 
+            ? "w-4 h-1.5 rounded-full bg-slate-950 transition-all duration-200" 
+            : "w-1.5 h-1.5 rounded-full bg-slate-300 transition-all duration-200";
+          dotsContainer.appendChild(dot);
+        });
+      }
+
+      // Allow scroll transition to reach element before anchoring
+      setTimeout(() => {
+        positionTourStep(stepIndex);
+      }, 280);
+    }
+
+    function positionTourStep(stepIndex) {
+      if (!isTourActive) return;
+      const step = TOUR_STEPS[stepIndex];
+      if (!step) return;
+      const targetEl = document.getElementById(step.targetId);
+      if (!targetEl) return;
+
+      const spotlight = document.getElementById("tourSpotlight");
+      const card = document.getElementById("tourCard");
+      if (!spotlight || !card) return;
+
+      const rect = targetEl.getBoundingClientRect();
+      const padding = 10;
+
+      const spotTop = Math.max(6, rect.top - padding);
+      const spotLeft = Math.max(6, rect.left - padding);
+      const spotWidth = Math.min(window.innerWidth - spotLeft - 12, rect.width + padding * 2);
+      const spotHeight = Math.min(window.innerHeight - spotTop - 12, rect.height + padding * 2);
+
+      spotlight.style.top = `${spotTop}px`;
+      spotlight.style.left = `${spotLeft}px`;
+      spotlight.style.width = `${spotWidth}px`;
+      spotlight.style.height = `${spotHeight}px`;
+
+      // Smart Card Positioning (prevent offscreen clipping)
+      const cardRect = card.getBoundingClientRect();
+      const cardWidth = cardRect.width || 360;
+      const cardHeight = cardRect.height || 220;
+
+      let cardLeft = rect.left + (rect.width / 2) - (cardWidth / 2);
+      cardLeft = Math.max(16, Math.min(window.innerWidth - cardWidth - 16, cardLeft));
+
+      const spaceBelow = window.innerHeight - (rect.bottom + padding);
+      const spaceAbove = rect.top - padding;
+
+      let cardTop;
+      if (spaceBelow >= cardHeight + 20) {
+        cardTop = rect.bottom + padding + 12;
+      } else if (spaceAbove >= cardHeight + 20) {
+        cardTop = rect.top - padding - cardHeight - 12;
+      } else {
+        cardTop = Math.max(16, window.innerHeight - cardHeight - 20);
+      }
+
+      card.style.top = `${cardTop}px`;
+      card.style.left = `${cardLeft}px`;
+    }
+
+    function updateSpotlightBounds() {
+      if (!isTourActive) return;
+      const step = TOUR_STEPS[currentTourStep];
+      if (!step) return;
+      const targetEl = document.getElementById(step.targetId);
+      const spotlight = document.getElementById("tourSpotlight");
+      if (!targetEl || !spotlight) return;
+
+      const rect = targetEl.getBoundingClientRect();
+      const padding = 10;
+      const spotTop = Math.max(6, rect.top - padding);
+      const spotLeft = Math.max(6, rect.left - padding);
+      const spotWidth = Math.min(window.innerWidth - spotLeft - 12, rect.width + padding * 2);
+      const spotHeight = Math.min(window.innerHeight - spotTop - 12, rect.height + padding * 2);
+
+      spotlight.style.top = `${spotTop}px`;
+      spotlight.style.left = `${spotLeft}px`;
+      spotlight.style.width = `${spotWidth}px`;
+      spotlight.style.height = `${spotHeight}px`;
+    }
+
+    /**
+     * 9. Toast Notifications Feedback Utility
+     */
+    function showToast(message, icon = "📋") {
+      const toast = document.getElementById("cclToast");
+      const msgEl = document.getElementById("cclToastMsg");
+      const iconEl = document.getElementById("cclToastIcon");
+      if (!toast || !msgEl) return;
+
+      msgEl.textContent = message;
+      if (iconEl) iconEl.textContent = icon;
+
+      toast.classList.remove("opacity-0", "-translate-y-4", "pointer-events-none");
+      toast.classList.add("opacity-100", "translate-y-0");
+
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => {
+        toast.classList.remove("opacity-100", "translate-y-0");
+        toast.classList.add("opacity-0", "-translate-y-4", "pointer-events-none");
+      }, 2500);
+    }
+
+    /**
+     * 10. Floating Back-to-Top Button
+     */
+    function initBackToTop() {
+      const btn = document.getElementById("backToTopBtn");
+      if (!btn) return;
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 350) {
+          btn.classList.remove("opacity-0", "translate-y-4", "pointer-events-none");
+          btn.classList.add("opacity-100", "translate-y-0", "pointer-events-auto");
+        } else {
+          btn.classList.add("opacity-0", "translate-y-4", "pointer-events-none");
+          btn.classList.remove("opacity-100", "translate-y-0", "pointer-events-auto");
+        }
+      }, { passive: true });
+
+      btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+
+    /**
+     * 11. 1-Tap Copy Coordinator Phone Numbers
+     */
+    function initPhoneCopy() {
+      document.querySelectorAll(".copy-phone-btn").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const phone = btn.getAttribute("data-copy-phone");
+          if (!phone) return;
+
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(phone).then(() => {
+              showToast(`Phone +91 ${phone} copied to clipboard!`, "📋");
+            }).catch(() => {
+              showToast(`Phone: +91 ${phone}`, "📞");
+            });
+          } else {
+            showToast(`Phone: +91 ${phone}`, "📞");
+          }
+        });
+      });
     }
   </script>
 </body>
