@@ -687,8 +687,8 @@
           </span>
         </div>
         
-        <!-- 5 Interactive Knockout Stage Tabs -->
-        <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 mb-4 text-center" id="modalRoundTabs">
+        <!-- 6 Interactive Knockout Stage Tabs -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 mb-4 text-center" id="modalRoundTabs">
           <button type="button" data-round="0" onclick="renderModalRoundDetails(0)" class="modal-round-tab p-2.5 rounded-xl bg-slate-950 text-white font-mono text-[11px] font-bold shadow-sm transition cursor-pointer border border-slate-950 text-left sm:text-center">
             <span class="block">R1: League</span>
             <span class="block text-[9px] opacity-85 mt-0.5">32 Teams</span>
@@ -703,9 +703,13 @@
           </button>
           <button type="button" data-round="3" onclick="renderModalRoundDetails(3)" class="modal-round-tab p-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 font-mono text-[11px] font-medium transition cursor-pointer border border-slate-300 text-left sm:text-center">
             <span class="block">R4: Semis</span>
-            <span class="block text-[9px] text-slate-500 mt-0.5">4 Teams</span>
+            <span class="block text-[9px] text-slate-500 mt-0.5">SF 1 & SF 2</span>
           </button>
           <button type="button" data-round="4" onclick="renderModalRoundDetails(4)" class="modal-round-tab p-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 font-mono text-[11px] font-medium transition cursor-pointer border border-slate-300 text-left sm:text-center">
+            <span class="block">3rd Place</span>
+            <span class="block text-[9px] text-slate-500 mt-0.5">Website Game</span>
+          </button>
+          <button type="button" data-round="5" onclick="renderModalRoundDetails(5)" class="modal-round-tab p-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 font-mono text-[11px] font-medium transition cursor-pointer border border-slate-300 text-left sm:text-center">
             <span class="block">R5: Finale</span>
             <span class="block text-[9px] text-slate-500 mt-0.5">Top 2 Teams</span>
           </button>
@@ -883,8 +887,8 @@
         <h2 class="text-3xl sm:text-5xl font-display font-bold text-slate-900 mb-4">
           How The Tournament Works
         </h2>
-        <p class="text-slate-600 text-base sm:text-lg mb-6">
-          Cricket-style single-elimination progression: 32 participants enter → 16 to next round → 8 to quarter-finals → 4 to semi-finals → and <strong>only the top 2 teams battle in the grand finale</strong>! Round 1 details are displayed below for all 32 squads. Advancing teams can view subsequent round specs by tapping the 3D design above.
+        <p class="text-slate-600 text-base sm:text-lg mb-6 max-w-3xl mx-auto">
+          Cricket-style single-elimination progression: 32 participants enter → 16 to next round → 8 to quarter-finals → 4 battle across <strong>Semi-Final 1 & Semi-Final 2</strong>. Winning squads advance to the <strong>Grand Finale</strong>, while losing squads fight in an <strong>Additional Round (Website Game Challenge) for the 3rd Prize</strong>!
         </p>
 
         <!-- Stage Transparency & Progression Notice Banner -->
@@ -900,8 +904,8 @@
         </div>
       </div>
 
-      <!-- 5 Knockout Stages Cards Grid / Timeline -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+      <!-- 6 Tournament Stages Grid (3 columns on desktop, 2 on tablet, 1 on mobile) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         
         <!-- Round 1: League Stage (FULLY DISPLAYED) -->
         <div class="reveal glass-card card-hover rounded-2xl p-5 sm:p-6 border-2 border-slate-900 flex flex-col justify-between group bg-white shadow-md relative overflow-hidden">
@@ -924,7 +928,7 @@
             </div>
 
             <h3 class="text-lg font-display font-bold text-slate-950 mb-1">
-              Landing Page
+              Landing Page Challenge
             </h3>
             <p class="text-xs font-mono text-slate-700 font-bold mb-3">
               32 Teams → Top 16 Advance
@@ -1014,10 +1018,10 @@
             </div>
 
             <h3 class="text-lg font-display font-bold text-slate-900 mb-1">
-              Quarter-Finals
+              Quarter-Finals Sprint
             </h3>
             <p class="text-xs font-mono text-slate-600 font-bold mb-3">
-              8 Teams → Top 4 to Semis
+              8 Teams → Top 4 to SF1 & SF2
             </p>
 
             <div class="p-3 rounded-xl bg-slate-50 border border-dashed border-slate-300 text-xs text-slate-600 space-y-2 mb-4">
@@ -1042,7 +1046,7 @@
           </div>
         </div>
 
-        <!-- Round 4: Semi-Finals (LOCKED / UNLOCK VIA 3D) -->
+        <!-- Round 4: Semi-Finals (SEMI-FINAL 1 & SEMI-FINAL 2) -->
         <div class="reveal glass-card card-hover rounded-2xl p-5 sm:p-6 border border-slate-200 flex flex-col justify-between group bg-white shadow-sm hover:border-slate-400 relative">
           <div>
             <div class="flex items-center justify-between mb-3">
@@ -1059,19 +1063,19 @@
             </div>
 
             <h3 class="text-lg font-display font-bold text-slate-900 mb-1">
-              Semi-Finals
+              Semi-Final 1 & 2
             </h3>
             <p class="text-xs font-mono text-slate-600 font-bold mb-3">
-              4 Teams → Top 2 to Finale
+              Winners → Finale | Losers → 3rd Place
             </p>
 
             <div class="p-3 rounded-xl bg-slate-50 border border-dashed border-slate-300 text-xs text-slate-600 space-y-2 mb-4">
               <p>
-                <strong class="text-slate-900 block font-semibold mb-0.5">🔒 Qualifiers Only:</strong>
-                AI ChatBot / Search Engine specs are locked. Visible strictly to the 4 squads advancing to the Semi-Finals.
+                <strong class="text-slate-900 block font-semibold mb-0.5">🔒 Semi-Finalists Only:</strong>
+                Challenge: Build a Simple ChatBot or Search Engine using AI. Contested as <strong>Semi-Final 1</strong> & <strong>Semi-Final 2</strong>.
               </p>
               <p class="text-[11px] text-slate-500 font-mono">
-                From 4 teams, exactly Top 2 qualify for Final
+                Winning squads → Finale • Losing squads → 3rd Place Playoff
               </p>
             </div>
           </div>
@@ -1081,8 +1085,57 @@
               <span>🔒 Unlock Stage (Qualifiers Only)</span>
             </button>
             <div class="pt-3 mt-3 border-t border-slate-100 text-[11px] text-slate-500 flex items-center justify-between font-mono">
-              <span>Cut-off: Top 2</span>
-              <span class="text-slate-800 font-semibold">Conversational UX</span>
+              <span>Split: 2 Winners / 2 Losers</span>
+              <span class="text-slate-800 font-semibold">User-Friendly UI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Round: 3rd Place Playoff (WEBSITE GAME CHALLENGE) -->
+        <div class="reveal glass-card card-hover rounded-2xl p-5 sm:p-6 border-2 border-slate-400 flex flex-col justify-between group bg-slate-50/50 shadow-sm hover:border-slate-900 relative">
+          <div class="absolute top-0 right-0 px-2.5 py-1 bg-slate-200 text-slate-800 font-mono text-[10px] font-bold uppercase rounded-bl-xl tracking-wider border-l border-b border-slate-300">
+            Bronze Playoff
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-3 mt-1">
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-white text-slate-900 border border-slate-300 flex items-center gap-1">
+                <span>🥉</span> ADDITIONAL ROUND
+              </span>
+              <span class="text-[11px] font-mono text-slate-700 bg-white px-2 py-0.5 rounded border border-slate-300">
+                2 Losing SF Teams
+              </span>
+            </div>
+            
+            <div class="w-11 h-11 rounded-xl bg-white border border-slate-300 flex items-center justify-center text-2xl mb-3 group-hover:scale-105 transition-transform text-slate-900">
+              🎮
+            </div>
+
+            <h3 class="text-lg font-display font-bold text-slate-900 mb-1">
+              Website Game Challenge
+            </h3>
+            <p class="text-xs font-mono text-slate-800 font-bold mb-3">
+              Battle for 3rd Prize (₹3,000 Cash)
+            </p>
+
+            <div class="p-3 rounded-xl bg-white border border-dashed border-slate-300 text-xs text-slate-700 space-y-2 mb-4">
+              <p>
+                <strong class="text-slate-900 block font-semibold mb-0.5">🎮 Participant's Wish:</strong>
+                Create a Website Game! The game genre and mechanics are <strong>your choice</strong>, but it must be <strong>interesting and user-friendly</strong>!
+              </p>
+              <p class="text-[11px] text-slate-600 font-mono">
+                Losing teams from SF1 & SF2 fight for 3rd Place!
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <button id="mainRoundBtn4" type="button" onclick="openStageModal(4)" class="w-full py-2.5 px-2 rounded-xl bg-slate-950 hover:bg-slate-800 text-white text-[11px] font-semibold border border-slate-900 flex items-center justify-center gap-1 transition cursor-pointer shadow-sm">
+              <span>🔒 Unlock 3rd Place Brief</span>
+            </button>
+            <div class="pt-3 mt-3 border-t border-slate-200 text-[11px] text-slate-600 flex items-center justify-between font-mono">
+              <span>Prize Stake</span>
+              <span class="text-slate-950 font-bold">3rd Prize ₹3,000</span>
             </div>
           </div>
         </div>
@@ -1107,13 +1160,13 @@
               E-Com with Bot
             </h3>
             <p class="text-xs font-mono text-slate-900 font-extrabold mb-3">
-              Top 2 Teams Head-to-Head
+              SF1 Winner vs SF2 Winner
             </p>
 
             <div class="p-3 rounded-xl bg-slate-50 border border-dashed border-slate-300 text-xs text-slate-600 space-y-2 mb-4">
               <p>
-                <strong class="text-slate-900 block font-semibold mb-0.5">👑 Top 2 Finalists:</strong>
-                Championship brief is locked. Visible strictly to the Top 2 finalists battling for ₹16k Prize Pool!
+                <strong class="text-slate-900 block font-semibold mb-0.5">👑 Grand Finale Battle:</strong>
+                Create an E-Commerce Website with integrated Bot. Contested strictly by the winning squads of SF1 & SF2!
               </p>
               <p class="text-[11px] text-slate-900 font-semibold font-mono">
                 1st Place ₹8,000 | 2nd Place ₹5,000
@@ -1122,11 +1175,11 @@
           </div>
 
           <div>
-            <button id="mainRoundBtn4" type="button" onclick="openStageModal(4)" class="w-full py-2.5 px-2 rounded-xl bg-slate-950 hover:bg-slate-800 text-white text-[11px] font-semibold border border-slate-900 flex items-center justify-center gap-1 transition cursor-pointer shadow-sm">
+            <button id="mainRoundBtn5" type="button" onclick="openStageModal(5)" class="w-full py-2.5 px-2 rounded-xl bg-slate-950 hover:bg-slate-800 text-white text-[11px] font-semibold border border-slate-900 flex items-center justify-center gap-1 transition cursor-pointer shadow-sm">
               <span>🔒 Unlock Final (Top 2 Only)</span>
             </button>
             <div class="pt-3 mt-3 border-t border-slate-100 text-[11px] text-slate-500 flex items-center justify-between font-mono">
-              <span>Prize Split</span>
+              <span>Podium Stakes</span>
               <span class="text-slate-950 font-bold">1st ₹8k | 2nd ₹5k</span>
             </div>
           </div>
@@ -1141,12 +1194,9 @@
           <span>Core Evaluation Rule Across All Rounds:</span>
         </div>
         <p class="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl mx-auto">
-          For all the websites across every round (Landing Page, Simple E-Commerce, AI ChatBot/Search, and E-Commerce with Bot), the <strong>UI must be user-friendly</strong>. Marks will be strictly provided based on intuitive layout, clean visual design, accessibility, and seamless user experience.
+          For all websites and games across every round (Landing Page, Simple E-Commerce, Interactive Web App, AI ChatBot/Search, Website Game, and E-Commerce with Bot), the <strong>UI must be user-friendly</strong>. For the Website Game, it must also be <strong>interesting and engaging</strong>. Marks will be strictly provided based on usability and intuitive experience!
         </p>
       </div>
-
-    </div>
-  </section>
 
     </div>
   </section>
@@ -1909,8 +1959,9 @@
       QUALIFIER_PASSKEYS: {
         ROUND_2: ["CCL2026", "QUALIFIED", "CCL-R2"],
         ROUND_3: ["CCL2026", "QUALIFIED", "CCL-R3"],
-        ROUND_4: ["CCL2026", "QUALIFIED", "CCL-R4"],
-        ROUND_5: ["CCL2026", "QUALIFIED", "CCL-R5"],
+        ROUND_4: ["CCL2026", "QUALIFIED", "CCL-R4", "SF1", "SF2"],
+        ROUND_5: ["CCL2026", "QUALIFIED", "CCL-3RD", "BRONZE", "GAME"],
+        ROUND_6: ["CCL2026", "QUALIFIED", "CCL-FINALE", "FINALIST"],
         MASTER: ["CCL2026", "QUALIFIED", "ADMIN"]
       },
       PARTICIPANTS: [],
@@ -1985,12 +2036,12 @@
 
     // Dynamic button text synchronization on the main landing page
     function updateMainPageRoundsLockStatus() {
-      for (let i = 1; i <= 4; i++) {
+      for (let i = 1; i <= 5; i++) {
         const btn = document.getElementById("mainRoundBtn" + i);
         if (btn) {
           const unlocked = isRoundUnlocked(i);
           if (unlocked) {
-            btn.innerHTML = `<span>✅ View Unlocked R${i + 1} Specs</span>`;
+            btn.innerHTML = `<span>✅ View Unlocked Specs</span>`;
             btn.className = "w-full py-2.5 px-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-[11px] font-semibold border border-slate-700 flex items-center justify-center gap-1 transition cursor-pointer shadow-sm";
           } else {
             btn.innerHTML = `<span>🔒 Unlock Stage (Qualifiers Only)</span>`;
@@ -2034,29 +2085,40 @@
         task: "Build an interactive, dynamic feature-rich Web Application with live responsive state management.",
         domain: "Challenge specification and domain assigned on-spot at round start.",
         scoring: "User-Friendly UI & Interaction — Graded strictly on intuitive interactive flow, accessibility, layout stability, and polish.",
-        advancement: "8 Participants → Top 4 qualify for the Semi-Finals.",
+        advancement: "8 Participants → Top 4 qualify for Semi-Final 1 & Semi-Final 2.",
         statusBadge: "🔒 Unlocked for Quarter-Finalists"
       },
       {
         num: "04",
-        title: "AI ChatBot or Search Engine",
-        stageName: "Round 04: The Semi-Finals",
+        title: "Semi-Final 1 & Semi-Final 2",
+        stageName: "Round 04: Semi-Final 1 & Semi-Final 2",
         stageBadge: "4 Teams • Semi-Finals",
-        task: "Build a Simple ChatBot or an intelligent Search Engine leveraging AI capabilities.",
+        task: "Build a Simple ChatBot or an intelligent Search Engine using AI. Contested in two simultaneous brackets: Semi-Final 1 (Match 1) and Semi-Final 2 (Match 2).",
         domain: "AI Conversational Agent or Smart Search Engine domain announced on-spot.",
         scoring: "User-Friendly AI Experience — Graded strictly on conversational ease, intuitive query input, responsive interaction states, and accessibility.",
-        advancement: "4 Participants in Semi-Finals → Top 2 qualify for the Grand Finale!",
+        advancement: "Winning squads from SF1 & SF2 advance to the Grand Finale! Losing squads advance to the Additional Round to fight for the 3rd Prize.",
         statusBadge: "🔒 Unlocked for Semi-Finalists"
       },
       {
+        num: "3P",
+        title: "Website Game (3rd Place Battle)",
+        stageName: "Additional Round: 3rd Place Playoff",
+        stageBadge: "2 Losing Semi-Finalists • ₹3k Prize",
+        task: "Create an interactive Website Game! The game concept and genre is participants' wish (your choice!), but it must be interesting, engaging, and user-friendly.",
+        domain: "Participants' Wish / Choice (Arcade, puzzle, canvas, trivia, cards, mini-game, etc.).",
+        scoring: "Interesting Concept & User-Friendly UI — Graded strictly on how interesting and engaging the game is, coupled with effortless, intuitive, and user-friendly controls & UI.",
+        advancement: "The winning squad secures the 3rd Place Cash Prize + Bronze Medals & Certificates!",
+        statusBadge: "🥉 Unlocked for 3rd Place Contenders"
+      },
+      {
         num: "05",
-        title: "E-Commerce with Bot",
+        title: "E-Commerce with Bot (Grand Finale)",
         stageName: "Round 05: The Grand Finale",
         stageBadge: "Top 2 Teams • Grand Finale",
         task: "Create a complete, high-converting E-Commerce store seamlessly integrated with an AI ChatBot assistant.",
         domain: "Full-Stack Storefront with Embedded Conversational Assistant for shopping and product queries.",
         scoring: "Comprehensive User-Friendly UI Polish — Graded strictly on cohesive end-to-end user experience, UI elegance, bot intelligence, and overall craftsmanship.",
-        advancement: "ONLY TOP 2 TEAMS battle head-to-head for 1st Place (₹8,000) & 2nd Place (₹5,000) Champion Trophies!",
+        advancement: "ONLY TOP 2 WINNERS from Semi-Final 1 & Semi-Final 2 battle head-to-head for 1st Place (₹8,000) & 2nd Place (₹5,000) Champion Trophies!",
         statusBadge: "👑 Top 2 Finalists Only"
       }
     ];
@@ -2876,9 +2938,9 @@
       {
         targetId: "rounds",
         icon: "🏏",
-        title: "Knockout Progression • Top 2 in Finale",
-        desc: "32 participants start in Round 1 (Landing Page, on-spot domain). 16 advance to Round 2, 8 to Quarter-Finals, 4 to Semi-Finals, and only the Top 2 teams reach the Grand Finale! Advancing squads reveal details by tapping the 3D design.",
-        tip: "Across all websites and stages, marks are strictly provided based on a user-friendly UI!"
+        title: "Knockout Progression • SF1 & SF2 • 3rd Place Match",
+        desc: "32 squads enter Round 1. 16 advance to R2, 8 to Quarter-Finals, 4 battle in Semi-Final 1 & Semi-Final 2. SF winners advance to the Grand Finale, while losing squads fight in an additional round (Website Game Challenge) for 3rd Place!",
+        tip: "All websites and games are graded strictly on user-friendly UI and engaging usability!"
       },
       {
         targetId: "prizes",
