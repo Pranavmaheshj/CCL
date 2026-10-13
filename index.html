@@ -143,23 +143,12 @@
       transform: translateY(0);
     }
 
-    /* 3D Transform Utilities */
-    .perspective-1000 {
-      perspective: 1000px;
+    /* Card Smooth Hover Utilities */
+    .card-hover {
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
     }
-    .card-3d {
-      transform-style: preserve-3d;
-      transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.25s ease;
-      will-change: transform;
-      position: relative;
-    }
-    .glare-effect {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 10;
-      border-radius: inherit;
-      transition: background 0.15s ease;
+    .card-hover:hover {
+      transform: translateY(-4px);
     }
 
     /* Animated 3D Holographic Border Beam (Light Mode) */
@@ -388,8 +377,8 @@
 
         <!-- Right 3D Championship Arena & Schedule Column -->
         <div class="lg:col-span-5 mt-6 lg:mt-0">
-          <div class="reveal perspective-1000 max-w-lg mx-auto">
-            <div class="card-3d border-beam-container shadow-xl">
+          <div class="reveal max-w-lg mx-auto">
+            <div class="border-beam-container shadow-xl">
               <div class="border-beam-content p-4 sm:p-5 flex flex-col bg-white">
                 
                 <!-- 3D Arena Header Bar with Stage Trigger Button -->
@@ -691,11 +680,10 @@
       </div>
 
       <!-- 4 Rounds Cards Grid / Timeline -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 perspective-1000">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
         <!-- Round 1: League Stage -->
-        <div class="reveal glass-card card-3d rounded-2xl p-6 border-l-4 border-l-slate-950 flex flex-col justify-between group transition-all bg-white" data-tilt>
-          <div class="glare-effect"></div>
+        <div class="reveal glass-card card-hover rounded-2xl p-6 border-l-4 border-l-slate-950 flex flex-col justify-between group bg-white shadow-sm hover:shadow-lg hover:border-slate-400">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-slate-100 text-slate-900 border border-slate-300">
@@ -728,8 +716,7 @@
         </div>
 
         <!-- Round 2: Quarter-Finals -->
-        <div class="reveal glass-card card-3d rounded-2xl p-6 border-l-4 border-l-slate-800 flex flex-col justify-between group transition-all bg-white" data-tilt>
-          <div class="glare-effect"></div>
+        <div class="reveal glass-card card-hover rounded-2xl p-6 border-l-4 border-l-slate-800 flex flex-col justify-between group bg-white shadow-sm hover:shadow-lg hover:border-slate-400">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-slate-100 text-slate-900 border border-slate-300">
@@ -762,8 +749,7 @@
         </div>
 
         <!-- Round 3: Semi-Finals -->
-        <div class="reveal glass-card card-3d rounded-2xl p-6 border-l-4 border-l-slate-700 flex flex-col justify-between group transition-all bg-white" data-tilt>
-          <div class="glare-effect"></div>
+        <div class="reveal glass-card card-hover rounded-2xl p-6 border-l-4 border-l-slate-700 flex flex-col justify-between group bg-white shadow-sm hover:shadow-lg hover:border-slate-400">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-slate-100 text-slate-900 border border-slate-300">
@@ -796,8 +782,7 @@
         </div>
 
         <!-- Round 4: The Grand Final -->
-        <div class="reveal glass-card card-3d rounded-2xl p-6 border-l-4 border-l-slate-950 flex flex-col justify-between group transition-all bg-white" data-tilt>
-          <div class="glare-effect"></div>
+        <div class="reveal glass-card card-hover rounded-2xl p-6 border-l-4 border-l-slate-950 flex flex-col justify-between group bg-white shadow-sm hover:shadow-lg hover:border-slate-400">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-slate-950 text-white border border-slate-900">
@@ -860,11 +845,10 @@
 
     <!-- Podium Layout (Mobile stacked, Desktop 2nd - 1st - 3rd) -->
     <div class="max-w-4xl mx-auto px-2 sm:px-0">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-5 md:items-end perspective-1000">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-5 md:items-end">
         
         <!-- 2nd Place (Silver) -->
-        <div class="reveal order-2 md:order-1 glass-card card-3d podium-base rounded-2xl p-5 sm:p-6 md:p-5 lg:p-7 border-2 border-slate-300 text-center flex flex-col justify-between podium-2 relative group hover:border-slate-400 transition-all shadow-md bg-white" data-tilt>
-          <div class="glare-effect"></div>
+        <div class="reveal order-2 md:order-1 glass-card card-hover podium-base rounded-2xl p-5 sm:p-6 md:p-5 lg:p-7 border-2 border-slate-300 text-center flex flex-col justify-between podium-2 relative group hover:border-slate-500 hover:shadow-xl transition-all bg-white">
           <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-slate-200 text-slate-800 font-display font-black flex items-center justify-center shadow-md text-lg border border-slate-300">
             2
           </div>
@@ -886,8 +870,7 @@
 
         <!-- 1st Place (Gold / Champion - Elevated with 3D Border Beam) -->
         <div class="reveal order-1 md:order-2 border-beam-container podium-base podium-base-gold shadow-xl group hover:scale-[1.02] transition-all">
-          <div class="border-beam-content card-3d rounded-2xl p-6 sm:p-7 md:p-6 lg:p-8 border-2 border-slate-900 text-center flex flex-col justify-between podium-1 relative bg-white" data-tilt>
-            <div class="glare-effect"></div>
+          <div class="border-beam-content rounded-2xl p-6 sm:p-7 md:p-6 lg:p-8 border-2 border-slate-900 text-center flex flex-col justify-between podium-1 relative bg-white">
             <div class="absolute -top-6 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-slate-950 text-white font-display font-black text-xs uppercase tracking-wider border border-slate-900 shadow-md flex items-center gap-1.5 whitespace-nowrap z-20">
               <span>👑</span> GRAND CHAMPION
             </div>
@@ -909,8 +892,7 @@
         </div>
 
         <!-- 3rd Place (Bronze) -->
-        <div class="reveal order-3 md:order-3 glass-card card-3d podium-base rounded-2xl p-5 sm:p-6 md:p-5 lg:p-7 border-2 border-slate-300 text-center flex flex-col justify-between podium-3 relative group hover:border-slate-500 transition-all shadow-md bg-white" data-tilt>
-          <div class="glare-effect"></div>
+        <div class="reveal order-3 md:order-3 glass-card card-hover podium-base rounded-2xl p-5 sm:p-6 md:p-5 lg:p-7 border-2 border-slate-300 text-center flex flex-col justify-between podium-3 relative group hover:border-slate-500 hover:shadow-xl transition-all bg-white">
           <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-slate-100 text-slate-900 font-display font-black flex items-center justify-center shadow-md text-lg border border-slate-300">
             3
           </div>
@@ -1664,7 +1646,6 @@
       initFaqAccordion();
       initParticleCanvas();
       initThreeJsHero();
-      initCard3DTilt();
     });
 
     /**
@@ -2125,44 +2106,6 @@
         renderer.render(scene, camera);
       }
       renderLoop();
-    }
-
-    /**
-     * 8. 3D Card Perspective Tilt with Holographic Glare Tracking (Light Mode)
-     */
-    function initCard3DTilt() {
-      const cards = document.querySelectorAll("[data-tilt]");
-      if (!cards.length) return;
-
-      cards.forEach(card => {
-        const glare = card.querySelector(".glare-effect");
-
-        card.addEventListener("mousemove", (e) => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-
-          const rotateX = ((y - centerY) / centerY) * -8;
-          const rotateY = ((x - centerX) / centerX) * 8;
-
-          card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
-
-          if (glare) {
-            const percentX = (x / rect.width) * 100;
-            const percentY = (y / rect.height) * 100;
-            glare.style.background = `radial-gradient(circle at ${percentX}% ${percentY}%, rgba(15, 23, 42, 0.09) 0%, transparent 65%)`;
-          }
-        });
-
-        card.addEventListener("mouseleave", () => {
-          card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
-          if (glare) {
-            glare.style.background = "transparent";
-          }
-        });
-      });
     }
   </script>
 </body>
