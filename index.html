@@ -146,11 +146,11 @@
       transform: translateY(0);
     }
 
-    /* Podium Heights - Responsive Min-Heights to prevent text clipping */
-    @media (min-width: 640px) {
-      .podium-1 { min-height: 430px; }
-      .podium-2 { min-height: 370px; }
-      .podium-3 { min-height: 370px; }
+    /* Podium Responsive Heights - Only applies to desktop/tablet (768px+) */
+    @media (min-width: 768px) {
+      .podium-1 { min-height: 410px; }
+      .podium-2 { min-height: 350px; }
+      .podium-3 { min-height: 350px; }
     }
   </style>
 </head>
@@ -280,35 +280,35 @@
         </p>
 
         <!-- Key Stats Chips Bar -->
-        <div class="reveal flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 mb-10">
-          <span class="px-3.5 py-1.5 rounded-xl bg-navy-850/80 border border-amber-500/30 text-xs sm:text-sm font-medium text-amber-300 flex items-center gap-1.5">
+        <div class="reveal flex flex-wrap items-center justify-center gap-2 sm:gap-3 md:gap-4 mb-8 sm:mb-10 px-2">
+          <span class="px-3 py-1.5 rounded-xl bg-navy-850/80 border border-amber-500/30 text-xs sm:text-sm font-medium text-amber-300 flex items-center gap-1.5">
             <span class="text-base">🏆</span> ₹16,000 Prize Pool
           </span>
-          <span class="px-3.5 py-1.5 rounded-xl bg-navy-850/80 border border-electric-500/30 text-xs sm:text-sm font-medium text-electric-400 flex items-center gap-1.5">
+          <span class="px-3 py-1.5 rounded-xl bg-navy-850/80 border border-electric-500/30 text-xs sm:text-sm font-medium text-electric-400 flex items-center gap-1.5">
             <span class="text-base">⚡</span> 32 Teams Only
           </span>
-          <span class="px-3.5 py-1.5 rounded-xl bg-navy-850/80 border border-purple-500/30 text-xs sm:text-sm font-medium text-purple-300 flex items-center gap-1.5">
+          <span class="px-3 py-1.5 rounded-xl bg-navy-850/80 border border-purple-500/30 text-xs sm:text-sm font-medium text-purple-300 flex items-center gap-1.5">
             <span class="text-base">🏏</span> 4 Knockout Rounds
           </span>
-          <span class="px-3.5 py-1.5 rounded-xl bg-navy-850/80 border border-cyan-400/30 text-xs sm:text-sm font-medium text-cyan-300 flex items-center gap-1.5">
-            <span class="text-base">🤖</span> AI Tools Allowed
+          <span class="px-3 py-1.5 rounded-xl bg-navy-850/80 border border-cyan-400/30 text-xs sm:text-sm font-medium text-cyan-300 flex items-center gap-1.5">
+            <span class="text-base">💻</span> All Stacks Welcome
           </span>
-          <span class="px-3.5 py-1.5 rounded-xl bg-navy-850/80 border border-emerald-500/30 text-xs sm:text-sm font-medium text-emerald-400 flex items-center gap-1.5">
+          <span class="px-3 py-1.5 rounded-xl bg-navy-850/80 border border-emerald-500/30 text-xs sm:text-sm font-medium text-emerald-400 flex items-center gap-1.5">
             <span class="text-base">🌐</span> 100% Online
           </span>
         </div>
 
         <!-- Primary & Secondary CTA Buttons -->
-        <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
-          <a href="#register" class="w-full sm:w-auto px-8 py-4 rounded-xl font-display font-bold text-base text-navy-950 bg-gradient-to-r from-electric-500 via-cyan-300 to-neon-amber hover:shadow-neon-blue transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 text-center flex items-center justify-center gap-2">
+        <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-14 w-full px-2">
+          <a href="#register" class="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-display font-bold text-sm sm:text-base text-navy-950 bg-gradient-to-r from-electric-500 via-cyan-300 to-neon-amber hover:shadow-neon-blue transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-center flex items-center justify-center gap-2">
             <span>Register Now — ₹750 / Team</span>
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </a>
 
-          <a href="https://chat.whatsapp.com/CDPD39LfROz4AY9HV4Zv4G?s=cl&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" class="whatsapp-group-link w-full sm:w-auto px-7 py-4 rounded-xl font-display font-semibold text-base text-white bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/50 hover:border-emerald-400 transition-all duration-300 flex items-center justify-center gap-2.5">
-            <svg class="w-5 h-5 text-emerald-400 fill-current" viewBox="0 0 24 24">
+          <a href="https://chat.whatsapp.com/CDPD39LfROz4AY9HV4Zv4G?s=cl&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" class="whatsapp-group-link w-full sm:w-auto px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl font-display font-semibold text-sm sm:text-base text-white bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/50 hover:border-emerald-400 transition-all duration-300 flex items-center justify-center gap-2">
+            <svg class="w-5 h-5 text-emerald-400 fill-current flex-shrink-0" viewBox="0 0 24 24">
               <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.101-.476-.15-.677.15-.201.3-.778.979-.954 1.18-.176.2-.352.226-.653.076-.3-.151-1.267-.467-2.414-1.489-.893-.796-1.496-1.78-1.672-2.08-.176-.3-.019-.462.132-.612.136-.135.301-.351.452-.527.15-.175.201-.3.301-.5.101-.2.051-.376-.025-.526-.076-.151-.678-1.633-.929-2.235-.245-.588-.493-.509-.678-.518-.176-.01-.377-.01-.578-.01s-.527.075-.803.376c-.276.3-1.054 1.03-1.054 2.511 0 1.482 1.079 2.913 1.23 3.114.15.2 2.122 3.24 5.141 4.544.718.31 1.278.496 1.716.634.721.229 1.378.197 1.897.12.578-.087 1.78-.727 2.03-1.43.25-.704.25-1.306.176-1.43-.075-.125-.276-.201-.577-.351z"/>
               <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.05 21.95l4.912-1.288A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.05a8.03 8.03 0 01-4.103-1.125l-.294-.175-3.051.8 0.814-2.973-.191-.305A8.04 8.04 0 1112 20.05z"/>
             </svg>
@@ -317,8 +317,8 @@
         </div>
 
         <!-- Countdown / TBA Live Ticker Card -->
-        <div class="reveal max-w-xl mx-auto glass-card rounded-2xl p-6 sm:p-7 border border-slate-700/60 shadow-glass">
-          <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
+        <div class="reveal max-w-xl mx-auto glass-card rounded-2xl p-4 sm:p-6 md:p-7 border border-slate-700/60 shadow-glass">
+          <div class="flex items-center justify-between pb-3 sm:pb-4 mb-3 sm:mb-4 border-b border-slate-800">
             <div class="flex items-center gap-2">
               <span class="inline-block w-2.5 h-2.5 rounded-full bg-electric-500 animate-ping"></span>
               <span class="text-xs uppercase font-mono tracking-wider text-slate-300">Official Schedule</span>
@@ -329,25 +329,25 @@
           </div>
 
           <!-- Dynamic countdown grid (Customizable via JS variable) -->
-          <div id="countdownContainer" class="grid grid-cols-4 gap-2 sm:gap-4 text-center">
-            <div class="bg-navy-900/80 rounded-xl p-3 border border-slate-800">
-              <span id="countdownDays" class="block font-display font-bold text-2xl sm:text-3xl text-electric-400">--</span>
-              <span class="text-[10px] sm:text-xs uppercase text-slate-400 font-mono">Days</span>
+          <div id="countdownContainer" class="grid grid-cols-4 gap-1.5 sm:gap-3 md:gap-4 text-center">
+            <div class="bg-navy-900/80 rounded-xl p-2 sm:p-3 border border-slate-800">
+              <span id="countdownDays" class="block font-display font-bold text-lg sm:text-2xl md:text-3xl text-electric-400">--</span>
+              <span class="text-[9px] sm:text-xs uppercase text-slate-400 font-mono">Days</span>
             </div>
-            <div class="bg-navy-900/80 rounded-xl p-3 border border-slate-800">
-              <span id="countdownHours" class="block font-display font-bold text-2xl sm:text-3xl text-white">--</span>
-              <span class="text-[10px] sm:text-xs uppercase text-slate-400 font-mono">Hours</span>
+            <div class="bg-navy-900/80 rounded-xl p-2 sm:p-3 border border-slate-800">
+              <span id="countdownHours" class="block font-display font-bold text-lg sm:text-2xl md:text-3xl text-white">--</span>
+              <span class="text-[9px] sm:text-xs uppercase text-slate-400 font-mono">Hours</span>
             </div>
-            <div class="bg-navy-900/80 rounded-xl p-3 border border-slate-800">
-              <span id="countdownMinutes" class="block font-display font-bold text-2xl sm:text-3xl text-white">--</span>
-              <span class="text-[10px] sm:text-xs uppercase text-slate-400 font-mono">Mins</span>
+            <div class="bg-navy-900/80 rounded-xl p-2 sm:p-3 border border-slate-800">
+              <span id="countdownMinutes" class="block font-display font-bold text-lg sm:text-2xl md:text-3xl text-white">--</span>
+              <span class="text-[9px] sm:text-xs uppercase text-slate-400 font-mono">Mins</span>
             </div>
-            <div class="bg-navy-900/80 rounded-xl p-3 border border-slate-800">
-              <span id="countdownSeconds" class="block font-display font-bold text-2xl sm:text-3xl text-neon-orange">--</span>
-              <span class="text-[10px] sm:text-xs uppercase text-slate-400 font-mono">Secs</span>
+            <div class="bg-navy-900/80 rounded-xl p-2 sm:p-3 border border-slate-800">
+              <span id="countdownSeconds" class="block font-display font-bold text-lg sm:text-2xl md:text-3xl text-neon-orange">--</span>
+              <span class="text-[9px] sm:text-xs uppercase text-slate-400 font-mono">Secs</span>
             </div>
           </div>
-          <p class="text-xs text-slate-400 mt-4 text-center">
+          <p class="text-[11px] sm:text-xs text-slate-400 mt-3 sm:mt-4 text-center">
             🔔 Final dates will be dropped directly in our WhatsApp community first!
           </p>
         </div>
@@ -361,43 +361,43 @@
        3. QUICK STATS BAR (Animated Counters)
        =================================================================== -->
   <section class="relative z-10 -mt-6 sm:-mt-8 max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="glass-card rounded-2xl p-6 sm:p-8 border border-electric-500/20 shadow-2xl bg-gradient-to-r from-navy-900 via-navy-850 to-navy-900">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-slate-800/80">
+    <div class="glass-card rounded-2xl p-4 sm:p-6 md:p-8 border border-electric-500/20 shadow-2xl bg-gradient-to-r from-navy-900 via-navy-850 to-navy-900">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
         
         <!-- Stat 1 -->
-        <div class="flex flex-col items-center text-center pt-2 sm:pt-0">
-          <div class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white flex items-center">
+        <div class="flex flex-col items-center text-center p-3 sm:p-4 rounded-xl bg-navy-950/40 border border-slate-800/60">
+          <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-white flex items-center">
             <span class="counter" data-target="32">0</span>
           </div>
-          <span class="text-xs sm:text-sm font-medium text-slate-400 mt-1 uppercase tracking-wider font-mono">Total Teams</span>
-          <span class="text-[11px] text-electric-400 mt-0.5">Strict Cap</span>
+          <span class="text-[10px] sm:text-xs md:text-sm font-medium text-slate-400 mt-1 uppercase tracking-wider font-mono">Total Teams</span>
+          <span class="text-[9px] sm:text-[11px] text-electric-400 mt-0.5">Strict Cap</span>
         </div>
 
         <!-- Stat 2 -->
-        <div class="flex flex-col items-center text-center pt-2 sm:pt-0">
-          <div class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white flex items-center">
+        <div class="flex flex-col items-center text-center p-3 sm:p-4 rounded-xl bg-navy-950/40 border border-slate-800/60">
+          <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-white flex items-center">
             <span class="counter" data-target="5">0</span>
           </div>
-          <span class="text-xs sm:text-sm font-medium text-slate-400 mt-1 uppercase tracking-wider font-mono">Members / Team</span>
-          <span class="text-[11px] text-electric-400 mt-0.5">Fixed Squad Size</span>
+          <span class="text-[10px] sm:text-xs md:text-sm font-medium text-slate-400 mt-1 uppercase tracking-wider font-mono">Members / Team</span>
+          <span class="text-[9px] sm:text-[11px] text-electric-400 mt-0.5">Fixed Squad</span>
         </div>
 
         <!-- Stat 3 -->
-        <div class="flex flex-col items-center text-center pt-4 sm:pt-0">
-          <div class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-neon-orange flex items-center">
+        <div class="flex flex-col items-center text-center p-3 sm:p-4 rounded-xl bg-navy-950/40 border border-slate-800/60">
+          <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-neon-orange flex items-center">
             <span>₹</span><span class="counter" data-target="750">0</span>
           </div>
-          <span class="text-xs sm:text-sm font-medium text-slate-400 mt-1 uppercase tracking-wider font-mono">Entry / Team</span>
-          <span class="text-[11px] text-slate-400 mt-0.5">Only ₹150 / student</span>
+          <span class="text-[10px] sm:text-xs md:text-sm font-medium text-slate-400 mt-1 uppercase tracking-wider font-mono">Entry / Team</span>
+          <span class="text-[9px] sm:text-[11px] text-slate-400 mt-0.5">₹150 / person</span>
         </div>
 
         <!-- Stat 4 -->
-        <div class="flex flex-col items-center text-center pt-4 sm:pt-0">
-          <div class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-neon-amber flex items-center">
+        <div class="flex flex-col items-center text-center p-3 sm:p-4 rounded-xl bg-navy-950/40 border border-slate-800/60">
+          <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-neon-amber flex items-center">
             <span>₹</span><span class="counter" data-target="16000">0</span>
           </div>
-          <span class="text-xs sm:text-sm font-medium text-slate-400 mt-1 uppercase tracking-wider font-mono">Total Prize Pool</span>
-          <span class="text-[11px] text-neon-amber mt-0.5">Direct Cash Prizes</span>
+          <span class="text-[10px] sm:text-xs md:text-sm font-medium text-slate-400 mt-1 uppercase tracking-wider font-mono">Prize Pool</span>
+          <span class="text-[9px] sm:text-[11px] text-neon-amber mt-0.5">Cash Prizes</span>
         </div>
 
       </div>
@@ -653,18 +653,18 @@
     </div>
 
     <!-- Podium Layout (Mobile stacked, Desktop 2nd - 1st - 3rd) -->
-    <div class="max-w-4xl mx-auto">
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-5 sm:items-end">
+    <div class="max-w-4xl mx-auto px-2 sm:px-0">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-5 md:items-end">
         
         <!-- 2nd Place (Silver) -->
-        <div class="reveal order-2 sm:order-1 glass-card rounded-2xl p-6 sm:p-7 border-2 border-slate-400/40 text-center flex flex-col justify-between podium-2 relative group hover:border-slate-300 transition-all shadow-glass">
+        <div class="reveal order-2 md:order-1 glass-card rounded-2xl p-5 sm:p-6 md:p-5 lg:p-7 border-2 border-slate-400/40 text-center flex flex-col justify-between podium-2 relative group hover:border-slate-300 transition-all shadow-glass">
           <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-slate-300 text-navy-950 font-display font-black flex items-center justify-center shadow-lg text-lg">
             2
           </div>
           <div class="pt-3">
-            <span class="text-4xl block mb-2">🥈</span>
+            <span class="text-3xl sm:text-4xl block mb-2">🥈</span>
             <span class="text-xs uppercase font-mono tracking-wider text-slate-300 font-bold block mb-1">RUNNER UP</span>
-            <h3 class="text-xl font-display font-bold text-white">2nd Place</h3>
+            <h3 class="text-lg sm:text-xl font-display font-bold text-white">2nd Place</h3>
           </div>
           <div class="my-4">
             <div class="text-3xl sm:text-4xl font-display font-extrabold text-slate-200">
@@ -678,14 +678,14 @@
         </div>
 
         <!-- 1st Place (Gold / Champion - Elevated) -->
-        <div class="reveal order-1 sm:order-2 glass-card rounded-2xl p-6 sm:p-8 border-2 border-amber-400 text-center flex flex-col justify-between podium-1 relative shadow-neon-gold bg-gradient-to-b from-navy-850 via-navy-900 to-navy-900 group hover:scale-[1.02] transition-all">
+        <div class="reveal order-1 md:order-2 glass-card rounded-2xl p-6 sm:p-7 md:p-6 lg:p-8 border-2 border-amber-400 text-center flex flex-col justify-between podium-1 relative shadow-neon-gold bg-gradient-to-b from-navy-850 via-navy-900 to-navy-900 group hover:scale-[1.02] transition-all">
           <div class="absolute -top-6 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-400 to-neon-orange text-navy-950 font-display font-black text-xs uppercase tracking-wider shadow-lg flex items-center gap-1.5 whitespace-nowrap">
             <span>👑</span> GRAND CHAMPION
           </div>
           <div class="pt-4">
-            <span class="text-5xl block mb-2 animate-bounce">🏆</span>
+            <span class="text-4xl sm:text-5xl block mb-2 animate-bounce">🏆</span>
             <span class="text-xs uppercase font-mono tracking-widest text-amber-300 font-bold block mb-1">1ST PLACE</span>
-            <h3 class="text-2xl font-display font-black text-white">The Champion</h3>
+            <h3 class="text-xl sm:text-2xl font-display font-black text-white">The Champion</h3>
           </div>
           <div class="my-4">
             <div class="text-4xl sm:text-5xl font-display font-black text-amber-300">
@@ -699,14 +699,14 @@
         </div>
 
         <!-- 3rd Place (Bronze) -->
-        <div class="reveal order-3 sm:order-3 glass-card rounded-2xl p-6 sm:p-7 border-2 border-amber-700/50 text-center flex flex-col justify-between podium-3 relative group hover:border-amber-600 transition-all shadow-glass">
+        <div class="reveal order-3 md:order-3 glass-card rounded-2xl p-5 sm:p-6 md:p-5 lg:p-7 border-2 border-amber-700/50 text-center flex flex-col justify-between podium-3 relative group hover:border-amber-600 transition-all shadow-glass">
           <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-amber-700 text-white font-display font-black flex items-center justify-center shadow-lg text-lg">
             3
           </div>
           <div class="pt-3">
-            <span class="text-4xl block mb-2">🥉</span>
+            <span class="text-3xl sm:text-4xl block mb-2">🥉</span>
             <span class="text-xs uppercase font-mono tracking-wider text-amber-500 font-bold block mb-1">2ND RUNNER UP</span>
-            <h3 class="text-xl font-display font-bold text-white">3rd Place</h3>
+            <h3 class="text-lg sm:text-xl font-display font-bold text-white">3rd Place</h3>
           </div>
           <div class="my-4">
             <div class="text-3xl sm:text-4xl font-display font-extrabold text-amber-500">
@@ -798,10 +798,10 @@
         <div class="reveal glass-card rounded-2xl p-6 border border-slate-800">
           <div class="flex items-center gap-3 mb-3">
             <span class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-sm">05</span>
-            <h3 class="font-display font-bold text-lg text-white">AI Tools Allowed 🤖</h3>
+            <h3 class="font-display font-bold text-lg text-white">Open Tech & Tool Freedom</h3>
           </div>
           <p class="text-slate-300 text-sm leading-relaxed">
-            Participants are completely free to use AI tools (ChatGPT, Claude, Gemini, Cursor, v0, Bolt, Copilot, etc.) to design, code, and generate websites. Speed, innovation, and functional execution are what win!
+            Participants are free to use any web frameworks, libraries, and developer tools to build and ship their websites. Focus on clean architecture, responsive design, and real working functionality.
           </p>
         </div>
 
@@ -1048,11 +1048,11 @@
         <!-- FAQ 6 -->
         <div class="faq-item glass-card rounded-2xl border border-slate-800 overflow-hidden transition-colors">
           <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-electric-500" aria-expanded="false">
-            <span class="font-display font-bold text-base sm:text-lg text-white">Can we use AI tools to create our websites? What tech stacks are allowed?</span>
+            <span class="font-display font-bold text-base sm:text-lg text-white">What tech stacks, frameworks, and tools are allowed?</span>
             <span class="faq-icon text-electric-400 text-2xl font-light transform transition-transform duration-300">+</span>
           </button>
           <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
-            <strong>Yes, 100%!</strong> Participants are fully allowed and encouraged to use AI tools (including ChatGPT, Claude, Gemini, Cursor, v0, Bolt.new, Lovable, GitHub Copilot, etc.) to design, code, and build their websites. There are no restrictions on tech stacks or frameworks (HTML/Tailwind, React, Next.js, Vue, Python, etc.). Use whichever modern AI tools and stacks empower your squad to build the most creative and functional solution!
+            There are zero restrictions on tech stacks or developer tools! You are free to build using HTML/Tailwind, React, Next.js, Vue, or any modern libraries and tools that help your team prototype and ship fast. All entries are evaluated based on user experience, responsiveness across devices, design polish, and working features.
           </div>
         </div>
 
@@ -1152,9 +1152,9 @@
           </div>
         </div>
 
-        <a href="https://chat.whatsapp.com/CDPD39LfROz4AY9HV4Zv4G?s=cl&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" class="whatsapp-group-link w-full sm:w-auto px-6 py-3.5 rounded-xl font-display font-bold text-sm text-navy-950 bg-emerald-400 hover:bg-emerald-300 shadow-lg hover:shadow-emerald-500/30 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
+        <a href="https://chat.whatsapp.com/CDPD39LfROz4AY9HV4Zv4G?s=cl&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" class="whatsapp-group-link w-full sm:w-auto px-6 py-3.5 rounded-xl font-display font-bold text-sm text-navy-950 bg-emerald-400 hover:bg-emerald-300 shadow-lg hover:shadow-emerald-500/30 transition-all flex items-center justify-center gap-2 text-center">
           <span>For more details, join our WhatsApp group</span>
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
         </a>
@@ -1220,15 +1220,15 @@
   <!-- ===================================================================
        FLOATING WHATSAPP BUTTON (Bottom Right - Always Accessible)
        =================================================================== -->
-  <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+  <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center gap-3">
     <!-- Helpful Tooltip on Hover for Desktop -->
     <span class="hidden sm:inline-block px-3 py-1.5 rounded-xl bg-navy-900/90 text-white text-xs font-medium border border-slate-700 shadow-glass">
       Join WhatsApp Group 👋
     </span>
 
-    <a href="https://chat.whatsapp.com/CDPD39LfROz4AY9HV4Zv4G?s=cl&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" aria-label="Join Official WhatsApp Group" class="whatsapp-group-link relative group w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-lg hover:shadow-emerald-500/50 transition-all duration-300 transform hover:scale-110 active:scale-95">
+    <a href="https://chat.whatsapp.com/CDPD39LfROz4AY9HV4Zv4G?s=cl&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" aria-label="Join Official WhatsApp Group" class="whatsapp-group-link relative group w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-lg hover:shadow-emerald-500/50 transition-all duration-300 transform hover:scale-105 active:scale-95">
       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-30"></span>
-      <svg class="w-7 h-7 fill-current relative z-10" viewBox="0 0 24 24">
+      <svg class="w-6 h-6 sm:w-7 sm:h-7 fill-current relative z-10" viewBox="0 0 24 24">
         <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.101-.476-.15-.677.15-.201.3-.778.979-.954 1.18-.176.2-.352.226-.653.076-.3-.151-1.267-.467-2.414-1.489-.893-.796-1.496-1.78-1.672-2.08-.176-.3-.019-.462.132-.612.136-.135.301-.351.452-.527.15-.175.201-.3.301-.5.101-.2.051-.376-.025-.526-.076-.151-.678-1.633-.929-2.235-.245-.588-.493-.509-.678-.518-.176-.01-.377-.01-.578-.01s-.527.075-.803.376c-.276.3-1.054 1.03-1.054 2.511 0 1.482 1.079 2.913 1.23 3.114.15.2 2.122 3.24 5.141 4.544.718.31 1.278.496 1.716.634.721.229 1.378.197 1.897.12.578-.087 1.78-.727 2.03-1.43.25-.704.25-1.306.176-1.43-.075-.125-.276-.201-.577-.351z"/>
         <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.05 21.95l4.912-1.288A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.05a8.03 8.03 0 01-4.103-1.125l-.294-.175-3.051.8 0.814-2.973-.191-.305A8.04 8.04 0 1112 20.05z"/>
       </svg>
