@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- ===================================================================
+       SEO & OPEN GRAPH (Optimized for WhatsApp, Telegram & Social Sharing)
+       =================================================================== -->
+  <title>CCL - Code Champion League | 32 Teams. 4 Rounds. One Champion.</title>
+  <meta name="description" content="Join CCL - Code Champion League — the ultimate online student knockout hackathon. 32 teams of 5, 4 intense cricket-style rounds, and ₹16,000 in cash prizes. Entry ₹750/team. Register now!" />
+  <meta name="keywords" content="CCL, Code Champion League, hackathon, student hackathon, coding competition, online hackathon, engineering competition, tech event, cash prize" />
+  <meta name="author" content="CCL Organizing Team" />
+  <meta name="theme-color" content="#070B14" />
+
+  <!-- Open Graph / WhatsApp Preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="⚡ CCL - Code Champion League — 32 Teams. 4 Rounds. One Champion." />
+  <meta property="og:description" content="Cricket-style knockout online hackathon for students. ₹16,000 Prize Pool | 32 Teams of 5 | ₹750/team entry. Slots filling fast!" />
+  <meta property="og:url" content="https://example.com" />
+  <meta property="og:site_name" content="CCL - Code Champion League" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CCL - Code Champion League — 32 Teams. 4 Rounds. One Champion." />
+  <meta name="twitter:description" content="Cricket-style knockout hackathon with ₹16,000 prize pool. 100% online. Register your squad of 5 today!" />
+
+  <!-- Google Fonts: Space Grotesk (Tech Headings) & Inter (UI Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              950: '#04070F',
+              900: '#070B14',
+              850: '#0C1222',
+              800: '#111A30',
+              700: '#1A2744',
+            },
+            electric: {
+              400: '#38BDF8',
+              500: '#00F0FF',
+              600: '#0284C7',
+            },
+            neon: {
+              orange: '#FF5E00',
+              amber: '#FFB800',
+              yellow: '#FACC15',
+            }
+          },
+          fontFamily: {
+            display: ['"Space Grotesk"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
+          },
+          boxShadow: {
+            'neon-blue': '0 0 25px -3px rgba(0, 240, 255, 0.45)',
+            'neon-orange': '0 0 25px -3px rgba(255, 94, 0, 0.45)',
+            'neon-gold': '0 0 30px -2px rgba(255, 184, 0, 0.5)',
+            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { opacity: '0.4' },
+              '50%': { opacity: '0.9' },
+            }
+          },
+          animation: {
+            'float-slow': 'float 6s ease-in-out infinite',
+            'pulse-glow': 'pulseGlow 4s ease-in-out infinite',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles for Glassmorphism & High-Tech Accents -->
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #070B14;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1A2744;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00F0FF;
+    }
+
+    /* Glassmorphism Classes */
+    .glass-card {
+      background: rgba(12, 18, 34, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(56, 189, 248, 0.12);
+    }
+    .glass-card:hover {
+      border-color: rgba(0, 240, 255, 0.3);
+    }
+
+    .glass-nav {
+      background: rgba(7, 11, 20, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.12);
+    }
+
+    /* Tech Grid Background Pattern */
+    .tech-grid {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+    }
+
+    /* Glow Gradients */
+    .gradient-radial-blue {
+      background: radial-gradient(circle at 50% 30%, rgba(0, 240, 255, 0.15) 0%, rgba(7, 11, 20, 0) 70%);
+    }
+
+    /* Scroll Reveal Animation Classes */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Podium Heights - Responsive Min-Heights to prevent text clipping */
+    @media (min-width: 640px) {
+      .podium-1 { min-height: 430px; }
+      .podium-2 { min-height: 370px; }
+      .podium-3 { min-height: 370px; }
+    }
+  </style>
+</head>
+<body class="bg-navy-950 text-slate-100 font-body antialiased selection:bg-electric-500 selection:text-navy-950 overflow-x-hidden relative">
+
+  <!-- Background decorative canvas for interactive particles -->
+  <canvas id="particleCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+
+  <!-- Ambient Light Blobs -->
+  <div class="fixed top-[-10vw] left-1/2 -translate-x-1/2 w-[70vw] h-[35vw] bg-electric-500/10 rounded-full blur-[140px] pointer-events-none z-0 animate-pulse-glow"></div>
+  <div class="fixed top-[40vh] right-[-10vw] w-[45vw] h-[45vw] bg-neon-orange/8 rounded-full blur-[150px] pointer-events-none z-0"></div>
+  <div class="fixed bottom-[-10vw] left-[-10vw] w-[50vw] h-[50vw] bg-electric-600/10 rounded-full blur-[160px] pointer-events-none z-0"></div>
+
+  <!-- ===================================================================
+       1. STICKY NAVBAR
+       =================================================================== -->
+  <header class="sticky top-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Name -->
+      <a href="#" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-electric-500 rounded-lg p-1">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-electric-500 to-neon-orange p-[1.5px] shadow-neon-blue group-hover:scale-105 transition-transform duration-300">
+          <div class="w-full h-full bg-navy-900 rounded-[10px] flex items-center justify-center">
+            <svg class="w-5 h-5 text-electric-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-bold text-lg tracking-wider text-white group-hover:text-electric-400 transition-colors">
+            CCL
+          </span>
+          <span class="text-[10px] uppercase font-mono tracking-widest text-slate-400 -mt-0.5">Code Champion League</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8" aria-label="Desktop Navigation">
+        <a href="#about" class="text-sm font-medium text-slate-300 hover:text-electric-400 transition-colors py-1">About</a>
+        <a href="#rounds" class="text-sm font-medium text-slate-300 hover:text-electric-400 transition-colors py-1">Rounds</a>
+        <a href="#prizes" class="text-sm font-medium text-slate-300 hover:text-electric-400 transition-colors py-1">Prizes</a>
+        <a href="#rules" class="text-sm font-medium text-slate-300 hover:text-electric-400 transition-colors py-1">Rules</a>
+        <a href="#faq" class="text-sm font-medium text-slate-300 hover:text-electric-400 transition-colors py-1">FAQ</a>
+        <a href="#contact" class="text-sm font-medium text-slate-300 hover:text-electric-400 transition-colors py-1">Contact</a>
+      </nav>
+
+      <!-- Desktop CTA Button -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#register" class="relative group inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-display font-semibold text-sm text-navy-950 bg-gradient-to-r from-electric-500 via-cyan-300 to-neon-amber hover:shadow-neon-blue transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0">
+          <span>Register Now</span>
+          <svg class="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuBtn" type="button" aria-label="Toggle mobile menu" aria-expanded="false" class="md:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-navy-800 focus:outline-none focus:ring-2 focus:ring-electric-500 transition-colors">
+        <svg id="hamburgerIcon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+        <svg id="closeIcon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="md:hidden hidden px-4 pt-2 pb-6 border-t border-slate-800/80 bg-navy-900/98 backdrop-blur-2xl transition-all duration-300">
+      <div class="flex flex-col space-y-3 pt-2">
+        <a href="#about" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-electric-400">About</a>
+        <a href="#rounds" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-electric-400">Tournament Format</a>
+        <a href="#prizes" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-electric-400">Prize Pool</a>
+        <a href="#rules" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-electric-400">Rules & Eligibility</a>
+        <a href="#register" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-electric-400">How to Register</a>
+        <a href="#faq" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-electric-400">FAQ</a>
+        <a href="#contact" class="mobile-nav-link px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-electric-400">Contact</a>
+        <div class="pt-4 flex flex-col gap-3">
+          <a href="#register" class="mobile-nav-link w-full py-3 rounded-xl text-center font-display font-semibold text-navy-950 bg-gradient-to-r from-electric-500 to-neon-amber shadow-neon-blue">
+            Register Team (₹750)
+          </a>
+          <a href="https://chat.whatsapp.com/CDPD39LfROz4AY9HV4Zv4G?s=cl&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" class="whatsapp-group-link w-full py-3 rounded-xl text-center font-medium text-emerald-400 border border-emerald-500/30 bg-emerald-950/20 flex items-center justify-center gap-2">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.101-.476-.15-.677.15-.201.3-.778.979-.954 1.18-.176.2-.352.226-.653.076-.3-.151-1.267-.467-2.414-1.489-.893-.796-1.496-1.78-1.672-2.08-.176-.3-.019-.462.132-.612.136-.135.301-.351.452-.527.15-.175.201-.3.301-.5.101-.2.051-.376-.025-.526-.076-.151-.678-1.633-.929-2.235-.245-.588-.493-.509-.678-.518-.176-.01-.377-.01-.578-.01s-.527.075-.803.376c-.276.3-1.054 1.03-1.054 2.511 0 1.482 1.079 2.913 1.23 3.114.15.2 2.122 3.24 5.141 4.544.718.31 1.278.496 1.716.634.721.229 1.378.197 1.897.12.578-.087 1.78-.727 2.03-1.43.25-.704.25-1.306.176-1.43-.075-.125-.276-.201-.577-.351z"/>
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.05 21.95l4.912-1.288A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.05a8.03 8.03 0 01-4.103-1.125l-.294-.175-3.051.8 0.814-2.973-.191-.305A8.04 8.04 0 1112 20.05z"/>
+            </svg>
+            Join WhatsApp Group
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       2. HERO SECTION
+       =================================================================== -->
+  <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 tech-grid overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Top Announcement Pill -->
+      <div class="reveal flex justify-center mb-6">
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-navy-850/90 border border-electric-500/30 text-xs sm:text-sm font-mono text-electric-400 shadow-glass">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-amber opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-neon-amber"></span>
+          </span>
+          <span class="font-semibold tracking-wide text-slate-200">DATES COMING SOON</span>
+          <span class="text-slate-500">•</span>
+          <span class="text-neon-amber font-medium">ONLY 32 SLOTS AVAILABLE</span>
+        </div>
+      </div>
+
+      <!-- Main Heading & Tagline -->
+      <div class="text-center max-w-4xl mx-auto">
+        <h1 class="reveal text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight leading-[1.1] mb-6">
+          <span class="block text-white">CCL</span>
+          <span class="block text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-300 mt-1 mb-3 font-mono tracking-wide">Code Champion League</span>
+          <span class="block bg-gradient-to-r from-electric-500 via-cyan-200 to-neon-orange bg-clip-text text-transparent">
+            32 Teams. 4 Rounds. One Champion.
+          </span>
+        </h1>
+
+        <p class="reveal text-base sm:text-xl text-slate-300 max-w-2xl mx-auto mb-8 font-light leading-relaxed">
+          The ultimate cricket-style online knockout hackathon for college tech creators. 
+          Battle through fast-paced rounds, out-code rival teams, and claim your share of the <span class="text-neon-amber font-semibold">₹16,000 cash prize pool</span>.
+        </p>
+
+        <!-- Key Stats Chips Bar -->
+        <div class="reveal flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 mb-10">
+          <span class="px-3.5 py-1.5 rounded-xl bg-navy-850/80 border border-amber-500/30 text-xs sm:text-sm font-medium text-amber-300 flex items-center gap-1.5">
+            <span class="text-base">🏆</span> ₹16,000 Prize Pool
+          </span>
+          <span class="px-3.5 py-1.5 rounded-xl bg-navy-850/80 border border-electric-500/30 text-xs sm:text-sm font-medium text-electric-400 flex items-center gap-1.5">
+            <span class="text-base">⚡</span> 32 Teams Only
+          </span>
+          <span class="px-3.5 py-1.5 rounded-xl bg-navy-850/80 border border-purple-500/30 text-xs sm:text-sm font-medium text-purple-300 flex items-center gap-1.5">
+            <span class="text-base">🏏</span> 4 Knockout Rounds
+          </span>
+          <span class="px-3.5 py-1.5 rounded-xl bg-navy-850/80 border border-cyan-400/30 text-xs sm:text-sm font-medium text-cyan-300 flex items-center gap-1.5">
+            <span class="text-base">🤖</span> AI Tools Allowed
+          </span>
+          <span class="px-3.5 py-1.5 rounded-xl bg-navy-850/80 border border-emerald-500/30 text-xs sm:text-sm font-medium text-emerald-400 flex items-center gap-1.5">
+            <span class="text-base">🌐</span> 100% Online
+          </span>
+        </div>
+
+        <!-- Primary & Secondary CTA Buttons -->
+        <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+          <a href="#register" class="w-full sm:w-auto px-8 py-4 rounded-xl font-display font-bold text-base text-navy-950 bg-gradient-to-r from-electric-500 via-cyan-300 to-neon-amber hover:shadow-neon-blue transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 text-center flex items-center justify-center gap-2">
+            <span>Register Now — ₹750 / Team</span>
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+
+          <a href="https://chat.whatsapp.com/CDPD39LfROz4AY9HV4Zv4G?s=cl&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" class="whatsapp-group-link w-full sm:w-auto px-7 py-4 rounded-xl font-display font-semibold text-base text-white bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/50 hover:border-emerald-400 transition-all duration-300 flex items-center justify-center gap-2.5">
+            <svg class="w-5 h-5 text-emerald-400 fill-current" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.101-.476-.15-.677.15-.201.3-.778.979-.954 1.18-.176.2-.352.226-.653.076-.3-.151-1.267-.467-2.414-1.489-.893-.796-1.496-1.78-1.672-2.08-.176-.3-.019-.462.132-.612.136-.135.301-.351.452-.527.15-.175.201-.3.301-.5.101-.2.051-.376-.025-.526-.076-.151-.678-1.633-.929-2.235-.245-.588-.493-.509-.678-.518-.176-.01-.377-.01-.578-.01s-.527.075-.803.376c-.276.3-1.054 1.03-1.054 2.511 0 1.482 1.079 2.913 1.23 3.114.15.2 2.122 3.24 5.141 4.544.718.31 1.278.496 1.716.634.721.229 1.378.197 1.897.12.578-.087 1.78-.727 2.03-1.43.25-.704.25-1.306.176-1.43-.075-.125-.276-.201-.577-.351z"/>
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.05 21.95l4.912-1.288A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.05a8.03 8.03 0 01-4.103-1.125l-.294-.175-3.051.8 0.814-2.973-.191-.305A8.04 8.04 0 1112 20.05z"/>
+            </svg>
+            <span>Join WhatsApp Group</span>
+          </a>
+        </div>
+
+        <!-- Countdown / TBA Live Ticker Card -->
+        <div class="reveal max-w-xl mx-auto glass-card rounded-2xl p-6 sm:p-7 border border-slate-700/60 shadow-glass">
+          <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
+            <div class="flex items-center gap-2">
+              <span class="inline-block w-2.5 h-2.5 rounded-full bg-electric-500 animate-ping"></span>
+              <span class="text-xs uppercase font-mono tracking-wider text-slate-300">Official Schedule</span>
+            </div>
+            <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-amber-400/20 text-neon-amber border border-amber-500/30">
+              Dates: TBA
+            </span>
+          </div>
+
+          <!-- Dynamic countdown grid (Customizable via JS variable) -->
+          <div id="countdownContainer" class="grid grid-cols-4 gap-2 sm:gap-4 text-center">
+            <div class="bg-navy-900/80 rounded-xl p-3 border border-slate-800">
+              <span id="countdownDays" class="block font-display font-bold text-2xl sm:text-3xl text-electric-400">--</span>
+              <span class="text-[10px] sm:text-xs uppercase text-slate-400 font-mono">Days</span>
+            </div>
+            <div class="bg-navy-900/80 rounded-xl p-3 border border-slate-800">
+              <span id="countdownHours" class="block font-display font-bold text-2xl sm:text-3xl text-white">--</span>
+              <span class="text-[10px] sm:text-xs uppercase text-slate-400 font-mono">Hours</span>
+            </div>
+            <div class="bg-navy-900/80 rounded-xl p-3 border border-slate-800">
+              <span id="countdownMinutes" class="block font-display font-bold text-2xl sm:text-3xl text-white">--</span>
+              <span class="text-[10px] sm:text-xs uppercase text-slate-400 font-mono">Mins</span>
+            </div>
+            <div class="bg-navy-900/80 rounded-xl p-3 border border-slate-800">
+              <span id="countdownSeconds" class="block font-display font-bold text-2xl sm:text-3xl text-neon-orange">--</span>
+              <span class="text-[10px] sm:text-xs uppercase text-slate-400 font-mono">Secs</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-400 mt-4 text-center">
+            🔔 Final dates will be dropped directly in our WhatsApp community first!
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       3. QUICK STATS BAR (Animated Counters)
+       =================================================================== -->
+  <section class="relative z-10 -mt-6 sm:-mt-8 max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="glass-card rounded-2xl p-6 sm:p-8 border border-electric-500/20 shadow-2xl bg-gradient-to-r from-navy-900 via-navy-850 to-navy-900">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-slate-800/80">
+        
+        <!-- Stat 1 -->
+        <div class="flex flex-col items-center text-center pt-2 sm:pt-0">
+          <div class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white flex items-center">
+            <span class="counter" data-target="32">0</span>
+          </div>
+          <span class="text-xs sm:text-sm font-medium text-slate-400 mt-1 uppercase tracking-wider font-mono">Total Teams</span>
+          <span class="text-[11px] text-electric-400 mt-0.5">Strict Cap</span>
+        </div>
+
+        <!-- Stat 2 -->
+        <div class="flex flex-col items-center text-center pt-2 sm:pt-0">
+          <div class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white flex items-center">
+            <span class="counter" data-target="5">0</span>
+          </div>
+          <span class="text-xs sm:text-sm font-medium text-slate-400 mt-1 uppercase tracking-wider font-mono">Members / Team</span>
+          <span class="text-[11px] text-electric-400 mt-0.5">Fixed Squad Size</span>
+        </div>
+
+        <!-- Stat 3 -->
+        <div class="flex flex-col items-center text-center pt-4 sm:pt-0">
+          <div class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-neon-orange flex items-center">
+            <span>₹</span><span class="counter" data-target="750">0</span>
+          </div>
+          <span class="text-xs sm:text-sm font-medium text-slate-400 mt-1 uppercase tracking-wider font-mono">Entry / Team</span>
+          <span class="text-[11px] text-slate-400 mt-0.5">Only ₹150 / student</span>
+        </div>
+
+        <!-- Stat 4 -->
+        <div class="flex flex-col items-center text-center pt-4 sm:pt-0">
+          <div class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-neon-amber flex items-center">
+            <span>₹</span><span class="counter" data-target="16000">0</span>
+          </div>
+          <span class="text-xs sm:text-sm font-medium text-slate-400 mt-1 uppercase tracking-wider font-mono">Total Prize Pool</span>
+          <span class="text-[11px] text-neon-amber mt-0.5">Direct Cash Prizes</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       4. ABOUT SECTION
+       =================================================================== -->
+  <section id="about" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <span class="text-xs uppercase font-mono tracking-widest text-electric-400 font-semibold mb-2 block">
+        // WHY JOIN THIS HACKATHON
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-display font-bold text-white mb-6">
+        Not Just Another Hackathon.<br />
+        <span class="bg-gradient-to-r from-electric-400 to-cyan-200 bg-clip-text text-transparent">
+          It’s A High-Octane Cricket-Style League.
+        </span>
+      </h2>
+      <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+        Most hackathons drag on for 48 hours without clear feedback until the end. We reimagined competitive student programming: 
+        <strong>32 teams enter a high-energy progression tournament</strong>. Advance through knockout checkpoints, pitch at each milestone, 
+        and battle your way to the top podium!
+      </p>
+    </div>
+
+    <!-- 3 Value Proposition Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Card 1 -->
+      <div class="reveal glass-card rounded-2xl p-8 border border-slate-800 hover:border-electric-500/40 transition-all duration-300 group">
+        <div class="w-14 h-14 rounded-xl bg-electric-500/10 border border-electric-500/30 flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">
+          ⚡
+        </div>
+        <h3 class="text-xl font-display font-bold text-white mb-3 group-hover:text-electric-400 transition-colors">
+          Cricket Knockout Adrenaline
+        </h3>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          Every round matters. League stage filtering, sudden-death quarters, intense semi-finals, and a Grand Final showdown. Feel the stadium rush right from your desk.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="reveal glass-card rounded-2xl p-8 border border-slate-800 hover:border-neon-orange/40 transition-all duration-300 group">
+        <div class="w-14 h-14 rounded-xl bg-neon-orange/10 border border-neon-orange/30 flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">
+          🎯
+        </div>
+        <h3 class="text-xl font-display font-bold text-white mb-3 group-hover:text-neon-orange transition-colors">
+          100% Online & Flexible
+        </h3>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          Compete from your college hostel, lab, or home bedroom. Live stream announcements, online submissions, and smooth Discord/WhatsApp coordination.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="reveal glass-card rounded-2xl p-8 border border-slate-800 hover:border-neon-amber/40 transition-all duration-300 group">
+        <div class="w-14 h-14 rounded-xl bg-neon-amber/10 border border-neon-amber/30 flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">
+          💰
+        </div>
+        <h3 class="text-xl font-display font-bold text-white mb-3 group-hover:text-neon-amber transition-colors">
+          High ROI & Direct UPI Payouts
+        </h3>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          With only ₹150 per person (₹750/team) and a capped pool of 32 teams, your odds of winning the ₹16,000 prize pool are drastically higher than mega 500-team events.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       5. TOURNAMENT FORMAT (Cricket-Style 4 Rounds Progression)
+       =================================================================== -->
+  <section id="rounds" class="py-24 bg-navy-900/60 border-y border-slate-800/80 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase font-mono tracking-widest text-electric-400 font-semibold mb-2 block">
+          // CRICKET-STYLE BRACKET
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-display font-bold text-white mb-4">
+          How The Tournament Works
+        </h2>
+        <p class="text-slate-400 text-base sm:text-lg">
+          4 progressive rounds designed like an IPL championship. Survive each round cut-off to claim the crown.
+        </p>
+      </div>
+
+      <!-- 4 Rounds Cards Grid / Timeline -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Round 1: League Stage -->
+        <div class="reveal glass-card rounded-2xl p-6 border-l-4 border-l-electric-500 flex flex-col justify-between group hover:-translate-y-1 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-electric-500/20 text-electric-400 border border-electric-500/40">
+                ROUND 01
+              </span>
+              <span class="text-xs font-mono text-slate-400 bg-navy-900 px-2 py-0.5 rounded border border-slate-800">
+                Date: TBA
+              </span>
+            </div>
+            
+            <div class="w-12 h-12 rounded-xl bg-electric-500/10 flex items-center justify-center text-2xl mb-4">
+              🏏
+            </div>
+
+            <h3 class="text-xl font-display font-bold text-white mb-2">
+              The League Stage
+            </h3>
+            <p class="text-xs font-mono text-electric-400 font-semibold mb-3">
+              32 Teams → Top 16 Advance
+            </p>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              All 32 registered teams build and submit their core idea prototype against the kickoff problem statements.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+            <span>Cut-off: 50%</span>
+            <span class="text-slate-300 font-medium">16 Teams Eliminated</span>
+          </div>
+        </div>
+
+        <!-- Round 2: Quarter-Finals -->
+        <div class="reveal glass-card rounded-2xl p-6 border-l-4 border-l-cyan-400 flex flex-col justify-between group hover:-translate-y-1 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">
+                ROUND 02
+              </span>
+              <span class="text-xs font-mono text-slate-400 bg-navy-900 px-2 py-0.5 rounded border border-slate-800">
+                Date: TBA
+              </span>
+            </div>
+            
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-2xl mb-4">
+              ⚡
+            </div>
+
+            <h3 class="text-xl font-display font-bold text-white mb-2">
+              Quarter-Finals
+            </h3>
+            <p class="text-xs font-mono text-cyan-300 font-semibold mb-3">
+              16 Teams → Top 8 Advance
+            </p>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Feature sprint round! Teams receive a sudden surprise twist / requirement to integrate into their existing build.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+            <span>Cut-off: Top 8</span>
+            <span class="text-slate-300 font-medium">High Pace Review</span>
+          </div>
+        </div>
+
+        <!-- Round 3: Semi-Finals -->
+        <div class="reveal glass-card rounded-2xl p-6 border-l-4 border-l-neon-orange flex flex-col justify-between group hover:-translate-y-1 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-neon-orange/20 text-neon-orange border border-neon-orange/40">
+                ROUND 03
+              </span>
+              <span class="text-xs font-mono text-slate-400 bg-navy-900 px-2 py-0.5 rounded border border-slate-800">
+                Date: TBA
+              </span>
+            </div>
+            
+            <div class="w-12 h-12 rounded-xl bg-neon-orange/10 flex items-center justify-center text-2xl mb-4">
+              🔥
+            </div>
+
+            <h3 class="text-xl font-display font-bold text-white mb-2">
+              Semi-Finals
+            </h3>
+            <p class="text-xs font-mono text-neon-orange font-semibold mb-3">
+              8 Teams → Top 4 Finalists
+            </p>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Live code checkpoint & architecture defense before technical evaluators. Only 4 teams book their ticket to the finale.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+            <span>Cut-off: Final 4</span>
+            <span class="text-slate-300 font-medium">Podium Contenders</span>
+          </div>
+        </div>
+
+        <!-- Round 4: The Grand Final -->
+        <div class="reveal glass-card rounded-2xl p-6 border-l-4 border-l-neon-amber flex flex-col justify-between group hover:-translate-y-1 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-500/20 text-neon-amber border border-amber-500/40">
+                GRAND FINAL
+              </span>
+              <span class="text-xs font-mono text-slate-400 bg-navy-900 px-2 py-0.5 rounded border border-slate-800">
+                Date: TBA
+              </span>
+            </div>
+            
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-2xl mb-4">
+              👑
+            </div>
+
+            <h3 class="text-xl font-display font-bold text-white mb-2">
+              The Grand Final
+            </h3>
+            <p class="text-xs font-mono text-neon-amber font-semibold mb-3">
+              Top 4 Battle For Top 3
+            </p>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Live presentation & project showcase. The 4 finalist squads present their working builds to crown the 1st, 2nd, and 3rd champions.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+            <span>Prize Split</span>
+            <span class="text-neon-amber font-semibold">₹16,000 Cash</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Format Note Disclaimer -->
+      <div class="mt-8 text-center">
+        <p class="text-xs sm:text-sm text-slate-400 bg-navy-850/80 inline-block px-5 py-2.5 rounded-full border border-slate-800">
+          <span class="text-amber-400 font-semibold">ℹ️ Organizer's Note:</span> The exact stage timings, review rubrics, and round progression structure may be fine-tuned by the organizing committee to ensure optimal fair play.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       6. PRIZES SECTION (Podium Layout with Animated Count-Ups)
+       =================================================================== -->
+  <section id="prizes" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs uppercase font-mono tracking-widest text-neon-amber font-semibold mb-2 block">
+        // CASH REWARDS & GLORY
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-display font-bold text-white mb-4">
+        ₹16,000 Total Prize Pool
+      </h2>
+      <p class="text-slate-300 text-base sm:text-lg">
+        Compete for cash prizes transferred directly to winning team leads within 48 hours.
+      </p>
+    </div>
+
+    <!-- Podium Layout (Mobile stacked, Desktop 2nd - 1st - 3rd) -->
+    <div class="max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-5 sm:items-end">
+        
+        <!-- 2nd Place (Silver) -->
+        <div class="reveal order-2 sm:order-1 glass-card rounded-2xl p-6 sm:p-7 border-2 border-slate-400/40 text-center flex flex-col justify-between podium-2 relative group hover:border-slate-300 transition-all shadow-glass">
+          <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-slate-300 text-navy-950 font-display font-black flex items-center justify-center shadow-lg text-lg">
+            2
+          </div>
+          <div class="pt-3">
+            <span class="text-4xl block mb-2">🥈</span>
+            <span class="text-xs uppercase font-mono tracking-wider text-slate-300 font-bold block mb-1">RUNNER UP</span>
+            <h3 class="text-xl font-display font-bold text-white">2nd Place</h3>
+          </div>
+          <div class="my-4">
+            <div class="text-3xl sm:text-4xl font-display font-extrabold text-slate-200">
+              ₹<span class="counter" data-target="5000">0</span>
+            </div>
+            <span class="text-xs text-slate-400 mt-1 block">Cash Prize</span>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 text-xs text-slate-300 leading-normal">
+            Certificate of Excellence + Bragging Rights
+          </div>
+        </div>
+
+        <!-- 1st Place (Gold / Champion - Elevated) -->
+        <div class="reveal order-1 sm:order-2 glass-card rounded-2xl p-6 sm:p-8 border-2 border-amber-400 text-center flex flex-col justify-between podium-1 relative shadow-neon-gold bg-gradient-to-b from-navy-850 via-navy-900 to-navy-900 group hover:scale-[1.02] transition-all">
+          <div class="absolute -top-6 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-400 to-neon-orange text-navy-950 font-display font-black text-xs uppercase tracking-wider shadow-lg flex items-center gap-1.5 whitespace-nowrap">
+            <span>👑</span> GRAND CHAMPION
+          </div>
+          <div class="pt-4">
+            <span class="text-5xl block mb-2 animate-bounce">🏆</span>
+            <span class="text-xs uppercase font-mono tracking-widest text-amber-300 font-bold block mb-1">1ST PLACE</span>
+            <h3 class="text-2xl font-display font-black text-white">The Champion</h3>
+          </div>
+          <div class="my-4">
+            <div class="text-4xl sm:text-5xl font-display font-black text-amber-300">
+              ₹<span class="counter" data-target="7500">0</span>
+            </div>
+            <span class="text-xs text-amber-200/90 mt-1 block font-medium">Grand Cash Prize</span>
+          </div>
+          <div class="pt-4 border-t border-amber-400/30 text-xs text-slate-200 leading-normal">
+            Winner Trophy + Winner Certificates + Social Showcase
+          </div>
+        </div>
+
+        <!-- 3rd Place (Bronze) -->
+        <div class="reveal order-3 sm:order-3 glass-card rounded-2xl p-6 sm:p-7 border-2 border-amber-700/50 text-center flex flex-col justify-between podium-3 relative group hover:border-amber-600 transition-all shadow-glass">
+          <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-amber-700 text-white font-display font-black flex items-center justify-center shadow-lg text-lg">
+            3
+          </div>
+          <div class="pt-3">
+            <span class="text-4xl block mb-2">🥉</span>
+            <span class="text-xs uppercase font-mono tracking-wider text-amber-500 font-bold block mb-1">2ND RUNNER UP</span>
+            <h3 class="text-xl font-display font-bold text-white">3rd Place</h3>
+          </div>
+          <div class="my-4">
+            <div class="text-3xl sm:text-4xl font-display font-extrabold text-amber-500">
+              ₹<span class="counter" data-target="3500">0</span>
+            </div>
+            <span class="text-xs text-slate-400 mt-1 block">Cash Prize</span>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 text-xs text-slate-300 leading-normal">
+            Certificate of Excellence + Bragging Rights
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Additional perks note with generous spacing -->
+      <div class="mt-14 sm:mt-16 text-center text-xs text-slate-400">
+        ✨ Digital Certificates of Participation will be provided to all active team participants.
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===================================================================
+       7. RULES & ELIGIBILITY SECTION
+       =================================================================== -->
+  <section id="rules" class="py-24 bg-navy-900/50 border-t border-slate-800/80 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase font-mono tracking-widest text-electric-400 font-semibold mb-2 block">
+          // FAIR PLAY & ELIGIBILITY
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-display font-bold text-white mb-4">
+          Who Can Participate & Rules
+        </h2>
+        <p class="text-slate-400 text-base sm:text-lg">
+          Clear, simple guidelines so every team competes on an equal playing field.
+        </p>
+      </div>
+
+      <!-- Grid of Rules Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        
+        <!-- Rule 1 -->
+        <div class="reveal glass-card rounded-2xl p-6 border border-slate-800">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-8 h-8 rounded-lg bg-electric-500/10 text-electric-400 flex items-center justify-center font-bold text-sm">01</span>
+            <h3 class="font-display font-bold text-lg text-white">Students Only</h3>
+          </div>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Open to all undergraduate, postgraduate, and diploma students from any recognized college or university. Valid student IDs will be verified.
+          </p>
+        </div>
+
+        <!-- Rule 2 -->
+        <div class="reveal glass-card rounded-2xl p-6 border border-slate-800">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-8 h-8 rounded-lg bg-electric-500/10 text-electric-400 flex items-center justify-center font-bold text-sm">02</span>
+            <h3 class="font-display font-bold text-lg text-white">Exactly 5 Members</h3>
+          </div>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Every team must consist of exactly 5 students. Cross-college and inter-departmental teams are 100% allowed and encouraged.
+          </p>
+        </div>
+
+        <!-- Rule 3 -->
+        <div class="reveal glass-card rounded-2xl p-6 border border-slate-800">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-8 h-8 rounded-lg bg-electric-500/10 text-electric-400 flex items-center justify-center font-bold text-sm">03</span>
+            <h3 class="font-display font-bold text-lg text-white">One Registration</h3>
+          </div>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            A participant can only be registered under one squad. Multi-team entries by the same individual will lead to team disqualification.
+          </p>
+        </div>
+
+        <!-- Rule 4 -->
+        <div class="reveal glass-card rounded-2xl p-6 border border-slate-800">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-8 h-8 rounded-lg bg-neon-orange/10 text-neon-orange flex items-center justify-center font-bold text-sm">04</span>
+            <h3 class="font-display font-bold text-lg text-white">₹750 Entry Fee</h3>
+          </div>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            A flat non-refundable fee of ₹750 covers the entire squad of 5 (only ₹150 per person). Entry is confirmed once payment screenshot is validated.
+          </p>
+        </div>
+
+        <!-- Rule 5 -->
+        <div class="reveal glass-card rounded-2xl p-6 border border-slate-800">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-sm">05</span>
+            <h3 class="font-display font-bold text-lg text-white">AI Tools Allowed 🤖</h3>
+          </div>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Participants are completely free to use AI tools (ChatGPT, Claude, Gemini, Cursor, v0, Bolt, Copilot, etc.) to design, code, and generate websites. Speed, innovation, and functional execution are what win!
+          </p>
+        </div>
+
+        <!-- Rule 6 -->
+        <div class="reveal glass-card rounded-2xl p-6 border border-slate-800">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-8 h-8 rounded-lg bg-neon-amber/10 text-neon-amber flex items-center justify-center font-bold text-sm">06</span>
+            <h3 class="font-display font-bold text-lg text-white">Organizer Decision Final</h3>
+          </div>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Evaluation rubrics, bracket matchups, and referee verdicts are conclusive. Respectful communication in official groups is mandatory.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       8. REGISTRATION STEPS & URGENCY SECTION
+       =================================================================== -->
+  <section id="register" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="max-w-4xl mx-auto">
+      
+      <div class="text-center mb-12">
+        <span class="text-xs uppercase font-mono tracking-widest text-electric-400 font-semibold mb-2 block">
+          // SECURE YOUR SQUAD SPOT
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-display font-bold text-white mb-4">
+          4 Simple Steps To Register
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg">
+          Spots are locked on a strict first-come, first-served basis. Only 32 team slots.
+        </p>
+      </div>
+
+      <!-- Urgency Banner -->
+      <div class="reveal glass-card rounded-2xl p-6 border border-amber-500/30 mb-12 shadow-glass bg-gradient-to-r from-navy-900 via-navy-850 to-navy-900">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <span class="relative flex h-3 w-3 flex-shrink-0">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-orange opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-neon-orange"></span>
+            </span>
+            <div>
+              <h3 class="font-display font-bold text-base sm:text-lg text-white">
+                Slots Filling Fast: Only 32 Teams
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-300 mt-0.5">
+                Strict limit of 32 squads total. First-come, first-served — registration closes immediately once 32 teams are registered.
+              </p>
+            </div>
+          </div>
+          <div class="flex-shrink-0">
+            <span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-amber-500/10 border border-amber-500/30 text-xs sm:text-sm font-mono font-semibold text-neon-amber">
+              ⚡ 32 Squads Only
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Steps Visual Timeline -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        
+        <!-- Step 1 -->
+        <div class="reveal glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-electric-500/10 text-electric-400 font-display font-bold flex items-center justify-center mb-4">
+              1
+            </div>
+            <h4 class="font-display font-bold text-base text-white mb-2">Form Your Team</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Assemble exactly 5 members. Pick your team name and appoint a primary Team Leader.
+            </p>
+          </div>
+          <div class="text-[11px] text-slate-400 font-mono mt-4 pt-3 border-t border-slate-800">
+            Squad size: 5
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="reveal glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-neon-orange/10 text-neon-orange font-display font-bold flex items-center justify-center mb-4">
+              2
+            </div>
+            <h4 class="font-display font-bold text-base text-white mb-2">Pay ₹750 Fee</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Complete the one-time ₹750 team entry payment via UPI. Save your transaction reference ID & screenshot.
+            </p>
+          </div>
+          <div class="text-[11px] text-slate-400 font-mono mt-4 pt-3 border-t border-slate-800">
+            ₹150 / member
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="reveal glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 font-display font-bold flex items-center justify-center mb-4">
+              3
+            </div>
+            <h4 class="font-display font-bold text-base text-white mb-2">Submit Details</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Fill out the Google Form / registration portal with your 5 teammates' names, colleges, and payment proof.
+            </p>
+          </div>
+          <div class="text-[11px] text-slate-400 font-mono mt-4 pt-3 border-t border-slate-800">
+            Quick 2 min form
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="reveal glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 font-display font-bold flex items-center justify-center mb-4">
+              4
+            </div>
+            <h4 class="font-display font-bold text-base text-white mb-2">Join WhatsApp</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              All 5 members join the official WhatsApp group for bracket seedings, topic drops, and live alerts.
+            </p>
+          </div>
+          <div class="text-[11px] text-slate-400 font-mono mt-4 pt-3 border-t border-slate-800">
+            Live updates hub
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Registration Action Box -->
+      <div class="reveal glass-card rounded-3xl p-8 sm:p-10 border-2 border-electric-500/40 text-center bg-gradient-to-b from-navy-900 to-navy-850 shadow-neon-blue">
+        <h3 class="text-2xl sm:text-3xl font-display font-extrabold text-white mb-3">
+          Ready to Claim Your Team Slot?
+        </h3>
+        <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-8">
+          Click below to open the official registration form. Have your UPI transaction screenshot ready to complete submission.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <!-- 
+            ==================================================================
+            EDITABLE REGISTRATION LINK:
+            Point this href to your Google Form or Razorpay payment gateway
+            ==================================================================
+          -->
+          <a id="registrationFormBtn" href="#" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-10 py-4 rounded-xl font-display font-bold text-base text-navy-950 bg-gradient-to-r from-electric-500 via-cyan-300 to-neon-amber hover:shadow-neon-blue transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 text-center flex items-center justify-center gap-2">
+            <span>Open Registration Form (₹750)</span>
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+
+          <a href="https://chat.whatsapp.com/CDPD39LfROz4AY9HV4Zv4G?s=cl&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" class="whatsapp-group-link w-full sm:w-auto px-7 py-4 rounded-xl font-display font-semibold text-sm sm:text-base text-white border border-emerald-500/40 hover:bg-emerald-600/20 transition-all text-center flex items-center justify-center gap-2">
+            <span>Need Help? Ask on WhatsApp</span>
+          </a>
+        </div>
+
+        <p class="text-xs text-slate-400 mt-6">
+          🔒 Payments are securely verified. Confirmation email and team roster code will be assigned to your team lead.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       9. FAQ ACCORDION SECTION (Keyboard Accessible)
+       =================================================================== -->
+  <section id="faq" class="py-24 bg-navy-900/60 border-t border-slate-800/80 relative z-10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <span class="text-xs uppercase font-mono tracking-widest text-electric-400 font-semibold mb-2 block">
+          // QUESTIONS ANSWERED
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-display font-bold text-white mb-4">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-slate-400 text-base sm:text-lg">
+          Everything you need to know about CCL (Code Champion League) before signing up.
+        </p>
+      </div>
+
+      <!-- Accordion Container -->
+      <div class="space-y-4" id="faqAccordion">
+        
+        <!-- FAQ 1 -->
+        <div class="faq-item glass-card rounded-2xl border border-slate-800 overflow-hidden transition-colors">
+          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-electric-500" aria-expanded="false">
+            <span class="font-display font-bold text-base sm:text-lg text-white">Who is eligible to participate?</span>
+            <span class="faq-icon text-electric-400 text-2xl font-light transform transition-transform duration-300">+</span>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+            Any college student currently enrolled in an undergraduate (B.E, B.Tech, B.Sc, BCA, etc.), postgraduate, or polytechnic diploma program is eligible. Cross-college teams and multidisciplinary branches are completely welcome. You must hold a valid college ID card.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item glass-card rounded-2xl border border-slate-800 overflow-hidden transition-colors">
+          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-electric-500" aria-expanded="false">
+            <span class="font-display font-bold text-base sm:text-lg text-white">Can we participate with fewer or more than 5 members?</span>
+            <span class="faq-icon text-electric-400 text-2xl font-light transform transition-transform duration-300">+</span>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+            To preserve the fairness of the cricket knockout format and team workload distribution, every team must register with exactly 5 members. If you need teammates, join our WhatsApp group to find fellow students looking to form a squad!
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item glass-card rounded-2xl border border-slate-800 overflow-hidden transition-colors">
+          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-electric-500" aria-expanded="false">
+            <span class="font-display font-bold text-base sm:text-lg text-white">Is the ₹750 entry fee refundable?</span>
+            <span class="faq-icon text-electric-400 text-2xl font-light transform transition-transform duration-300">+</span>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+            No, the ₹750 team entry fee is strictly non-refundable once your team slot is reserved. This ensures that only committed teams claim the limited 32 spots and prevents no-shows from ruining tournament fixtures.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item glass-card rounded-2xl border border-slate-800 overflow-hidden transition-colors">
+          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-electric-500" aria-expanded="false">
+            <span class="font-display font-bold text-base sm:text-lg text-white">What platform will the hackathon take place on?</span>
+            <span class="faq-icon text-electric-400 text-2xl font-light transform transition-transform duration-300">+</span>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+            The entire event is 100% online! Announcements and fast coordination happen on WhatsApp and Discord. Project submissions will be collected via GitHub links and recorded loom/walkthrough video links. Final presentations will be conducted over Google Meet / Zoom.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item glass-card rounded-2xl border border-slate-800 overflow-hidden transition-colors">
+          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-electric-500" aria-expanded="false">
+            <span class="font-display font-bold text-base sm:text-lg text-white">When will the exact dates be announced?</span>
+            <span class="faq-icon text-electric-400 text-2xl font-light transform transition-transform duration-300">+</span>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+            Dates are currently "To Be Announced" to allow teams enough time to form rosters. As soon as slot pre-registrations reach threshold, the complete schedule with precise round timings will be announced first inside the official WhatsApp group.
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="faq-item glass-card rounded-2xl border border-slate-800 overflow-hidden transition-colors">
+          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-electric-500" aria-expanded="false">
+            <span class="font-display font-bold text-base sm:text-lg text-white">Can we use AI tools to create our websites? What tech stacks are allowed?</span>
+            <span class="faq-icon text-electric-400 text-2xl font-light transform transition-transform duration-300">+</span>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+            <strong>Yes, 100%!</strong> Participants are fully allowed and encouraged to use AI tools (including ChatGPT, Claude, Gemini, Cursor, v0, Bolt.new, Lovable, GitHub Copilot, etc.) to design, code, and build their websites. There are no restrictions on tech stacks or frameworks (HTML/Tailwind, React, Next.js, Vue, Python, etc.). Use whichever modern AI tools and stacks empower your squad to build the most creative and functional solution!
+          </div>
+        </div>
+
+        <!-- FAQ 7 -->
+        <div class="faq-item glass-card rounded-2xl border border-slate-800 overflow-hidden transition-colors">
+          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-electric-500" aria-expanded="false">
+            <span class="font-display font-bold text-base sm:text-lg text-white">How and when are the cash prizes distributed?</span>
+            <span class="faq-icon text-electric-400 text-2xl font-light transform transition-transform duration-300">+</span>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+            Cash prizes (₹7,500 for 1st, ₹5,000 for 2nd, and ₹3,500 for 3rd) are transferred directly via UPI or IMPS bank transfer to the winning team leader within 48 hours of the grand finale conclusion after standard identity verification.
+          </div>
+        </div>
+
+        <!-- FAQ 8 -->
+        <div class="faq-item glass-card rounded-2xl border border-slate-800 overflow-hidden transition-colors">
+          <button type="button" class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-electric-500" aria-expanded="false">
+            <span class="font-display font-bold text-base sm:text-lg text-white">Who can I contact for queries or immediate support?</span>
+            <span class="faq-icon text-electric-400 text-2xl font-light transform transition-transform duration-300">+</span>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+            You can call our student coordinator helpline at <strong>+91 8072657948</strong> or <strong>+91 98944 57189</strong> anytime between 9 AM to 9 PM, or simply join our official WhatsApp group and ping an admin directly.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       10. CONTACT SECTION
+       =================================================================== -->
+  <section id="contact" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="max-w-4xl mx-auto glass-card rounded-3xl p-8 sm:p-12 border border-slate-700/80 shadow-2xl relative overflow-hidden">
+      
+      <!-- Accent Top Banner Glow -->
+      <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-electric-500 via-neon-amber to-neon-orange"></div>
+
+      <div class="text-center mb-10">
+        <span class="text-xs uppercase font-mono tracking-widest text-electric-400 font-semibold mb-2 block">
+          // REACH OUT TO ORGANIZERS
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mb-3">
+          Have Questions? Let's Talk!
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base">
+          Our organizing committee is just a tap away for team matching, registration help, or sponsorship queries.
+        </p>
+      </div>
+
+      <!-- Contact Options Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        
+        <!-- Phone Contact Card 1 -->
+        <a href="tel:+918072657948" class="flex items-center gap-4 p-5 rounded-2xl bg-navy-900/90 border border-slate-800 hover:border-electric-500/50 hover:bg-navy-850 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-electric-500/10 text-electric-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+            📞
+          </div>
+          <div>
+            <span class="text-xs text-slate-400 font-mono block">Student Coordinator 1</span>
+            <span class="text-lg font-display font-bold text-white group-hover:text-electric-400 transition-colors">
+              +91 80726 57948
+            </span>
+            <span class="text-[11px] text-electric-400 block mt-0.5">Tap to Call Directly</span>
+          </div>
+        </a>
+
+        <!-- Phone Contact Card 2 -->
+        <a href="tel:+919894457189" class="flex items-center gap-4 p-5 rounded-2xl bg-navy-900/90 border border-slate-800 hover:border-electric-500/50 hover:bg-navy-850 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+            📞
+          </div>
+          <div>
+            <span class="text-xs text-slate-400 font-mono block">Student Coordinator 2</span>
+            <span class="text-lg font-display font-bold text-white group-hover:text-cyan-400 transition-colors">
+              +91 98944 57189
+            </span>
+            <span class="text-[11px] text-cyan-400 block mt-0.5">Tap to Call Directly</span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Prominent WhatsApp Community Banner -->
+      <div class="p-6 rounded-2xl bg-gradient-to-r from-emerald-950/40 via-emerald-900/20 to-navy-900 border border-emerald-500/40 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4 text-center sm:text-left">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 flex-shrink-0">
+            <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.101-.476-.15-.677.15-.201.3-.778.979-.954 1.18-.176.2-.352.226-.653.076-.3-.151-1.267-.467-2.414-1.489-.893-.796-1.496-1.78-1.672-2.08-.176-.3-.019-.462.132-.612.136-.135.301-.351.452-.527.15-.175.201-.3.301-.5.101-.2.051-.376-.025-.526-.076-.151-.678-1.633-.929-2.235-.245-.588-.493-.509-.678-.518-.176-.01-.377-.01-.578-.01s-.527.075-.803.376c-.276.3-1.054 1.03-1.054 2.511 0 1.482 1.079 2.913 1.23 3.114.15.2 2.122 3.24 5.141 4.544.718.31 1.278.496 1.716.634.721.229 1.378.197 1.897.12.578-.087 1.78-.727 2.03-1.43.25-.704.25-1.306.176-1.43-.075-.125-.276-.201-.577-.351z"/>
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.05 21.95l4.912-1.288A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.05a8.03 8.03 0 01-4.103-1.125l-.294-.175-3.051.8 0.814-2.973-.191-.305A8.04 8.04 0 1112 20.05z"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-display font-bold text-lg text-white">Join The Official WhatsApp Group</h4>
+            <p class="text-xs text-slate-300">Fast announcements, date reveal, teammate finding & instant query resolution.</p>
+          </div>
+        </div>
+
+        <a href="https://chat.whatsapp.com/CDPD39LfROz4AY9HV4Zv4G?s=cl&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" class="whatsapp-group-link w-full sm:w-auto px-6 py-3.5 rounded-xl font-display font-bold text-sm text-navy-950 bg-emerald-400 hover:bg-emerald-300 shadow-lg hover:shadow-emerald-500/30 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
+          <span>For more details, join our WhatsApp group</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       11. FOOTER
+       =================================================================== -->
+  <footer class="bg-navy-950 border-t border-slate-800/80 py-12 relative z-10 text-slate-400 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-slate-800">
+        
+        <!-- Brand / Info -->
+        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-8 h-8 rounded-lg bg-electric-500/20 text-electric-400 flex items-center justify-center font-bold">
+              ⚡
+            </div>
+            <span class="font-display font-bold text-lg text-white">CCL — Code Champion League</span>
+          </div>
+          <p class="text-xs text-slate-400 max-w-sm">
+            Online Knockout Student Tournament. 32 Teams. 4 Rounds. One Champion.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="flex flex-wrap justify-center gap-6 text-xs font-medium">
+          <a href="#about" class="hover:text-electric-400 transition-colors">About</a>
+          <a href="#rounds" class="hover:text-electric-400 transition-colors">Tournament Format</a>
+          <a href="#prizes" class="hover:text-electric-400 transition-colors">Prizes</a>
+          <a href="#rules" class="hover:text-electric-400 transition-colors">Rules</a>
+          <a href="#register" class="hover:text-electric-400 transition-colors">Register</a>
+          <a href="#faq" class="hover:text-electric-400 transition-colors">FAQ</a>
+          <a href="#contact" class="hover:text-electric-400 transition-colors">Contact</a>
+        </div>
+
+        <!-- Phone links -->
+        <div class="flex items-center gap-4 text-xs font-mono">
+          <a href="tel:+918072657948" class="hover:text-white transition-colors">📞 8072657948</a>
+          <span class="text-slate-700">|</span>
+          <a href="tel:+919894457189" class="hover:text-white transition-colors">📞 98944 57189</a>
+        </div>
+
+      </div>
+
+      <!-- Copyright Notice -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 text-center sm:text-left">
+        <div>
+          © 2026 CCL - Code Champion League. All rights reserved.
+        </div>
+        <div class="text-slate-400">
+          Crafted for high-velocity student innovators.
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ===================================================================
+       FLOATING WHATSAPP BUTTON (Bottom Right - Always Accessible)
+       =================================================================== -->
+  <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+    <!-- Helpful Tooltip on Hover for Desktop -->
+    <span class="hidden sm:inline-block px-3 py-1.5 rounded-xl bg-navy-900/90 text-white text-xs font-medium border border-slate-700 shadow-glass">
+      Join WhatsApp Group 👋
+    </span>
+
+    <a href="https://chat.whatsapp.com/CDPD39LfROz4AY9HV4Zv4G?s=cl&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" aria-label="Join Official WhatsApp Group" class="whatsapp-group-link relative group w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-lg hover:shadow-emerald-500/50 transition-all duration-300 transform hover:scale-110 active:scale-95">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-30"></span>
+      <svg class="w-7 h-7 fill-current relative z-10" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.101-.476-.15-.677.15-.201.3-.778.979-.954 1.18-.176.2-.352.226-.653.076-.3-.151-1.267-.467-2.414-1.489-.893-.796-1.496-1.78-1.672-2.08-.176-.3-.019-.462.132-.612.136-.135.301-.351.452-.527.15-.175.201-.3.301-.5.101-.2.051-.376-.025-.526-.076-.151-.678-1.633-.929-2.235-.245-.588-.493-.509-.678-.518-.176-.01-.377-.01-.578-.01s-.527.075-.803.376c-.276.3-1.054 1.03-1.054 2.511 0 1.482 1.079 2.913 1.23 3.114.15.2 2.122 3.24 5.141 4.544.718.31 1.278.496 1.716.634.721.229 1.378.197 1.897.12.578-.087 1.78-.727 2.03-1.43.25-.704.25-1.306.176-1.43-.075-.125-.276-.201-.577-.351z"/>
+        <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.05 21.95l4.912-1.288A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.05a8.03 8.03 0 01-4.103-1.125l-.294-.175-3.051.8 0.814-2.973-.191-.305A8.04 8.04 0 1112 20.05z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- ===================================================================
+       JAVASCRIPT LOGIC (Single Source of Truth Configuration)
+       =================================================================== -->
+  <script>
+    /**
+     * =====================================================================
+     * GLOBAL EVENT CONFIGURATION (Edit your hackathon settings right here!)
+     * =====================================================================
+     */
+    const CONFIG = {
+      // 1. Event Name (Used across title, headings, footer)
+      HACKATHON_NAME: "CCL - Code Champion League",
+
+      // 2. Target Date for Live Countdown:
+      // Set to an ISO 8601 string like "2026-11-20T10:00:00+05:30", or set to null if dates are strictly TBA.
+      COUNTDOWN_TARGET_DATE: "2026-11-20T10:00:00+05:30",
+
+      // 3. Official WhatsApp Group Link
+      WHATSAPP_GROUP_URL: "https://chat.whatsapp.com/CDPD39LfROz4AY9HV4Zv4G?s=cl&p=a&mlu=4&ilr=4",
+
+      // 4. Registration Form URL (Google Form / Unstop / Razorpay link)
+      // Change '#' to your actual form link: e.g. "https://forms.gle/your-form-id"
+      REGISTRATION_FORM_URL: "#",
+
+      // 5. Contact phone numbers (clean digits for tel: links)
+      PHONE_1: "8072657948",
+      PHONE_2: "9894457189",
+
+      // 6. Max tournament team slots
+      TOTAL_SLOTS: 32,
+    };
+
+    // Update dynamic text and links across the document from CONFIG
+    document.addEventListener("DOMContentLoaded", () => {
+      // Populate Event Name
+      document.querySelectorAll(".hackathon-title-text").forEach(el => {
+        el.textContent = CONFIG.HACKATHON_NAME;
+      });
+
+      // Populate WhatsApp Links
+      document.querySelectorAll(".whatsapp-group-link").forEach(link => {
+        link.href = CONFIG.WHATSAPP_GROUP_URL;
+      });
+
+      // Populate Registration Button
+      const regBtn = document.getElementById("registrationFormBtn");
+      if (regBtn) {
+        regBtn.href = CONFIG.REGISTRATION_FORM_URL;
+        if (CONFIG.REGISTRATION_FORM_URL === "#") {
+          regBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            alert("Registration link will be activated shortly! Join the WhatsApp group for immediate notice.");
+          });
+        }
+      }
+
+      // Initialize all modules
+      initMobileMenu();
+      initCountdown();
+      initCounterAnimations();
+      initScrollReveal();
+      initFaqAccordion();
+      initParticleCanvas();
+    });
+
+    /**
+     * 1. Mobile Hamburger Menu Toggle
+     */
+    function initMobileMenu() {
+      const btn = document.getElementById("mobileMenuBtn");
+      const menu = document.getElementById("mobileMenu");
+      const hamburger = document.getElementById("hamburgerIcon");
+      const close = document.getElementById("closeIcon");
+
+      if (!btn || !menu) return;
+
+      btn.addEventListener("click", () => {
+        const isExpanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", !isExpanded);
+        menu.classList.toggle("hidden");
+        hamburger.classList.toggle("hidden");
+        close.classList.toggle("hidden");
+      });
+
+      // Close menu when tapping any mobile nav link
+      document.querySelectorAll(".mobile-nav-link").forEach(link => {
+        link.addEventListener("click", () => {
+          menu.classList.add("hidden");
+          hamburger.classList.remove("hidden");
+          close.classList.add("hidden");
+          btn.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+
+    /**
+     * 2. Live Countdown Timer with TBA Fallback
+     */
+    function initCountdown() {
+      const daysEl = document.getElementById("countdownDays");
+      const hoursEl = document.getElementById("countdownHours");
+      const minsEl = document.getElementById("countdownMinutes");
+      const secsEl = document.getElementById("countdownSeconds");
+
+      if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+
+      if (!CONFIG.COUNTDOWN_TARGET_DATE) {
+        daysEl.textContent = "T";
+        hoursEl.textContent = "B";
+        minsEl.textContent = "A";
+        secsEl.textContent = "!";
+        return;
+      }
+
+      const target = new Date(CONFIG.COUNTDOWN_TARGET_DATE).getTime();
+
+      function updateClock() {
+        const now = new Date().getTime();
+        const difference = target - now;
+
+        if (difference <= 0) {
+          daysEl.textContent = "00";
+          hoursEl.textContent = "00";
+          minsEl.textContent = "00";
+          secsEl.textContent = "00";
+          return;
+        }
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        daysEl.textContent = String(days).padStart(2, '0');
+        hoursEl.textContent = String(hours).padStart(2, '0');
+        minsEl.textContent = String(minutes).padStart(2, '0');
+        secsEl.textContent = String(seconds).padStart(2, '0');
+      }
+
+      updateClock();
+      setInterval(updateClock, 1000);
+    }
+
+    /**
+     * 3. Number Counter Animation (Runs when scrolled into view)
+     */
+    function initCounterAnimations() {
+      const counters = document.querySelectorAll(".counter");
+      const speed = 40; // lower number = faster animation
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counter = entry.target;
+            const target = +counter.getAttribute("data-target");
+
+            const updateCount = () => {
+              const current = +counter.innerText.replace(/,/g, '');
+              const increment = Math.max(1, Math.ceil(target / speed));
+
+              if (current < target) {
+                const nextVal = Math.min(target, current + increment);
+                counter.innerText = nextVal.toLocaleString('en-IN');
+                setTimeout(updateCount, 25);
+              } else {
+                counter.innerText = target.toLocaleString('en-IN');
+              }
+            };
+
+            updateCount();
+            obs.unobserve(counter);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      counters.forEach(counter => observer.observe(counter));
+    }
+
+    /**
+     * 4. Smooth Scroll Reveal on Intersection
+     */
+    function initScrollReveal() {
+      const reveals = document.querySelectorAll(".reveal");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: "0px 0px -40px 0px"
+      });
+
+      reveals.forEach(el => observer.observe(el));
+    }
+
+    /**
+     * 5. Accessible FAQ Accordion
+     */
+    function initFaqAccordion() {
+      const items = document.querySelectorAll(".faq-item");
+
+      items.forEach(item => {
+        const questionBtn = item.querySelector(".faq-question");
+        const answer = item.querySelector(".faq-answer");
+        const icon = item.querySelector(".faq-icon");
+
+        questionBtn.addEventListener("click", () => {
+          const isCurrentlyOpen = !answer.classList.contains("hidden");
+
+          // Close all answers for single-open experience
+          items.forEach(otherItem => {
+            otherItem.querySelector(".faq-answer").classList.add("hidden");
+            otherItem.querySelector(".faq-icon").textContent = "+";
+            otherItem.querySelector(".faq-icon").classList.remove("rotate-45");
+            otherItem.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+            otherItem.classList.remove("border-electric-500/40");
+          });
+
+          // Toggle current
+          if (!isCurrentlyOpen) {
+            answer.classList.remove("hidden");
+            icon.textContent = "×";
+            icon.classList.add("rotate-45");
+            questionBtn.setAttribute("aria-expanded", "true");
+            item.classList.add("border-electric-500/40");
+          }
+        });
+      });
+    }
+
+    /**
+     * 6. Lightweight Ambient Background Particle Canvas
+     */
+    function initParticleCanvas() {
+      const canvas = document.getElementById("particleCanvas");
+      if (!canvas) return;
+      const ctx = canvas.getContext("2d");
+
+      let width, height;
+      let particles = [];
+      const particleCount = window.innerWidth < 768 ? 25 : 55;
+
+      function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+      resize();
+      window.addEventListener("resize", resize);
+
+      class Particle {
+        constructor() {
+          this.reset();
+        }
+        reset() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.size = Math.random() * 2 + 0.6;
+          this.speedX = (Math.random() - 0.5) * 0.4;
+          this.speedY = (Math.random() - 0.5) * 0.4;
+          this.color = Math.random() > 0.4 ? 'rgba(0, 240, 255,' : 'rgba(255, 94, 0,';
+          this.alpha = Math.random() * 0.5 + 0.1;
+        }
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+          if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) {
+            this.reset();
+          }
+        }
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fillStyle = `${this.color} ${this.alpha})`;
+          ctx.fill();
+        }
+      }
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach(p => {
+          p.update();
+          p.draw();
+        });
+        requestAnimationFrame(animate);
+      }
+      animate();
+    }
+  </script>
+</body>
+</html>
+
