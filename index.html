@@ -590,22 +590,31 @@
                   </button>
                 </div>
 
-                <!-- Three.js 3D Interactive Canvas Container (Tap to open stage!) -->
+                <!-- Three.js 3D Interactive Canvas Container (Touch = Stage, Drag = Water Drop Game!) -->
                 <div id="arenaCanvasWrapper" class="relative w-full h-[260px] sm:h-[300px] rounded-xl overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50 border border-slate-200 flex items-center justify-center cursor-pointer group shadow-inner">
                   <canvas id="hero3dCanvas" class="w-full h-full block" style="touch-action: none;"></canvas>
                   
-                  <!-- Subtle Floating HUD Overlays -->
-                  <div class="absolute top-2.5 left-2.5 pointer-events-none px-2.5 py-0.5 rounded-md bg-white/95 border border-slate-300 text-[10px] font-mono font-semibold text-slate-800 shadow-sm">
-                    TROPHY ORB // 3D
-                  </div>
-                  <div class="absolute bottom-2.5 right-2.5 pointer-events-none px-2.5 py-0.5 rounded-md bg-white/95 border border-slate-300 text-[10px] font-mono font-semibold text-slate-800 shadow-sm">
-                    STAGE: LEAGUE
+                  <!-- Subtle Floating Water Drop Game HUD Overlays -->
+                  <div class="absolute top-2.5 left-2.5 right-2.5 pointer-events-none flex items-center justify-between z-20">
+                    <div class="px-2.5 py-1 rounded-md bg-white/95 border border-slate-300 text-[10px] font-mono font-bold text-slate-900 shadow-sm flex items-center gap-1.5">
+                      <span class="w-2 h-2 rounded-full bg-slate-950 animate-pulse"></span>
+                      <span>WATER DROP // 3D</span>
+                    </div>
+
+                    <div id="waterGameScorePill" class="px-3 py-1 rounded-full bg-slate-950 text-white border border-slate-800 text-[11px] font-mono font-bold shadow-md flex items-center gap-1.5 transition-transform duration-150">
+                      <span>💧 Drops:</span>
+                      <span id="waterDropScore" class="text-white font-black text-xs">0</span>
+                    </div>
+
+                    <div class="px-2.5 py-1 rounded-md bg-white/95 border border-slate-300 text-[10px] font-mono font-bold text-slate-800 shadow-sm">
+                      STAGE: LEAGUE
+                    </div>
                   </div>
                   
-                  <!-- Interactive Tap / Touch Callout Prompt -->
-                  <div class="absolute bottom-2.5 left-1/2 -translate-x-1/2 pointer-events-none px-3 py-1 rounded-full bg-white/95 border border-slate-300 text-[11px] font-mono font-semibold text-slate-900 shadow-md flex items-center gap-1.5 whitespace-nowrap">
-                    <span class="w-1.5 h-1.5 rounded-full bg-slate-900 animate-pulse"></span>
-                    <span>Tap 3D for Stage & Roster</span>
+                  <!-- Interactive Dual-Action Prompt: Touch to see stage, Drag to play game -->
+                  <div class="absolute bottom-2.5 left-1/2 -translate-x-1/2 pointer-events-none px-3.5 py-1.5 rounded-full bg-white/95 border border-slate-300 text-[11px] font-mono font-semibold text-slate-900 shadow-md flex items-center gap-2 whitespace-nowrap z-20">
+                    <span class="w-1.5 h-1.5 rounded-full bg-slate-900 animate-ping"></span>
+                    <span id="waterDropStatusText">Drag to Play Game • Tap for Stage & Roster</span>
                   </div>
                 </div>
 
@@ -2695,7 +2704,10 @@
     }
 
     /**
-     * 7. Interactive 3D WebGL Championship Trophy Arena (Three.js with Tap/Touch Stage Trigger)
+     * 7. Interactive 3D WebGL Championship Arena & Water Drop Game (Three.js)
+     * Interaction Rules:
+     * - TOUCH / TAP: Opens tournament stage, bracket & roster modal (openStageModal())
+     * - DRAG: Plays the interactive 3D Water Drop Game (drags player droplet to catch falling drops with splashes!)
      */
     function initThreeJsHero() {
       const canvas = document.getElementById("hero3dCanvas");
@@ -2719,151 +2731,341 @@
       renderer.setSize(width, height);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
 
-      // Atmospheric Studio Lighting tuned for Light Background
-      const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
+      // Atmospheric Studio Lighting tuned for high-contrast monochrome water reflections
+      const ambientLight = new THREE.AmbientLight(0xffffff, 1.4);
       scene.add(ambientLight);
 
-      const pointLight1 = new THREE.PointLight(0xffffff, 2.5, 50); // Electric Blue
-      pointLight1.position.set(5, 5, 5);
-      scene.add(pointLight1);
+      const light1 = new THREE.PointLight(0xffffff, 2.8, 50);
+      light1.position.set(5, 5, 5);
+      scene.add(light1);
 
-      const pointLight2 = new THREE.PointLight(0xf1f5f9, 2.0, 50); // Amber Gold
-      pointLight2.position.set(-5, -4, -2);
-      scene.add(pointLight2);
+      const light2 = new THREE.PointLight(0xf1f5f9, 2.2, 50);
+      light2.position.set(-5, -4, 3);
+      scene.add(light2);
 
-      const pointLight3 = new THREE.PointLight(0xe2e8f0, 1.8, 50); // Cyan Highlight
-      pointLight3.position.set(0, 6, 2);
-      scene.add(pointLight3);
+      const light3 = new THREE.PointLight(0x94a3b8, 1.8, 50);
+      light3.position.set(0, 6, -2);
+      scene.add(light3);
 
-      // Root Group for interactive rotation & tap feedback
-      const rootGroup = new THREE.Group();
-      scene.add(rootGroup);
+      // --- PLAYER DROPLET (Collector Droplet) ---
+      const playerGroup = new THREE.Group();
+      scene.add(playerGroup);
 
-      // Central Trophy Crystal (Brilliant Sapphire Gemstone)
-      const geomCore = new THREE.IcosahedronGeometry(1.0, 0);
-      const matCore = new THREE.MeshPhongMaterial({
-        color: 0x0f172a,
+      // Core Glossy Water Droplet Mesh
+      const coreGeom = new THREE.SphereGeometry(0.44, 32, 32);
+      const coreMat = new THREE.MeshPhongMaterial({
+        color: 0x090d16,
         emissive: 0x020617,
         specular: 0xffffff,
-        shininess: 120,
-        flatShading: true,
+        shininess: 160,
         transparent: true,
         opacity: 0.92
       });
-      const coreMesh = new THREE.Mesh(geomCore, matCore);
-      rootGroup.add(coreMesh);
+      const coreDropMesh = new THREE.Mesh(coreGeom, coreMat);
+      playerGroup.add(coreDropMesh);
 
-      // Wireframe Holographic Lattice
-      const geomWire = new THREE.IcosahedronGeometry(1.035, 0);
-      const matWire = new THREE.MeshBasicMaterial({
-        color: 0x334155,
+      // Surface Tension Meniscus Outer Wireframe Lattice
+      const sheenGeom = new THREE.SphereGeometry(0.47, 24, 24);
+      const sheenMat = new THREE.MeshBasicMaterial({
+        color: 0x475569,
         wireframe: true,
         transparent: true,
-        opacity: 0.8
+        opacity: 0.38
       });
-      const wireMesh = new THREE.Mesh(geomWire, matWire);
-      rootGroup.add(wireMesh);
+      const sheenMesh = new THREE.Mesh(sheenGeom, sheenMat);
+      playerGroup.add(sheenMesh);
 
-      // Glowing Inner Core Gem (Golden Octahedron)
-      const geomInner = new THREE.OctahedronGeometry(0.48, 0);
-      const matInner = new THREE.MeshBasicMaterial({
+      // Inner Bright Highlight Core
+      const innerGeom = new THREE.SphereGeometry(0.18, 16, 16);
+      const innerMat = new THREE.MeshBasicMaterial({
         color: 0xffffff,
         wireframe: false
       });
-      const innerMesh = new THREE.Mesh(geomInner, matInner);
-      rootGroup.add(innerMesh);
+      const innerHighlight = new THREE.Mesh(innerGeom, innerMat);
+      playerGroup.add(innerHighlight);
 
-      // Dual Gyroscope Orbit Rings (Torus)
-      const ringGeom1 = new THREE.TorusGeometry(1.48, 0.024, 16, 64);
+      // Dual Fluid Meniscus Orbit Rings (Gyro Rings)
+      const ringGeom1 = new THREE.TorusGeometry(0.72, 0.018, 16, 64);
       const ringMat1 = new THREE.MeshBasicMaterial({
         color: 0x0f172a,
         transparent: true,
-        opacity: 0.85
+        opacity: 0.75
       });
-      const ring1 = new THREE.Mesh(ringGeom1, ringMat1);
-      ring1.rotation.x = Math.PI / 3;
-      rootGroup.add(ring1);
+      const orbitRing1 = new THREE.Mesh(ringGeom1, ringMat1);
+      orbitRing1.rotation.x = Math.PI / 3;
+      playerGroup.add(orbitRing1);
 
-      const ringGeom2 = new THREE.TorusGeometry(1.72, 0.022, 16, 64);
+      const ringGeom2 = new THREE.TorusGeometry(0.88, 0.015, 16, 64);
       const ringMat2 = new THREE.MeshBasicMaterial({
         color: 0x64748b,
         transparent: true,
-        opacity: 0.85
+        opacity: 0.65
       });
-      const ring2 = new THREE.Mesh(ringGeom2, ringMat2);
-      ring2.rotation.y = Math.PI / 4;
-      ring2.rotation.x = Math.PI / 6;
-      rootGroup.add(ring2);
+      const orbitRing2 = new THREE.Mesh(ringGeom2, ringMat2);
+      orbitRing2.rotation.y = Math.PI / 4;
+      orbitRing2.rotation.x = Math.PI / 6;
+      playerGroup.add(orbitRing2);
 
-      // Floating 3D Micro-Dust Particles
-      const particleCount = 110;
+      // Atmospheric Micro-Dust Particles
+      const particleCount = 80;
       const pGeom = new THREE.BufferGeometry();
       const pCoords = new Float32Array(particleCount * 3);
       for (let i = 0; i < particleCount * 3; i += 3) {
-        pCoords[i] = (Math.random() - 0.5) * 5.2;
-        pCoords[i + 1] = (Math.random() - 0.5) * 5.2;
-        pCoords[i + 2] = (Math.random() - 0.5) * 5.2;
+        pCoords[i] = (Math.random() - 0.5) * 5.4;
+        pCoords[i + 1] = (Math.random() - 0.5) * 4.2;
+        pCoords[i + 2] = (Math.random() - 0.5) * 3.0;
       }
       pGeom.setAttribute('position', new THREE.BufferAttribute(pCoords, 3));
       const pMat = new THREE.PointsMaterial({
-        color: 0x64748b,
-        size: 0.048,
+        color: 0x94a3b8,
+        size: 0.038,
         transparent: true,
-        opacity: 0.7
+        opacity: 0.55
       });
       const particleField = new THREE.Points(pGeom, pMat);
       scene.add(particleField);
 
-      // Mouse & Touch Drag Rotation + Touch/Tap Detection
-      let isDragging = false;
+      // --- FALLING WATER DROPLETS POOL ---
+      const DROP_COUNT = 15;
+      const fallingDrops = [];
+      const dropSharedMat = new THREE.MeshPhongMaterial({
+        color: 0x1e293b,
+        emissive: 0x040812,
+        specular: 0xffffff,
+        shininess: 140,
+        transparent: true,
+        opacity: 0.90
+      });
+
+      function getVisibleBounds() {
+        const vFOV = (camera.fov * Math.PI) / 180;
+        const visibleH = 2 * Math.tan(vFOV / 2) * camera.position.z;
+        const visibleW = visibleH * camera.aspect;
+        return { w: visibleW, h: visibleH };
+      }
+
+      function respawnDrop(drop, initialSpawn = false) {
+        const bounds = getVisibleBounds();
+        const halfW = (bounds.w * 0.42);
+        drop.mesh.position.x = (Math.random() * 2 - 1) * halfW;
+        drop.mesh.position.y = initialSpawn ? (Math.random() * bounds.h * 0.9 - bounds.h * 0.1) : (bounds.h * 0.55 + Math.random() * 1.2);
+        drop.mesh.position.z = (Math.random() - 0.5) * 0.3;
+        drop.vy = -(0.016 + Math.random() * 0.022);
+        drop.swayFreq = 1.8 + Math.random() * 2.2;
+        drop.swayAmp = 0.003 + Math.random() * 0.005;
+        drop.wobblePhase = Math.random() * Math.PI * 2;
+        drop.mesh.visible = true;
+      }
+
+      for (let i = 0; i < DROP_COUNT; i++) {
+        const dropRadius = 0.11 + Math.random() * 0.06;
+        const dGeom = new THREE.SphereGeometry(dropRadius, 16, 16);
+        // Slightly elongate for teardrop aesthetic
+        dGeom.scale(1.0, 1.25, 1.0);
+        const dMesh = new THREE.Mesh(dGeom, dropSharedMat);
+        scene.add(dMesh);
+
+        const dropObj = {
+          mesh: dMesh,
+          radius: dropRadius,
+          vy: -0.02,
+          swayFreq: 2.0,
+          swayAmp: 0.004,
+          wobblePhase: 0
+        };
+        respawnDrop(dropObj, true);
+        fallingDrops.push(dropObj);
+      }
+
+      // --- EXPANDING WATER RIPPLE WAVES POOL ---
+      const RIPPLE_COUNT = 8;
+      const rippleRings = [];
+      const rippleGeom = new THREE.RingGeometry(0.06, 0.13, 32);
+      for (let i = 0; i < RIPPLE_COUNT; i++) {
+        const rMat = new THREE.MeshBasicMaterial({
+          color: 0x0f172a,
+          transparent: true,
+          opacity: 0,
+          side: THREE.DoubleSide
+        });
+        const rMesh = new THREE.Mesh(rippleGeom, rMat);
+        rMesh.visible = false;
+        scene.add(rMesh);
+        rippleRings.push({ mesh: rMesh, mat: rMat, life: 0, maxLife: 32, scale: 0.4 });
+      }
+
+      function spawnWaterRipple(x, y, z) {
+        const r = rippleRings.find(item => item.life <= 0) || rippleRings[0];
+        r.mesh.position.set(x, y, z + 0.02);
+        r.mesh.visible = true;
+        r.life = r.maxLife;
+        r.scale = 0.4;
+        r.mesh.scale.set(0.4, 0.4, 0.4);
+        r.mat.opacity = 0.85;
+      }
+
+      // --- SPLASH MICRO-DROPLET PARTICLES POOL ---
+      const SPLASH_COUNT = 32;
+      const splashGeom = new THREE.SphereGeometry(0.038, 8, 8);
+      const splashParticles = [];
+      for (let i = 0; i < SPLASH_COUNT; i++) {
+        const sMat = new THREE.MeshBasicMaterial({
+          color: 0x334155,
+          transparent: true,
+          opacity: 0
+        });
+        const sMesh = new THREE.Mesh(splashGeom, sMat);
+        sMesh.visible = false;
+        scene.add(sMesh);
+        splashParticles.push({
+          mesh: sMesh,
+          mat: sMat,
+          vx: 0,
+          vy: 0,
+          vz: 0,
+          life: 0,
+          maxLife: 24
+        });
+      }
+
+      function spawnSplashBursts(x, y, z, count = 7) {
+        let spawned = 0;
+        for (const s of splashParticles) {
+          if (s.life <= 0) {
+            s.mesh.position.set(x, y, z);
+            const angle = Math.random() * Math.PI * 2;
+            const speed = 0.028 + Math.random() * 0.038;
+            s.vx = Math.cos(angle) * speed;
+            s.vy = Math.sin(angle) * speed + 0.024; // Upward fountain arc
+            s.vz = (Math.random() - 0.5) * 0.02;
+            s.life = s.maxLife;
+            s.mesh.visible = true;
+            s.mat.opacity = 0.95;
+            spawned++;
+            if (spawned >= count) break;
+          }
+        }
+      }
+
+      // --- GAME STATE & HUD ELEMENTS ---
+      let dropsCaught = 0;
+      const scoreElem = document.getElementById("waterDropScore");
+      const scorePill = document.getElementById("waterGameScorePill");
+      const statusText = document.getElementById("waterDropStatusText");
+
+      function triggerCatchFeedback(dropX, dropY, dropZ) {
+        dropsCaught++;
+        if (scoreElem) scoreElem.textContent = dropsCaught;
+
+        // Bouncy HUD feedback animation
+        if (scorePill) {
+          scorePill.classList.remove("scale-125");
+          void scorePill.offsetWidth;
+          scorePill.classList.add("scale-125");
+          setTimeout(() => scorePill.classList.remove("scale-125"), 160);
+        }
+
+        // Spawn visual water splashes & expanding ripples
+        spawnWaterRipple(dropX, dropY, dropZ);
+        spawnSplashBursts(dropX, dropY, dropZ, 7);
+
+        // Liquid elastic surface squash
+        playerElasticScale.x = 1.34;
+        playerElasticScale.y = 0.72;
+        playerElasticScale.z = 1.34;
+      }
+
+      // --- MOUSE & TOUCH CONTROLS (Dual Mode: Tap = Stage, Drag = Game) ---
+      let isPointerDown = false;
+      let hasDragged = false;
       let startX = 0;
       let startY = 0;
       let prevX = 0;
       let prevY = 0;
-      let velocityX = 0;
-      let velocityY = 0;
+      let targetWorldX = 0;
+      let targetWorldY = 0;
+      let playerVelocityX = 0;
+      let playerVelocityY = 0;
+      let playerElasticScale = { x: 1, y: 1, z: 1 };
+
+      function screenToWorld(clientX, clientY) {
+        const rect = canvas.getBoundingClientRect();
+        const ndcX = ((clientX - rect.left) / rect.width) * 2 - 1;
+        const ndcY = -((clientY - rect.top) / rect.height) * 2 + 1;
+        const bounds = getVisibleBounds();
+        const wx = THREE.MathUtils.clamp((ndcX * bounds.w) / 2, -bounds.w * 0.44, bounds.w * 0.44);
+        const wy = THREE.MathUtils.clamp((ndcY * bounds.h) / 2, -bounds.h * 0.44, bounds.h * 0.44);
+        return { x: wx, y: wy };
+      }
 
       function onPointerStart(e) {
-        isDragging = true;
+        isPointerDown = true;
+        hasDragged = false;
         const pt = e.touches ? e.touches[0] : e;
         startX = pt.clientX;
         startY = pt.clientY;
         prevX = pt.clientX;
         prevY = pt.clientY;
-        velocityX = 0;
-        velocityY = 0;
       }
 
       function onPointerMove(e) {
-        if (!isDragging) return;
+        if (!isPointerDown) return;
         const pt = e.touches ? e.touches[0] : e;
-        const deltaX = pt.clientX - prevX;
-        const deltaY = pt.clientY - prevY;
+        const moveDist = Math.hypot(pt.clientX - startX, pt.clientY - startY);
+
+        if (moveDist >= 10) {
+          hasDragged = true;
+          if (statusText) {
+            statusText.textContent = "🎮 Dragging Droplet • Catch Falling Drops!";
+          }
+        }
+
+        if (hasDragged) {
+          const worldPt = screenToWorld(pt.clientX, pt.clientY);
+          targetWorldX = worldPt.x;
+          targetWorldY = worldPt.y;
+
+          playerVelocityX = (pt.clientX - prevX) * 0.005;
+          playerVelocityY = (pt.clientY - prevY) * 0.005;
+        }
+
         prevX = pt.clientX;
         prevY = pt.clientY;
-
-        velocityX = deltaX * 0.005;
-        velocityY = deltaY * 0.005;
-
-        rootGroup.rotation.y += velocityX;
-        rootGroup.rotation.x += velocityY;
       }
 
       function onPointerEnd(e) {
-        if (!isDragging) return;
-        isDragging = false;
+        if (!isPointerDown) return;
+        isPointerDown = false;
 
         const pt = (e.changedTouches && e.changedTouches.length) ? e.changedTouches[0] : (e.touches ? e.touches[0] : e);
         const endX = pt ? pt.clientX : prevX;
         const endY = pt ? pt.clientY : prevY;
         const dist = Math.hypot(endX - startX, endY - startY);
 
-        // If user tapped/clicked without substantial dragging (<12px), trigger the Stage & Participants view!
-        if (dist < 12) {
-          // Celebratory spin pulse
-          velocityX = 0.09;
-          velocityY = 0.04;
-          openStageModal();
+        // Reset HUD prompt text after dragging session
+        if (statusText) {
+          setTimeout(() => {
+            if (!isPointerDown) {
+              statusText.textContent = "Drag to Play Game • Tap for Stage & Roster";
+            }
+          }, 600);
+        }
+
+        // TOUCH / TAP: If user touched without dragging, view tournament stage!
+        if (dist < 12 && !hasDragged) {
+          // Playful ripple at tap location
+          const tapWorld = screenToWorld(endX, endY);
+          spawnWaterRipple(tapWorld.x, tapWorld.y, 0);
+          playerElasticScale.x = 1.25;
+          playerElasticScale.y = 1.25;
+
+          // Open Stage Modal
+          if (typeof openStageModal === "function") {
+            openStageModal();
+          }
+        } else {
+          // DRAG / PLAYED GAME: user engaged with the water drop game!
+          // Droplet stays smoothly in arena or relaxes towards rest position.
         }
       }
 
@@ -2887,7 +3089,7 @@
       }
       window.addEventListener("resize", handleResize);
 
-      // Optimize: Pause loop when not in viewport to save mobile battery
+      // Optimize: Pause loop when not in viewport to conserve mobile resources
       let isVisible = true;
       if ("IntersectionObserver" in window) {
         const observer = new IntersectionObserver((entries) => {
@@ -2896,28 +3098,98 @@
         observer.observe(canvas);
       }
 
-      // 60FPS Render Loop
+      // --- 60FPS GAME ENGINE & RENDER LOOP ---
+      let clockTime = 0;
+
       function renderLoop() {
         requestAnimationFrame(renderLoop);
         if (!isVisible) return;
 
-        if (!isDragging) {
-          // Gentle autonomous rotation
-          rootGroup.rotation.y += 0.007;
-          rootGroup.rotation.x += 0.003;
+        clockTime += 0.016;
+        const bounds = getVisibleBounds();
 
-          // Velocity decay
-          velocityX *= 0.92;
-          velocityY *= 0.92;
-          rootGroup.rotation.y += velocityX;
-          rootGroup.rotation.x += velocityY;
+        // 1. Player Droplet Motion & Fluid Inertia
+        if (isPointerDown && hasDragged) {
+          // Smoothly track drag target position
+          playerGroup.position.x += (targetWorldX - playerGroup.position.x) * 0.28;
+          playerGroup.position.y += (targetWorldY - playerGroup.position.y) * 0.28;
+
+          // Dynamic tilt according to velocity
+          const tiltX = (targetWorldX - playerGroup.position.x) * 0.45;
+          const tiltY = (targetWorldY - playerGroup.position.y) * 0.45;
+          playerGroup.rotation.z = -tiltX;
+          playerGroup.rotation.x = tiltY;
+        } else {
+          // Gentle autonomous centering & liquid breathing float
+          playerGroup.position.x += (0 - playerGroup.position.x) * 0.035;
+          playerGroup.position.y += ((Math.sin(clockTime * 2.2) * 0.08) - playerGroup.position.y) * 0.035;
+          playerGroup.rotation.z *= 0.92;
+          playerGroup.rotation.x *= 0.92;
         }
 
-        // Counter-rotating orbital rings
-        ring1.rotation.z += 0.012;
-        ring2.rotation.z -= 0.009;
-        innerMesh.rotation.y -= 0.018;
+        // 2. Liquid Elastic Surface Tension Recovery
+        playerElasticScale.x += (1.0 - playerElasticScale.x) * 0.12;
+        playerElasticScale.y += (1.0 - playerElasticScale.y) * 0.12;
+        playerElasticScale.z += (1.0 - playerElasticScale.z) * 0.12;
+        playerGroup.scale.set(playerElasticScale.x, playerElasticScale.y, playerElasticScale.z);
+
+        // Core and orbit ring rotations
+        orbitRing1.rotation.z += 0.016;
+        orbitRing2.rotation.z -= 0.012;
+        innerHighlight.rotation.y += 0.025;
+        sheenMesh.rotation.y -= 0.008;
         particleField.rotation.y += 0.001;
+
+        // 3. Falling Droplets Physics & Collision Check
+        const playerPos = playerGroup.position;
+        const catchHitRadius = 0.48; // player droplet collision radius
+
+        for (let i = 0; i < fallingDrops.length; i++) {
+          const drop = fallingDrops[i];
+          drop.mesh.position.y += drop.vy;
+          drop.mesh.position.x += Math.sin(clockTime * drop.swayFreq + drop.wobblePhase) * drop.swayAmp;
+
+          // Test distance to player droplet
+          const distToPlayer = playerPos.distanceTo(drop.mesh.position);
+          if (distToPlayer < (catchHitRadius + drop.radius)) {
+            // CATCH SUCCESS!
+            triggerCatchFeedback(drop.mesh.position.x, drop.mesh.position.y, drop.mesh.position.z);
+            respawnDrop(drop, false);
+          } else if (drop.mesh.position.y < -bounds.h * 0.58) {
+            // Reached bottom boundary, respawn at top
+            respawnDrop(drop, false);
+          }
+        }
+
+        // 4. Update Ripple Waves
+        for (let i = 0; i < rippleRings.length; i++) {
+          const r = rippleRings[i];
+          if (r.life > 0) {
+            r.life--;
+            r.scale += 0.06;
+            r.mesh.scale.set(r.scale, r.scale, r.scale);
+            r.mat.opacity = (r.life / r.maxLife) * 0.85;
+            if (r.life <= 0) {
+              r.mesh.visible = false;
+            }
+          }
+        }
+
+        // 5. Update Splash Micro-Particles
+        for (let i = 0; i < splashParticles.length; i++) {
+          const s = splashParticles[i];
+          if (s.life > 0) {
+            s.life--;
+            s.mesh.position.x += s.vx;
+            s.mesh.position.y += s.vy;
+            s.mesh.position.z += s.vz;
+            s.vy -= 0.0018; // Gravity pulling splash down
+            s.mat.opacity = (s.life / s.maxLife) * 0.95;
+            if (s.life <= 0) {
+              s.mesh.visible = false;
+            }
+          }
+        }
 
         renderer.render(scene, camera);
       }
@@ -2930,10 +3202,10 @@
     const TOUR_STEPS = [
       {
         targetId: "arenaCanvasWrapper",
-        icon: "🏆",
-        title: "Interactive 3D Arena & Stages",
-        desc: "Touch, spin, or drag our real-time 3D crystal trophy! Tapping it opens the tournament stage, team draw brackets, participant roster, and unlocks next round details for advancing squads.",
-        tip: "Tap the 3D trophy anytime to open the stage inspector or preview round details."
+        icon: "💧",
+        title: "3D Water Drop Game & Stage Arena",
+        desc: "Drag the 3D model to play the interactive Water Drop Game and catch falling droplets with fluid splashes! Simply tap or touch the 3D canvas anytime to inspect the tournament stage, brackets, and participant rosters.",
+        tip: "Drag = Play Water Drop Game • Tap = View Stage & Lineup."
       },
       {
         targetId: "rounds",
