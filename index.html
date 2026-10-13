@@ -676,42 +676,49 @@
         </p>
       </div>
 
-      <!-- Current Stage Info Box -->
+      <!-- Stage & Round Details Inspector (3D Tapped View) -->
       <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 mb-6">
         <div class="flex items-center justify-between mb-3">
-          <span class="text-xs font-mono uppercase tracking-wider text-slate-500 font-semibold">Active Progression</span>
-          <span id="stageStatusBadge" class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-900 border border-slate-300">
-            Registration Active
+          <span class="text-xs font-mono uppercase tracking-wider text-slate-700 font-bold flex items-center gap-1.5">
+            <span>🧭</span> Stage & Round Inspector
+          </span>
+          <span id="stageStatusBadge" class="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-900 border border-slate-300">
+            Interactive Roadmap
           </span>
         </div>
         
-        <!-- 4 Round Progress Tracker Pills -->
-        <div class="grid grid-cols-4 gap-1.5 sm:gap-2 mb-4 text-center">
-          <div class="p-2 rounded-xl bg-slate-950 text-white font-mono text-[11px] font-bold shadow-sm">
-            <span>R1: League</span>
-            <span class="block text-[9px] opacity-90 mt-0.5">32 Teams</span>
-          </div>
-          <div class="p-2 rounded-xl bg-slate-200 text-slate-600 font-mono text-[11px] font-medium">
-            <span>R2: Quarters</span>
-            <span class="block text-[9px] text-slate-500 mt-0.5">16 Teams</span>
-          </div>
-          <div class="p-2 rounded-xl bg-slate-200 text-slate-600 font-mono text-[11px] font-medium">
-            <span>R3: Semis</span>
-            <span class="block text-[9px] text-slate-500 mt-0.5">8 Teams</span>
-          </div>
-          <div class="p-2 rounded-xl bg-slate-200 text-slate-600 font-mono text-[11px] font-medium">
-            <span>Final</span>
-            <span class="block text-[9px] text-slate-500 mt-0.5">Top 4</span>
-          </div>
+        <!-- 4 Interactive Round Tabs -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4 text-center" id="modalRoundTabs">
+          <button type="button" data-round="0" onclick="renderModalRoundDetails(0)" class="modal-round-tab p-2.5 rounded-xl bg-slate-950 text-white font-mono text-[11px] font-bold shadow-sm transition cursor-pointer border border-slate-950 text-left sm:text-center">
+            <span class="block">R1: League</span>
+            <span class="block text-[9px] opacity-85 mt-0.5">Landing Page</span>
+          </button>
+          <button type="button" data-round="1" onclick="renderModalRoundDetails(1)" class="modal-round-tab p-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 font-mono text-[11px] font-medium transition cursor-pointer border border-slate-300 text-left sm:text-center">
+            <span class="block">R2: Quarters</span>
+            <span class="block text-[9px] text-slate-500 mt-0.5">Simple E-Com</span>
+          </button>
+          <button type="button" data-round="2" onclick="renderModalRoundDetails(2)" class="modal-round-tab p-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 font-mono text-[11px] font-medium transition cursor-pointer border border-slate-300 text-left sm:text-center">
+            <span class="block">R3: Semis</span>
+            <span class="block text-[9px] text-slate-500 mt-0.5">AI ChatBot/Search</span>
+          </button>
+          <button type="button" data-round="3" onclick="renderModalRoundDetails(3)" class="modal-round-tab p-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 font-mono text-[11px] font-medium transition cursor-pointer border border-slate-300 text-left sm:text-center">
+            <span class="block">R4: Final</span>
+            <span class="block text-[9px] text-slate-500 mt-0.5">E-Com + Bot</span>
+          </button>
         </div>
 
-        <div class="space-y-1 text-xs text-slate-600 leading-relaxed border-t border-slate-200 pt-3">
-          <div class="flex items-center gap-2 font-semibold text-slate-800">
-            <span>🏏 Current: Round 01 — League Stage</span>
+        <!-- Dynamic Round Detail Panel -->
+        <div id="modalRoundDetailPanel" class="p-3.5 sm:p-4 rounded-xl bg-white border border-slate-200 text-xs text-slate-700 space-y-2.5">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <!-- Universal Marking Rule Callout -->
+        <div class="mt-3 p-3 rounded-xl bg-slate-100 border border-slate-300 text-[11px] sm:text-xs text-slate-800 flex items-start gap-2.5">
+          <span class="text-base flex-shrink-0">⭐</span>
+          <div>
+            <strong class="text-slate-950 font-bold block mb-0.5">Universal UI Evaluation Criteria:</strong>
+            Across all rounds and websites, marks will be strictly provided based on a <strong>User-Friendly UI</strong> (intuitive navigation, clean visual hierarchy, responsive layout, and effortless usability).
           </div>
-          <p>
-            All 32 confirmed teams build their prototype. The top 16 teams qualify for the Quarter-Finals.
-          </p>
         </div>
       </div>
 
@@ -865,161 +872,229 @@
   <section id="rounds" class="py-24 bg-slate-50/70 border-y border-slate-200 relative z-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="text-center max-w-3xl mx-auto mb-14">
         <span class="text-xs uppercase font-mono tracking-widest text-slate-500 font-semibold mb-2 block">
-          // CRICKET-STYLE BRACKET
+          // CRICKET-STYLE KNOCKOUT PROGRESSION
         </span>
         <h2 class="text-3xl sm:text-5xl font-display font-bold text-slate-900 mb-4">
           How The Tournament Works
         </h2>
-        <p class="text-slate-600 text-base sm:text-lg">
-          4 progressive rounds designed like an IPL championship. Survive each round cut-off to claim the crown.
+        <p class="text-slate-600 text-base sm:text-lg mb-6">
+          4 progressive knockout stages designed like a cricket championship. Round 1 details are displayed below for all 32 squads. Advancing teams can view the next round details by tapping the 3D design above!
         </p>
+
+        <!-- Stage Transparency & Progression Notice Banner -->
+        <div class="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 px-4 py-2.5 rounded-2xl bg-white border border-slate-300 text-xs font-mono text-slate-800 shadow-sm">
+          <span class="flex items-center gap-1.5 font-bold text-slate-950">
+            <span class="w-2 h-2 rounded-full bg-slate-950 animate-ping"></span>
+            Round 01 Details Active Below
+          </span>
+          <span class="hidden sm:inline text-slate-300">|</span>
+          <span class="text-slate-600">
+            🔒 Qualified squads unlock Next Rounds via 3D Design
+          </span>
+        </div>
       </div>
 
       <!-- 4 Rounds Cards Grid / Timeline -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <!-- Round 1: League Stage -->
-        <div class="reveal glass-card card-hover rounded-2xl p-6 border-l-4 border-l-slate-950 flex flex-col justify-between group bg-white shadow-sm hover:shadow-lg hover:border-slate-400">
+        <!-- Round 1: League Stage (FULLY DISPLAYED) -->
+        <div class="reveal glass-card card-hover rounded-2xl p-6 border-2 border-slate-900 flex flex-col justify-between group bg-white shadow-md relative overflow-hidden">
+          <div class="absolute top-0 right-0 px-3 py-1 bg-slate-950 text-white font-mono text-[10px] font-bold uppercase rounded-bl-xl tracking-wider">
+            Active Round
+          </div>
+
           <div>
-            <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center justify-between mb-4 mt-1">
               <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-slate-100 text-slate-900 border border-slate-300">
                 ROUND 01
               </span>
-              <span class="text-xs font-mono text-slate-600 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
-                Date: TBA
+              <span class="text-xs font-mono text-slate-700 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
+                All 32 Teams
               </span>
             </div>
             
-            <div class="w-12 h-12 rounded-xl bg-slate-100 border border-slate-300 flex items-center justify-center text-2xl mb-4">
+            <div class="w-12 h-12 rounded-xl bg-slate-100 border border-slate-300 flex items-center justify-center text-2xl mb-4 group-hover:scale-105 transition-transform">
               🏏
             </div>
 
-            <h3 class="text-xl font-display font-bold text-slate-900 mb-2">
-              The League Stage
+            <h3 class="text-xl font-display font-bold text-slate-950 mb-1">
+              Landing Page Challenge
             </h3>
-            <p class="text-xs font-mono text-slate-900 font-bold mb-3">
+            <p class="text-xs font-mono text-slate-700 font-bold mb-3">
               32 Teams → Top 16 Advance
             </p>
-            <p class="text-slate-600 text-sm leading-relaxed mb-4">
-              All 32 registered teams build and submit their core idea prototype against the kickoff problem statements.
-            </p>
+
+            <div class="space-y-2.5 text-xs text-slate-600 mb-4">
+              <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+                <strong class="text-slate-900 block font-semibold mb-0.5">🎯 Challenge:</strong>
+                Create a modern, responsive <strong>Landing Page</strong>.
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+                <strong class="text-slate-900 block font-semibold mb-0.5">📍 Theme & Domain:</strong>
+                Theme and domain will be announced <strong>on spot</strong> at kickoff.
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-100 border border-slate-300 text-slate-800">
+                <strong class="text-slate-950 block font-semibold mb-0.5">✨ Marking Metric:</strong>
+                UI must be <strong>user-friendly</strong> — marks provided strictly based on design usability & layout!
+              </div>
+            </div>
           </div>
 
-          <div class="pt-4 border-t border-slate-100 text-xs text-slate-500 flex items-center justify-between">
-            <span>Cut-off: 50%</span>
-            <span class="text-slate-700 font-medium">16 Teams Eliminated</span>
+          <div class="pt-4 border-t border-slate-200 text-xs text-slate-600 flex items-center justify-between font-mono">
+            <span>Cut-off: Top 16</span>
+            <span class="text-slate-950 font-bold">16 Teams Advance</span>
           </div>
         </div>
 
-        <!-- Round 2: Quarter-Finals -->
-        <div class="reveal glass-card card-hover rounded-2xl p-6 border-l-4 border-l-slate-800 flex flex-col justify-between group bg-white shadow-sm hover:shadow-lg hover:border-slate-400">
+        <!-- Round 2: Quarter-Finals (LOCKED / UNLOCK VIA 3D) -->
+        <div class="reveal glass-card card-hover rounded-2xl p-6 border border-slate-200 flex flex-col justify-between group bg-white shadow-sm hover:border-slate-400 relative">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-slate-100 text-slate-900 border border-slate-300">
-                ROUND 02
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-slate-100 text-slate-700 border border-slate-300 flex items-center gap-1">
+                <span>🔒</span> ROUND 02
               </span>
-              <span class="text-xs font-mono text-slate-600 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
-                Date: TBA
+              <span class="text-[11px] font-mono text-slate-500 bg-slate-50 px-2 py-0.5 rounded border border-slate-200">
+                Top 16 Teams
               </span>
             </div>
             
-            <div class="w-12 h-12 rounded-xl bg-slate-100 border border-slate-300 flex items-center justify-center text-2xl mb-4">
-              ⚡
+            <div class="w-12 h-12 rounded-xl bg-slate-100 border border-slate-300 flex items-center justify-center text-2xl mb-4 group-hover:scale-105 transition-transform text-slate-700">
+              🛒
             </div>
 
-            <h3 class="text-xl font-display font-bold text-slate-900 mb-2">
-              Quarter-Finals
+            <h3 class="text-xl font-display font-bold text-slate-900 mb-1">
+              Simple E-Commerce
             </h3>
-            <p class="text-xs font-mono text-slate-900 font-bold mb-3">
+            <p class="text-xs font-mono text-slate-600 font-bold mb-3">
               16 Teams → Top 8 Advance
             </p>
-            <p class="text-slate-600 text-sm leading-relaxed mb-4">
-              Feature sprint round! Teams receive a sudden surprise twist / requirement to integrate into their existing build.
-            </p>
+
+            <div class="p-3 rounded-xl bg-slate-50 border border-dashed border-slate-300 text-xs text-slate-600 space-y-2 mb-4">
+              <p>
+                <strong>Challenge:</strong> Build a Simple E-Commerce Website. Like Round 1, the product domain will be on spot.
+              </p>
+              <p class="text-[11px] text-slate-500">
+                🔒 Full task details unlocked for Round 1 qualifiers.
+              </p>
+            </div>
           </div>
 
-          <div class="pt-4 border-t border-slate-100 text-xs text-slate-500 flex items-center justify-between">
-            <span>Cut-off: Top 8</span>
-            <span class="text-slate-700 font-medium">High Pace Review</span>
+          <div>
+            <button type="button" onclick="openStageModal(1)" class="w-full py-2.5 px-3 rounded-xl bg-slate-950 hover:bg-slate-800 text-white text-xs font-semibold border border-slate-900 flex items-center justify-center gap-1.5 transition cursor-pointer shadow-sm">
+              <span>🧭 Tap 3D Design to View Next Round</span>
+            </button>
+            <div class="pt-3 mt-3 border-t border-slate-100 text-xs text-slate-500 flex items-center justify-between font-mono">
+              <span>Cut-off: Top 8</span>
+              <span class="text-slate-800 font-semibold">User-Friendly UI</span>
+            </div>
           </div>
         </div>
 
-        <!-- Round 3: Semi-Finals -->
-        <div class="reveal glass-card card-hover rounded-2xl p-6 border-l-4 border-l-slate-700 flex flex-col justify-between group bg-white shadow-sm hover:shadow-lg hover:border-slate-400">
+        <!-- Round 3: Semi-Finals (LOCKED / UNLOCK VIA 3D) -->
+        <div class="reveal glass-card card-hover rounded-2xl p-6 border border-slate-200 flex flex-col justify-between group bg-white shadow-sm hover:border-slate-400 relative">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-slate-100 text-slate-900 border border-slate-300">
-                ROUND 03
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-slate-100 text-slate-700 border border-slate-300 flex items-center gap-1">
+                <span>🔒</span> ROUND 03
               </span>
-              <span class="text-xs font-mono text-slate-600 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
-                Date: TBA
+              <span class="text-[11px] font-mono text-slate-500 bg-slate-50 px-2 py-0.5 rounded border border-slate-200">
+                Top 8 Teams
               </span>
             </div>
             
-            <div class="w-12 h-12 rounded-xl bg-slate-100 border border-slate-300 flex items-center justify-center text-2xl mb-4">
-              🔥
+            <div class="w-12 h-12 rounded-xl bg-slate-100 border border-slate-300 flex items-center justify-center text-2xl mb-4 group-hover:scale-105 transition-transform text-slate-700">
+              🤖
             </div>
 
-            <h3 class="text-xl font-display font-bold text-slate-900 mb-2">
-              Semi-Finals
+            <h3 class="text-xl font-display font-bold text-slate-900 mb-1">
+              AI ChatBot or Search
             </h3>
-            <p class="text-xs font-mono text-slate-900 font-bold mb-3">
-              8 Teams → Top 4 Finalists
+            <p class="text-xs font-mono text-slate-600 font-bold mb-3">
+              8 Teams → Top 4 Advance
             </p>
-            <p class="text-slate-600 text-sm leading-relaxed mb-4">
-              Live code checkpoint & architecture defense before technical evaluators. Only 4 teams book their ticket to the finale.
-            </p>
+
+            <div class="p-3 rounded-xl bg-slate-50 border border-dashed border-slate-300 text-xs text-slate-600 space-y-2 mb-4">
+              <p>
+                <strong>Challenge:</strong> Create a Simple ChatBot or Search Engine using AI.
+              </p>
+              <p class="text-[11px] text-slate-500">
+                🔒 Full task details unlocked for Quarter-Final qualifiers.
+              </p>
+            </div>
           </div>
 
-          <div class="pt-4 border-t border-slate-100 text-xs text-slate-500 flex items-center justify-between">
-            <span>Cut-off: Final 4</span>
-            <span class="text-slate-700 font-medium">Podium Contenders</span>
+          <div>
+            <button type="button" onclick="openStageModal(2)" class="w-full py-2.5 px-3 rounded-xl bg-slate-950 hover:bg-slate-800 text-white text-xs font-semibold border border-slate-900 flex items-center justify-center gap-1.5 transition cursor-pointer shadow-sm">
+              <span>🧭 Tap 3D Design to View Next Round</span>
+            </button>
+            <div class="pt-3 mt-3 border-t border-slate-100 text-xs text-slate-500 flex items-center justify-between font-mono">
+              <span>Cut-off: Top 4</span>
+              <span class="text-slate-800 font-semibold">Conversational UX</span>
+            </div>
           </div>
         </div>
 
-        <!-- Round 4: The Grand Final -->
-        <div class="reveal glass-card card-hover rounded-2xl p-6 border-l-4 border-l-slate-950 flex flex-col justify-between group bg-white shadow-sm hover:shadow-lg hover:border-slate-400">
+        <!-- Round 4: The Grand Final (LOCKED / UNLOCK VIA 3D) -->
+        <div class="reveal glass-card card-hover rounded-2xl p-6 border border-slate-200 flex flex-col justify-between group bg-white shadow-sm hover:border-slate-400 relative">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-slate-950 text-white border border-slate-900">
-                GRAND FINAL
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-slate-100 text-slate-700 border border-slate-300 flex items-center gap-1">
+                <span>🔒</span> GRAND FINAL
               </span>
-              <span class="text-xs font-mono text-slate-600 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
-                Date: TBA
+              <span class="text-[11px] font-mono text-slate-500 bg-slate-50 px-2 py-0.5 rounded border border-slate-200">
+                Top 4 Finalists
               </span>
             </div>
             
-            <div class="w-12 h-12 rounded-xl bg-slate-100 border border-slate-300 flex items-center justify-center text-2xl mb-4">
+            <div class="w-12 h-12 rounded-xl bg-slate-100 border border-slate-300 flex items-center justify-center text-2xl mb-4 group-hover:scale-105 transition-transform text-slate-700">
               👑
             </div>
 
-            <h3 class="text-xl font-display font-bold text-slate-900 mb-2">
-              The Grand Final
+            <h3 class="text-xl font-display font-bold text-slate-900 mb-1">
+              E-Commerce with Bot
             </h3>
-            <p class="text-xs font-mono text-slate-900 font-bold mb-3">
-              Top 4 Battle For Top 3
+            <p class="text-xs font-mono text-slate-600 font-bold mb-3">
+              Top 4 Battle For ₹16k Pool
             </p>
-            <p class="text-slate-600 text-sm leading-relaxed mb-4">
-              Live presentation & project showcase. The 4 finalist squads present their working builds to crown the 1st, 2nd, and 3rd champions.
-            </p>
+
+            <div class="p-3 rounded-xl bg-slate-50 border border-dashed border-slate-300 text-xs text-slate-600 space-y-2 mb-4">
+              <p>
+                <strong>Challenge:</strong> Create an E-Commerce Website with integrated Bot.
+              </p>
+              <p class="text-[11px] text-slate-500">
+                🔒 Unlocked for Grand Finalists competing for 1st, 2nd, and 3rd place!
+              </p>
+            </div>
           </div>
 
-          <div class="pt-4 border-t border-slate-100 text-xs text-slate-500 flex items-center justify-between">
-            <span>Prize Split</span>
-            <span class="text-slate-950 font-bold">₹16,000 Cash</span>
+          <div>
+            <button type="button" onclick="openStageModal(3)" class="w-full py-2.5 px-3 rounded-xl bg-slate-950 hover:bg-slate-800 text-white text-xs font-semibold border border-slate-900 flex items-center justify-center gap-1.5 transition cursor-pointer shadow-sm">
+              <span>🧭 Tap 3D Design to View Next Round</span>
+            </button>
+            <div class="pt-3 mt-3 border-t border-slate-100 text-xs text-slate-500 flex items-center justify-between font-mono">
+              <span>Prize Split</span>
+              <span class="text-slate-950 font-bold">₹16,000 Cash</span>
+            </div>
           </div>
         </div>
 
       </div>
 
-      <!-- Format Note Disclaimer -->
-      <div class="mt-8 text-center">
-        <p class="text-xs sm:text-sm text-slate-600 bg-white inline-block px-5 py-2.5 rounded-full border border-slate-200 shadow-sm">
-          <span class="text-slate-900 font-bold">ℹ️ Organizer's Note:</span> The exact stage timings, review rubrics, and round progression structure may be fine-tuned by the organizing committee to ensure optimal fair play.
+      <!-- Format Note & UI Marks Criteria Callout -->
+      <div class="mt-10 p-5 rounded-2xl bg-white border border-slate-300 shadow-sm text-center max-w-4xl mx-auto">
+        <div class="flex items-center justify-center gap-2 mb-2 text-slate-900 font-bold text-sm sm:text-base">
+          <span>⭐</span>
+          <span>Core Evaluation Rule Across All Rounds:</span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl mx-auto">
+          For all the websites across every round (Landing Page, Simple E-Commerce, AI ChatBot/Search, and E-Commerce with Bot), the <strong>UI must be user-friendly</strong>. Marks will be strictly provided based on intuitive layout, clean visual design, accessibility, and seamless user experience.
         </p>
       </div>
+
+    </div>
+  </section>
 
     </div>
   </section>
@@ -1775,14 +1850,114 @@
       PARTICIPANTS: [],
     };
 
-    // Global Modal Handlers
-    function openStageModal() {
+    // Global Modal & Stage Inspector Handlers
+    let activeModalRound = 0;
+
+    const STAGE_ROUNDS_DATA = [
+      {
+        num: "01",
+        title: "Landing Page Challenge",
+        stageName: "Round 01: The League Stage",
+        stageBadge: "Active Stage • 32 Teams",
+        task: "Design & develop a modern, responsive Landing Page from scratch.",
+        domain: "Theme and domain assigned on-spot at the tournament kickoff.",
+        scoring: "User-Friendly UI (Primary Focus) — Graded strictly on usability, clean visual hierarchy, smooth navigation, and responsive design across all devices.",
+        advancement: "All 32 confirmed teams participate → Top 16 qualify for Round 02.",
+        statusBadge: "🟢 Round Details Active"
+      },
+      {
+        num: "02",
+        title: "Simple E-Commerce Website",
+        stageName: "Round 02: Quarter-Finals",
+        stageBadge: "Quarter-Finals • Top 16 Teams",
+        task: "Build a functional, clean Simple E-Commerce Website with product showcase & cart interaction.",
+        domain: "Product niche and domain assigned on-spot at round start (same format as Round 1).",
+        scoring: "User-Friendly UI & Store Flow — Graded strictly on ease of browsing, product presentation clarity, cart usability, and frictionless user journey.",
+        advancement: "Top 16 advancing teams compete → Top 8 qualify for Semi-Finals.",
+        statusBadge: "🏆 Unlocked for Round 1 Qualifiers"
+      },
+      {
+        num: "03",
+        title: "AI ChatBot or Search Engine",
+        stageName: "Round 03: Semi-Finals",
+        stageBadge: "Semi-Finals • Top 8 Teams",
+        task: "Build a Simple ChatBot or an intelligent Search Engine leveraging AI capabilities.",
+        domain: "AI-Powered Conversational Assistant or Semantic Search Interface.",
+        scoring: "User-Friendly AI Experience — Graded strictly on conversational ease, intuitive query input, responsive interaction states, and accessibility.",
+        advancement: "Top 8 advancing teams compete → Top 4 qualify for the Grand Finale.",
+        statusBadge: "🔥 Unlocked for Quarter-Final Qualifiers"
+      },
+      {
+        num: "04",
+        title: "E-Commerce with Bot",
+        stageName: "Round 04: The Grand Finale",
+        stageBadge: "Grand Final • Top 4 Teams",
+        task: "Create a complete, high-converting E-Commerce store seamlessly integrated with an AI ChatBot.",
+        domain: "Full-Stack Storefront with Embedded Conversational Assistant for shopping and product queries.",
+        scoring: "Comprehensive User-Friendly Polish — Graded strictly on cohesive end-to-end user experience, UI elegance, bot intelligence, and overall craftsmanship.",
+        advancement: "Top 4 finalist squads battle for 1st, 2nd, and 3rd Podium (₹16,000 Cash Prize Pool + Trophies).",
+        statusBadge: "👑 Unlocked for Grand Finalists"
+      }
+    ];
+
+    function renderModalRoundDetails(roundIndex = 0) {
+      activeModalRound = roundIndex;
+      const round = STAGE_ROUNDS_DATA[roundIndex] || STAGE_ROUNDS_DATA[0];
+      const panel = document.getElementById("modalRoundDetailPanel");
+      if (panel) {
+        panel.innerHTML = `
+          <div class="flex flex-wrap items-center justify-between gap-2 pb-2.5 border-b border-slate-100">
+            <div>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-slate-500 font-bold block mb-0.5">Round ${round.num} Stage Specification</span>
+              <h4 class="text-sm sm:text-base font-display font-extrabold text-slate-950">${round.title}</h4>
+            </div>
+            <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-slate-100 text-slate-900 border border-slate-300">
+              ${round.stageBadge}
+            </span>
+          </div>
+
+          <div class="space-y-2 pt-1 text-xs">
+            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+              <span class="font-bold text-slate-900 block mb-0.5">🎯 Challenge Task:</span>
+              <p class="text-slate-700 font-medium">${round.task}</p>
+            </div>
+
+            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+              <span class="font-bold text-slate-900 block mb-0.5">📍 Domain & Theme:</span>
+              <p class="text-slate-700">${round.domain}</p>
+            </div>
+
+            <div class="p-2.5 rounded-xl bg-slate-100 border border-slate-300">
+              <span class="font-bold text-slate-950 block mb-0.5">✨ Marking & UI Criteria:</span>
+              <p class="text-slate-800">${round.scoring}</p>
+            </div>
+
+            <div class="flex items-center justify-between text-[11px] font-mono text-slate-500 pt-1">
+              <span>Progression: ${round.advancement}</span>
+              <span class="font-bold text-slate-950">${round.statusBadge}</span>
+            </div>
+          </div>
+        `;
+      }
+
+      // Update Tab Buttons Active Styling
+      document.querySelectorAll(".modal-round-tab").forEach((btn, idx) => {
+        if (idx === roundIndex) {
+          btn.className = "modal-round-tab p-2.5 rounded-xl bg-slate-950 text-white font-mono text-[11px] font-bold shadow-sm transition cursor-pointer border border-slate-950 text-left sm:text-center";
+        } else {
+          btn.className = "modal-round-tab p-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 font-mono text-[11px] font-medium transition cursor-pointer border border-slate-300 text-left sm:text-center";
+        }
+      });
+    }
+
+    function openStageModal(roundIndex = 0) {
       const modal = document.getElementById("stageModal");
       const card = document.getElementById("stageModalCard");
       if (!modal) return;
       modal.classList.remove("hidden");
       modal.classList.add("flex");
       document.body.style.overflow = "hidden";
+      renderModalRoundDetails(typeof roundIndex === 'number' ? roundIndex : 0);
       renderParticipantsRoster();
       requestAnimationFrame(() => {
         modal.classList.remove("opacity-0");
@@ -1793,6 +1968,9 @@
         }
       });
     }
+
+    window.openStageModal = openStageModal;
+    window.renderModalRoundDetails = renderModalRoundDetails;
 
     function closeStageModal() {
       const modal = document.getElementById("stageModal");
@@ -1951,6 +2129,11 @@
       }
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeStageModal();
+      });
+
+      // Wire up Stage Modal Round Tabs
+      document.querySelectorAll(".modal-round-tab").forEach((btn, idx) => {
+        btn.addEventListener("click", () => renderModalRoundDetails(idx));
       });
 
       // Initialize all modules
@@ -2434,15 +2617,15 @@
         targetId: "arenaCanvasWrapper",
         icon: "🏆",
         title: "Interactive 3D Arena & Stages",
-        desc: "Touch, spin, or drag our real-time 3D crystal trophy! Tapping it opens the tournament stage, team draw brackets, and participant roster.",
-        tip: "You can tap the 3D trophy anytime to open the stage & squad lineup modal."
+        desc: "Touch, spin, or drag our real-time 3D crystal trophy! Tapping it opens the tournament stage, team draw brackets, participant roster, and unlocks next round details for advancing squads.",
+        tip: "Tap the 3D trophy anytime to open the stage inspector or preview round details."
       },
       {
         targetId: "rounds",
         icon: "🏏",
-        title: "Cricket Knockout 4-Round Format",
-        desc: "Experience the intensity of cricket knockout progression: 32 teams battle across 4 elimination rounds down to the championship final.",
-        tip: "Real-time bracket tracking, fast evaluation rounds, and live scoreboards."
+        title: "4 Knockout Rounds • User-Friendly UI Focus",
+        desc: "Round 1 (Landing Page with on-spot theme & domain) is active for all squads. For all websites across every round, UI must be user-friendly—marks are strictly based on usability! Advancing teams reveal Rounds 2, 3, and Finale by tapping the 3D design.",
+        tip: "Marks are provided strictly based on how user-friendly and intuitive your UI is!"
       },
       {
         targetId: "prizes",
